@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
+import ReactDOM from 'react-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Jumbotron from './components/jumbotron'
 import Navbar from './components/Navbar'
 // import Body from './components/Body'
 import Footer from './components/Footer'
@@ -8,21 +11,36 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { getArticles } from './actions/actions_index.js'
 
+
 class App extends Component {
+
 
   componentDidMount() {
     this.props.getArticles()
   }
 
+
   render() {
     return (
       <div className="App">
+
         <MuiThemeProvider>
           <Navbar />
+          <Jumbotron />
         </MuiThemeProvider>
-        <Body />
+        <BodyContainer />
+
+
+
+
+
+
+        {/* <Body /> */}
+
         <Footer />
+
       </div>
+
     );
   }
 }
