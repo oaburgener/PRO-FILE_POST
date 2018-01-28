@@ -8,7 +8,11 @@
     "font-awesome": "^4.7.0",
 =======
     "bootstrap": "4.0.0-alpha.6",
+<<<<<<< HEAD
 >>>>>>> 961809ae31826d87017764293d1fe58bdb1be8a2
+=======
+    "font-awesome": "^4.7.0",
+>>>>>>> ca819efac38b832247f01bbe4515580e01b58985
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.2.0",
