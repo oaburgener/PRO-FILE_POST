@@ -10,6 +10,7 @@ import BodyContainer from './containers/BodyContainer'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { getArticles } from './actions/actions_index.js'
+import JumbotronContainer from './containers/JumbotronContainer'
 
 
 class App extends Component {
@@ -23,13 +24,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
+        <Navbar />
         <MuiThemeProvider>
-          <Navbar />
-          <Jumbotron />
+            <JumbotronContainer />
         </MuiThemeProvider>
         <BodyContainer />
-
 
 
 
