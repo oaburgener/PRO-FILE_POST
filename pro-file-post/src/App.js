@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
-<<<<<<< HEAD
+
 import Navbar from './components/Navbar'
-=======
+
 import Body from './components/Body'
->>>>>>> body
+
+
+import Footer from './components/Footer'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-<<<<<<< HEAD
-        
+
         <Navbar />
-=======
         <header className="App-header">
           <h1 className="App-title">Welcome to React</h1>
         </header>
@@ -21,7 +21,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <Body />
->>>>>>> body
+        <Footer />
       </div>
     );
   }
