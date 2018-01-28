@@ -1,7 +1,9 @@
 import React from 'react'
 import SmallCard from './SmallCard'
 
-const Body = ()=> {
+const Body = ({all_articles})=> {
+  console.log(all_articles);
+
   return (
   <div>
     <SmallCard />
