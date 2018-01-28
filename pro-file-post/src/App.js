@@ -4,22 +4,37 @@ import ReactDOM from 'react-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Jumbotron from './components/Jumbotron'
 import Navbar from './components/Navbar'
-import Body from './components/Body'
+// import Body from './components/Body'
 import Footer from './components/Footer'
-
+import BodyContainer from './containers/BodyContainer'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { getArticles } from './actions/actions_index.js'
 
 
 class App extends Component {
 
+
+  componentDidMount() {
+    this.props.getArticles()
+  }
+
+
   render() {
     return (
       <div className="App">
+        <MuiThemeProvider>
+                <Jumbotron />
+          </MuiThemeProvider>
+        <BodyContainer />
         <Navbar />
 
-<MuiThemeProvider>
-        <Jumbotron />
-  </MuiThemeProvider>
-        <Body />
+
+
+
+
+        {/* <Body /> */}
+
         <Footer />
 
       </div>
@@ -28,4 +43,11 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => bindActionCreators({
+  getArticles,
+}, dispatch)
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(App)
