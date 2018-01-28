@@ -14,7 +14,8 @@ export default (state = initialState, action) => {
     case GET_ARTICLES:
     return {
       ...state,
-      all_articles: action.data.data
+      all_articles: action.data,
+      trending_articles: action.trending
     }
     default: return state
   }
