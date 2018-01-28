@@ -1,11 +1,11 @@
 import React from 'react'
-import largePics from './largePics'
+import LargePics from './LargePics'
 
-const jumbotron = () => {
+const Jumbotron = () => {
 
   return (<div className='main'>
-    // onClick; hover;
 
+<LargePics />
   </div>)
 }
-export default jumbotron
+export default Jumbotron

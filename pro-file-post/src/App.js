@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-
-import jumbotron from './components/jumbotron'
-
-
-
+import ReactDOM from 'react-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Jumbotron from './components/Jumbotron'
 import Navbar from './components/Navbar'
 import Body from './components/Body'
-
-
-
-
 import Footer from './components/Footer'
 
 
@@ -22,16 +16,14 @@ class App extends Component {
       <div className="App">
         <Navbar />
 
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-            <div class = 'body' ></div>
-            <div jumbotron ></div>
-        </p>
+<MuiThemeProvider>
+        <Jumbotron />
+  </MuiThemeProvider>
         <Body />
         <Footer />
+
       </div>
+
     );
   }
 }
