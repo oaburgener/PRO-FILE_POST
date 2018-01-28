@@ -1,12 +1,11 @@
 import React from 'react'
 import SmallCard from './SmallCard'
 
-const Body = ({all_articles})=> {
-  console.log(all_articles);
+const Body = ({getArticles, all_articles})=> {
 
   return (
   <div>
-    <SmallCard />
+    {all_articles.map(article=> (<SmallCard key={article.id} article={article}/>))}
   </div>
   )
 }

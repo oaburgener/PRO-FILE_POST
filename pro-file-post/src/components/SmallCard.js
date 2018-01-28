@@ -2,7 +2,7 @@ import React from 'react'
 import '../index.css';
 import { Grid, Row, Col, Image } from 'react-bootstrap'
 
-const SmallCard = () => {
+const SmallCard = ({article}) => {
 
   return (
     <div>
@@ -14,7 +14,7 @@ const SmallCard = () => {
         </Row>
         <Row >
           <Col xs={6} md={4} >
-            <h4>Title</h4>
+            <h4>{article.title}</h4>
             <p>Author</p>
           </Col>
         </Row>
