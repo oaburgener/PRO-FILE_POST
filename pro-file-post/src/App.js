@@ -19,7 +19,7 @@ import Filters from './components/Filter'
 import ArticleContainer from './containers/ArticleContainer'
 import SmallCard from './components/SmallCard'
 import Login from './components/Login'
-import SubmitButton from './components/Login'
+import LoginContainer from './containers/LoginContainer'
 
 
 
@@ -37,6 +37,7 @@ class App extends Component {
       <div className="App">
 
         <MuiThemeProvider>
+          <Login />
           <Navbar />
 
           <Route exact path="/" render={() => (
@@ -54,6 +55,7 @@ class App extends Component {
           )}/>
 
           <Footer />
+
         </MuiThemeProvider>
 
       </div>
