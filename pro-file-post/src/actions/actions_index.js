@@ -43,3 +43,17 @@ export const getArticleId = (id) => {
     })
   }
 }
+export const logInVerify = (username, password){
+
+  return async (dispatch) =>{
+    const response = await fetch('http://localhost:3001/users/',{
+      body:{}
+    })
+    const json = await response.json()
+    dispatch({
+      type:
+      verified:200 ? 404
+      token: json.token
+    })
+  }
+}
