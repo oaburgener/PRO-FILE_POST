@@ -19,6 +19,7 @@ const titleStyle={
 }
 
 const toolbar={
+  zIndex: '9',
   backgroundColor:'white',
   marginBottom:'18px',
   position:'fixed',
