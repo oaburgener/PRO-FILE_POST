@@ -1,10 +1,19 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: helvetica;
+  font-family: helvetica !important;
   font-weight: 50;
 }
 
+.padding
+{
+  margin-left: 6px
+  }
+  .icons{
+  height: 28px;
+  width: auto;
+  padding-left: 4px;
+}
 .small-card {
   height: 40vh;
 }
@@ -32,6 +41,9 @@ body {
 /***** End Filter Styling *****/
 
 
+.menu{
+  font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
  /***** FOOTER STYLING *****/
 .footerLogo{
   max-height: 80px;
