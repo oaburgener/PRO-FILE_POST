@@ -2,18 +2,18 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { getArticleId } from '../actions/actions_index.js'
-import Body from '../components/Body.js'
+import Article from '../components/Article.js'
 
 const mapStateToProps = state => ({
-  all_articles:state.splash.all_articles,
+  article:state.article.article,
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-getArticleId
+  getArticleId,
 }, dispatch)
 
-const BodyContainer = connect (
-  mapStateToProps, mapDispatchToProps
-)(Body)
+const ArticleContainer = connect (
+  mapStateToProps,null
+)(Article)
 
-export default BodyContainer
+export default ArticleContainer
