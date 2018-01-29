@@ -7,4 +7,6 @@ router.get('/users', users.getUsers)
 
 router.get('/articles', articles.getArticles)
 
+router.get('/articles/:sport', articles.filter)
+
 module.exports = router;
