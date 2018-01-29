@@ -23,7 +23,7 @@ const getArticleId = (req,res,next) => {
   'articles.body', 'articles.image_url', 'articles.sport', 'articles.views',
   'articles.likes', 'articles.created_at', 'articles.updated_at')
   .then(data => {
-    updateViews(id)
+    updateViews(id,next)
     res.send({ data: data[0] })
   }).catch(err => {next(err)})
 }
@@ -44,7 +44,7 @@ const deleteArticle = (req,res,next) => {
   .catch(err=>{next(err)})
 }
 
-const updateViews = (id) => {
+const updateViews = (id, next) => {
   knex('articles').where({id: id})
   .then((article)=> {
     var newViews = Number(article[0].views) + 1
@@ -61,6 +61,5 @@ module.exports = {
   getArticles,
   getArticleId,
   postArticles,
-  putLikes,
   deleteArticle
 }
