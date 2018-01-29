@@ -12,7 +12,6 @@ import { bindActionCreators } from 'redux'
 import { getArticles } from './actions/actions_index.js'
 import JumbotronContainer from './containers/JumbotronContainer'
 import Filters from './components/Filter'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 class App extends Component {
 
@@ -28,17 +27,6 @@ class App extends Component {
         <MuiThemeProvider>
           <Navbar />
           <JumbotronContainer />
-          <BodyContainer />
-
-
-
-
-
-        {/* <Body /> */}
-
-        <Footer />
-
-
           <Filters />
           <BodyContainer />
           {/* <Body /> */}
