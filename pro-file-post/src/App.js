@@ -7,6 +7,8 @@ import BodyContainer from './containers/BodyContainer'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { getArticles } from './actions/actions_index.js'
+import Filters from './components/Filter'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 
 class App extends Component {
 
@@ -17,10 +19,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <BodyContainer />
-        <Navbar />
-        {/* <Body /> */}
-        <Footer />
+        <MuiThemeProvider>
+          <Navbar />
+
+          <Filters />
+          <BodyContainer />
+          {/* <Body /> */}
+          <Footer />
+        </MuiThemeProvider>
       </div>
     );
   }
