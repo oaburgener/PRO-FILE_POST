@@ -5,9 +5,9 @@ export const GET_ONE_ARTICLE = 'GET_ONE_ARTICLE'
 export const getArticles = () => {
 
   return async (dispatch) => {
-    const response = await fetch('http://localhost:3001/articles')
+    const response = await fetch('http://localhost:3001/articles/')
     const json = await response.json()
-    const trending = await json.data.sort(function(a,b){
+    const trending =  json.data.sort(function(a,b){
       return (b.likes + b.views) - (a.likes + a.views)
     }).slice(0,3)
     dispatch({
@@ -15,8 +15,7 @@ export const getArticles = () => {
       data:json.data,
       trending: trending
     })
-  }
-
+ }
 }
 
 export const getBySport = (sport)=> {
