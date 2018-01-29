@@ -17,6 +17,29 @@ body {
 .small-card {
   height: 40vh;
 }
+/***** Filter Styling *****/
+
+.filter-by{
+  font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 22px;
+}
+
+.filter-icons{
+  height: 5vh;
+  margin: 17px;
+}
+
+.hover-icon{
+  height: 5vh;
+  margin: 17px;
+  padding: 1px;
+  box-shadow: 0px 2.5px ;
+}
+
+
+
+/***** End Filter Styling *****/
+
 
 .menu{
   font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif !important;
