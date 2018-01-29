@@ -1,4 +1,5 @@
 export const GET_ARTICLES = 'GET_ARTICLES'
+export const GET_SPORT = 'GET_SPORT'
 export const GET_ONE_ARTICLE = 'GET_ONE_ARTICLE'
 
 export const getArticles = () => {
@@ -13,6 +14,19 @@ export const getArticles = () => {
       type: GET_ARTICLES,
       data:json.data,
       trending: trending
+    })
+  }
+
+}
+
+export const getBySport = (sport)=> {
+
+  return async (dispatch) => {
+    const response = await fetch(`http://localhost:3001/articles/${sport}`)
+    const json = await response.json()
+    dispatch({
+      type: GET_SPORT,
+      data: json.data,
     })
   }
 

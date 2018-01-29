@@ -3,8 +3,10 @@ import './App.css';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Jumbotron from './components/jumbotron'
 import Navbar from './components/Navbar'
+import {pinkA200} from 'material-ui/styles/colors';
 // import Body from './components/Body'
 import Footer from './components/Footer'
 import BodyContainer from './containers/BodyContainer'
@@ -12,11 +14,12 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { getArticles } from './actions/actions_index.js'
 import JumbotronContainer from './containers/JumbotronContainer'
-
+import FilterContainer from './containers/FilterContainer'
 import Filters from './components/Filter'
-
 import ArticleContainer from './containers/ArticleContainer'
-
+import SmallCard from './components/SmallCard'
+import Login from './components/Login'
+import SubmitButton from './components/Login'
 
 
 
@@ -32,11 +35,9 @@ class App extends Component {
     return (
       <Router>
       <div className="App">
+
         <MuiThemeProvider>
           <Navbar />
-
-
-
 
           <Route exact path="/" render={() => (
             <div>
@@ -54,6 +55,7 @@ class App extends Component {
 
           <Footer />
         </MuiThemeProvider>
+
       </div>
     </Router>
 
