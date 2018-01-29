@@ -1,14 +1,26 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: helvetica;
+  font-family: helvetica !important;
   font-weight: 50;
 }
 
+.padding
+{
+  margin-left: 6px
+  }
+  .icons{
+  height: 28px;
+  width: auto;
+  padding-left: 4px;
+}
 .small-card {
   height: 40vh;
 }
 
+.menu{
+  font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
  /***** FOOTER STYLING *****/
 .footerLogo{
   max-height: 80px;
@@ -24,6 +36,45 @@ footer{
 
 .footerTitle{
   justify-content: flex-end;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.7;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  padding: 16px 32px;
 }
 
  /*****END FOOTER STYLING *****/
