@@ -5,6 +5,8 @@ var articles = require('./articles.js')
 var like = require('./likes.js')
 var bcrypt = require('./bcrypt.js')
 var bodyParser = require('body-parser')
+var jwt = require('jsonwebtoken')
+var cookieParser = require('cookie-parser')
 
 router.get('/users', users.getUsers)
 

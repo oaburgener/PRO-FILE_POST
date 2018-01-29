@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const knex = require('../knex')
 const bodyParser = require('body-parser')
+const jwt = require('jsonwebtoken')
+const cookieParser = require('cookie-parser')
+
 
 const getUsers = function(req, res, next) {
   knex('users').then(data=>{res.status(200).send({data})})
