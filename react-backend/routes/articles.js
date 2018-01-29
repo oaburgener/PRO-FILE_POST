@@ -11,6 +11,11 @@ const getArticles = (req,res,next) =>{
   })
 }
 
+const filter = (req,res,next) => {
+  knex('articles')
+  .where('sport', req.params.sport)
+  .then((data) => {res.send({data})})
+
 const getArticleId = (req,res,next) => {
   let id = req.params.id
   knex('users')
@@ -25,5 +30,6 @@ const getArticleId = (req,res,next) => {
 
 module.exports = {
   getArticles,
+  filter,
   getArticleId
 }

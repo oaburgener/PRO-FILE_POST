@@ -14,6 +14,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { getArticles } from './actions/actions_index.js'
 import JumbotronContainer from './containers/JumbotronContainer'
+import FilterContainer from './containers/FilterContainer'
 import Filters from './components/Filter'
 import ArticleContainer from './containers/ArticleContainer'
 import SmallCard from './components/SmallCard'
@@ -37,9 +38,9 @@ class App extends Component {
 
         <MuiThemeProvider>
           <Navbar />
-
-
-
+          <JumbotronContainer />
+          <FilterContainer />
+          <BodyContainer />
 
           <Route exact path="/" render={() => (
             <div>
