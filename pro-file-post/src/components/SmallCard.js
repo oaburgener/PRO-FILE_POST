@@ -1,26 +1,88 @@
 import React from 'react'
-import '../index.css';
-import { Grid, Row, Col, Image } from 'react-bootstrap'
+import '../index.css'
+import {GridList, GridTile} from 'material-ui/GridList'
+import IconButton from 'material-ui/IconButton'
+import Subheader from 'material-ui/Subheader'
+import StarBorder from 'material-ui/svg-icons/toggle/star-border'
 
-const SmallCard = ({article}) => {
 
-  return (
-    <div>
-      <Grid>
-        <Row >
-          <Col xs={6} md={4} >
-            <Image className="small-card"  src="https://images.unsplash.com/photo-1496283391099-4bda095db381?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8794ebd95c8b75f60953619f92e71ba2&auto=format&fit=crop&w=829&q=80" responsive />
-          </Col>
-        </Row>
-        <Row >
-          <Col xs={6} md={4} >
-            <h4>{article.title}</h4>
-            <p>Author</p>
-          </Col>
-        </Row>
-      </Grid>
-    </div>
-  )
-}
+    const styles = {
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+  },
 
-export default SmallCard
+  gridList: {
+    width: 800,
+    height: 750,
+  },
+};
+
+const tilesData = [
+  {
+    img: 'https://ewc.wy.edu/wp-content/uploads/2013/05/EWC2013regionalchampions.jpg',
+    title: 'Breakfast',
+    author: 'jill111',
+  },
+  {
+    img: 'https://www.scu.edu/media/ethics-center/sports/4111101027_65bbc29aec_z.jpg',
+    title: 'Tasty burger',
+    author: 'pashminu',
+  },
+  {
+    img: 'http://www.collegesportsmadness.com/sites/default/files/article-pictures/softball/l-n/michigan_team_0.jpg?1325135862',
+    title: 'Camera',
+    author: 'Danson67',
+  },
+  {
+    img: 'http://static6.businessinsider.com/image/57ffc83cda177d1b008b4b92-1190-625/the-25-schools-that-make-the-most-money-in-college-sports.jpg',
+    title: 'Morning',
+    author: 'fancycrave1',
+  },
+  {
+    img: 'images/grid-list/hats-829509_640.jpg',
+    title: 'Hats',
+    author: 'Hans',
+  },
+  {
+    img: 'images/grid-list/honey-823614_640.jpg',
+    title: 'Honey',
+    author: 'fancycravel',
+  },
+  {
+    img: 'images/grid-list/vegetables-790022_640.jpg',
+    title: 'Vegetables',
+    author: 'jill111',
+  },
+  {
+    img: 'images/grid-list/water-plant-821293_640.jpg',
+    title: 'Water plant',
+    author: 'BkrmadtyaKarki',
+  },
+];
+const GridListExampleSimple = () => (
+  <div style={styles.root}>
+    <GridList
+      cellHeight={180}
+      style={styles.gridList}
+      cols={3}
+      padding={20}
+
+    >
+      <Subheader>Articles</Subheader>
+      {tilesData.map((tile) => (
+        <GridTile
+          key={tile.img}
+          title={tile.title}
+          subtitle={<span>by <b>{tile.author}</b></span>}
+          actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
+        >
+          <img src={tile.img} />
+        </GridTile>
+      ))}
+    </GridList>
+  </div>
+);
+
+export default GridListExampleSimple;

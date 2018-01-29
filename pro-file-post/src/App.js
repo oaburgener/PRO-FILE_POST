@@ -1,15 +1,28 @@
 import React, { Component } from 'react';
 import './App.css';
 import ReactDOM from 'react-dom';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Jumbotron from './components/jumbotron'
 import Navbar from './components/Navbar'
+import {pinkA200} from 'material-ui/styles/colors';
 // import Body from './components/Body'
 import Footer from './components/Footer'
 import BodyContainer from './containers/BodyContainer'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { getArticles } from './actions/actions_index.js'
+import GridListExampleSimple from './components/SmallCard'
+
+const muiTheme = getMuiTheme({
+  palette: {
+    textColor: pinkA200,
+  },
+  appBar: {
+    height: 50,
+  },
+});
 
 
 class App extends Component {
@@ -24,11 +37,12 @@ class App extends Component {
     return (
       <div className="App">
 
-        <MuiThemeProvider>
+        <MuiThemeProvider muiTheme={muiTheme}>
           <Navbar />
           <Jumbotron />
-        </MuiThemeProvider>
+
         <BodyContainer />
+        <GridListExampleSimple />
 
 
 
@@ -38,7 +52,7 @@ class App extends Component {
         {/* <Body /> */}
 
         <Footer />
-
+  </MuiThemeProvider>
       </div>
 
     );
