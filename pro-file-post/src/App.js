@@ -11,7 +11,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { getArticles } from './actions/actions_index.js'
 import JumbotronContainer from './containers/JumbotronContainer'
-
+import Filters from './components/Filter'
 
 class App extends Component {
 
@@ -27,17 +27,11 @@ class App extends Component {
         <MuiThemeProvider>
           <Navbar />
           <JumbotronContainer />
+          <Filters />
           <BodyContainer />
+          {/* <Body /> */}
+          <Footer />
         </MuiThemeProvider>
-
-
-
-
-
-        {/* <Body /> */}
-
-        <Footer />
-
       </div>
 
     );
