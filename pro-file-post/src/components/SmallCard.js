@@ -26,21 +26,14 @@ const SmallCard = ({article, getArticleId}) => {
   return (
 
       <div style={styles.root}>
-        <GridList
-          cellHeight={180}
-          style={styles.gridList}
-          cols={3}
-          padding={20}
-        >
-          <GridTile> <Link to={`/article/${article.id}`}>
-            <Image onClick={(event)=>{getArticleId(article.id)}}
-              className="small-card"  src="https://images.unsplash.com/photo-1496283391099-4bda095db381?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8794ebd95c8b75f60953619f92e71ba2&auto=format&fit=crop&w=829&q=80" responsive
-            /></Link>
+        <GridTile> <Link to={`/article/${article.id}`}>
+          <Image onClick={(event)=>{getArticleId(article.id)}}
+            className="small-card"  src="https://images.unsplash.com/photo-1496283391099-4bda095db381?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8794ebd95c8b75f60953619f92e71ba2&auto=format&fit=crop&w=829&q=80" responsive
+          /></Link>
 
-            <h4>{article.title}</h4>
-            <p>Author</p>
-          </GridTile> 
-        </GridList>
+          <h4>{article.title}</h4>
+          <p>Author</p>
+        </GridTile>
       </div>    )
       }
 
