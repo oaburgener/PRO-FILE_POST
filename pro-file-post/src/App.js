@@ -34,17 +34,14 @@ class App extends Component {
       <div className="App">
         <MuiThemeProvider>
           <Navbar />
-<<<<<<< HEAD
-          <JumbotronContainer />
-          <Filters />
-          <BodyContainer />
-          {/* <Body /> */}
-=======
+
+
 
 
           <Route exact path="/" render={() => (
             <div>
               <JumbotronContainer />
+                <Filters />
               <BodyContainer />
             </div>
           )}/>
@@ -55,7 +52,6 @@ class App extends Component {
             </div>
           )}/>
 
->>>>>>> article
           <Footer />
         </MuiThemeProvider>
       </div>
