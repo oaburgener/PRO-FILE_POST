@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  font-weight: 50;
+}
+
+.padding
+{
+  margin-left: 6px
+  }
+  .icons{
+  height: 20px;
+  width: auto;
+  margin-left: 16px;
+  margin-bottom: 3px;
+}
+.small-card {
+  height: 40vh;
+}
+/***** Filter Styling *****/
+
+.filter-by{
+  font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 22px;
+}
+
+.filter-icons{
+  height: 5vh;
+  margin: 17px;
+}
+
+.hover-icon{
+  height: 5vh;
+  margin: 17px;
+  padding: 1px;
+  box-shadow: 0px 2.5px ;
+}
+
+
+
+/***** End Filter Styling *****/
+
+
+.menu{
+  font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+}
+ /***** FOOTER STYLING *****/
+.footerLogo{
+  max-height: 80px;
+  max-width: 80px;
+  color: black;
+}
+
+footer{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.footerTitle{
+  justify-content: flex-end;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container:hover .image {
+  opacity: 0.7;
+}
+
+.container:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  padding: 16px 32px;
+}
+
+
+ /*****END FOOTER STYLING *****/
