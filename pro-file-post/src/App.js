@@ -14,6 +14,9 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { getArticles } from './actions/actions_index.js'
 import GridListExampleSimple from './components/SmallCard'
+import Login from './components/Login'
+import SubmitButton from './components/Login'
+
 
 const muiTheme = getMuiTheme({
   palette: {
@@ -44,14 +47,11 @@ class App extends Component {
         <BodyContainer />
         <GridListExampleSimple />
 
-
-
-
-
-
         {/* <Body /> */}
 
         <Footer />
+        <Login />
+        <SubmitButton />
   </MuiThemeProvider>
       </div>
 
