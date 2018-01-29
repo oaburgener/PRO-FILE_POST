@@ -1,20 +1,23 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const knex = require('../knex')
+const bodyParser = require('body-parser')
+const jwt = require('jsonwebtoken')
+const cookieParser = require('cookie-parser')
 
-/* GET users listing. */
+
 const getUsers = function(req, res, next) {
-	// Comment out this line:
-  //res.send('respond with a resource');
-  // And insert something like this instead:
-  res.json([{
-  	id: 1,
-  	username: "samsepi0l"
-  }, {
-  	id: 2,
-  	username: "D0loresH4ze"
-  }]);
+  knex('users').then(data=>{res.status(200).send({data})})
+  .catch(err=>{next(err)})
+}
+
+const deleteUser = function(req,res,next){
+  knex('users').where({id : req.params.id}).del()
+  .then(data=>{res.sendStatus(200)})
+  .catch(err=>{next(err)})
 }
 
 module.exports = {
-  getUsers
+  getUsers,
+  deleteUser
 }
