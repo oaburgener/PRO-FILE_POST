@@ -51,26 +51,26 @@ export default class ToolbarExamplesSimple extends React.Component {
         <Toolbar style={toolbar}>
 
           <ToolbarGroup firstChild={true}>
-            <img src={require("../logos/round-logo.png")} alt="Logo" style={toolImage}/>
-            <ToolbarTitle text="ost"
-              style={titleStyle}/>
+            <a href="https://twitter.com/PRO__file" style={{ textDecoration: 'none' }}>
+              <img src={require("../logos/round-logo.png")} alt="Logo" style={toolImage} />
+              <ToolbarTitle text="ost"
+                style={titleStyle}/>
+            </a>
             <FontIcon className="muidocs-icon-custom-sort" />
             <ToolbarSeparator />
           </ToolbarGroup>
           <ToolbarGroup>
-          </ToolbarGroup>
-          <ToolbarGroup>
-            {/* <a href="https://www.facebook.com">
-              <img src={require('../logos/blackFbLogo.jpg')} className="icons"/>
-            </a> */}
-            <a href="https://www.twitter.com" style={{marginLeft:'3px', marginRight:'2px'}}>
+            <a href="https://twitter.com/PRO__file" style={{marginLeft:'3px', marginRight:'2px'}}>
               <img src={require('../logos/black twitter.png')} className="icons"/>
             </a>
-            <a href="https://www.instagram.com">
+            <a href="https://www.instagram.com/pro.file.sports/?hl=en">
               <img src={require('../logos/blackGramLogo.png')} className="icons"/>
             </a>
-            <a href="https://www.facebook.com">
+            <a href="https://www.facebook.com/profilesportsinc/">
               <img src={require('../logos/blackFbLogo.jpg')} className="icons"/>
+            </a>
+            <a href="http://pro-file.us/#/">
+              <img src={require('../logos/round-logo.png')} className="icons"/>
             </a>
 
             <IconMenu
@@ -100,9 +100,8 @@ export default class ToolbarExamplesSimple extends React.Component {
                 marginLeft: '-3px'
               }}>
 
-              <MenuItem value={1} primaryText="About" className="menu"/>
-              <MenuItem value={2} primaryText="Submit article" className="menu"/>
-              <MenuItem value={3} primaryText="Contact" className="menu"/>
+              <MenuItem value={1} href="#" primaryText="About" className="menu"/>
+              <MenuItem value={2} href="#" primaryText="Submit article" className="menu"/>
 
             </IconMenu>
           </ToolbarGroup>
