@@ -1,8 +1,26 @@
 import React from 'react'
-import '../index.css';
-import { Grid, Row, Col, Image } from 'react-bootstrap'
+import '../index.css'
+import {GridList, GridTile} from 'material-ui/GridList'
+import IconButton from 'material-ui/IconButton'
+import Subheader from 'material-ui/Subheader'
+import StarBorder from 'material-ui/svg-icons/toggle/star-border'
+
+
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
+const styles = {
+root: {
+display: 'flex',
+flexWrap: 'wrap',
+justifyContent: 'space-around',
+},
+
+
+gridList: {
+width: 800,
+height: 750,
+},
+};
 
 const SmallCard = ({article, getArticleId}) => {
   console.log(article);
@@ -28,4 +46,29 @@ const SmallCard = ({article, getArticleId}) => {
   )
 }
 
-export default SmallCard
+
+const GridListExampleSimple = () => (
+  <div style={styles.root}>
+    <GridList
+      cellHeight={180}
+      style={styles.gridList}
+      cols={3}
+      padding={20}
+
+    >
+      <Subheader>Articles</Subheader>
+      {tilesData.map((tile) => (
+        <GridTile
+          key={tile.img}
+          title={tile.title}
+          subtitle={<span>by <b>{tile.author}</b></span>}
+          actionIcon={<IconButton><StarBorder color="white" /></IconButton>}
+        >
+          <img src={tile.img} />
+        </GridTile>
+      ))}
+    </GridList>
+  </div>
+);
+
+export default GridListExampleSimple;
