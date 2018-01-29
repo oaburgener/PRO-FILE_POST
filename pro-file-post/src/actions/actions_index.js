@@ -1,5 +1,6 @@
 export const GET_ARTICLES = 'GET_ARTICLES'
 export const GET_SPORT = 'GET_SPORT'
+export const GET_ONE_ARTICLE = 'GET_ONE_ARTICLE'
 
 export const getArticles = () => {
 
@@ -29,4 +30,16 @@ export const getBySport = (sport)=> {
     })
   }
 
+}
+
+export const getArticleId = (id) => {
+
+  return async (dispatch) => {
+    const response = await fetch(`http://localhost:3001/articles/${id}`)
+    const json = await response.json()
+    dispatch({
+      type: GET_ONE_ARTICLE,
+      data: json.data
+    })
+  }
 }

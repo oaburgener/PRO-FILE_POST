@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Jumbotron from './components/jumbotron'
 import Navbar from './components/Navbar'
+import {pinkA200} from 'material-ui/styles/colors';
 // import Body from './components/Body'
 import Footer from './components/Footer'
 import BodyContainer from './containers/BodyContainer'
@@ -13,6 +16,12 @@ import { getArticles } from './actions/actions_index.js'
 import JumbotronContainer from './containers/JumbotronContainer'
 import FilterContainer from './containers/FilterContainer'
 import Filters from './components/Filter'
+import ArticleContainer from './containers/ArticleContainer'
+import SmallCard from './components/SmallCard'
+import Login from './components/Login'
+import SubmitButton from './components/Login'
+
+
 
 class App extends Component {
 
@@ -24,16 +33,34 @@ class App extends Component {
 
   render() {
     return (
+      <Router>
       <div className="App">
+
         <MuiThemeProvider>
           <Navbar />
           <JumbotronContainer />
           <FilterContainer />
           <BodyContainer />
-          {/* <Body /> */}
+
+          <Route exact path="/" render={() => (
+            <div>
+              <JumbotronContainer />
+                <Filters />
+              <BodyContainer />
+            </div>
+          )}/>
+
+          <Route exact path ="/article/:id" render={() => (
+            <div>
+              <ArticleContainer />
+            </div>
+          )}/>
+
           <Footer />
         </MuiThemeProvider>
+
       </div>
+    </Router>
 
     );
   }

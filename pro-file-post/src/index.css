@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: helvetica !important;
+  font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif !important;
   font-weight: 50;
 }
 
@@ -10,9 +10,10 @@ body {
   margin-left: 6px
   }
   .icons{
-  height: 28px;
+  height: 20px;
   width: auto;
-  padding-left: 4px;
+  margin-left: 16px;
+  margin-bottom: 3px;
 }
 .small-card {
   height: 40vh;
@@ -99,5 +100,6 @@ footer{
   font-size: 20px;
   padding: 16px 32px;
 }
+
 
  /*****END FOOTER STYLING *****/
