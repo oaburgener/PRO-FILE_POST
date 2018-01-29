@@ -29,11 +29,7 @@ class App extends Component {
           <JumbotronContainer />
           <BodyContainer />
         </MuiThemeProvider>
-
-
-
-
-
+        
         {/* <Body /> */}
 
         <Footer />
