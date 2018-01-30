@@ -20,7 +20,9 @@ import Filters from './components/Filter'
 import ArticleContainer from './containers/ArticleContainer'
 import SmallCard from './components/SmallCard'
 import Login from './components/Login'
+
 import LoginContainer from './containers/LoginContainer'
+
 
 class App extends Component {
 
@@ -48,6 +50,12 @@ class App extends Component {
           <Route exact path ="/article/:id" render={() => (
             <div>
               <ArticleContainer />
+            </div>
+          )}/>
+
+          <Route exact path ="/article-submit" render={() => (
+            <div>
+              <Form />
             </div>
           )}/>
 
