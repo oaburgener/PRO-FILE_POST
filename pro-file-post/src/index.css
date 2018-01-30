@@ -5,6 +5,13 @@ body {
   font-weight: 50;
 }
 
+.smallPic{
+  max-height: 250px;
+}
+.storyArea{
+  margin-top:25px;
+}
+
 .padding
 {
   margin-left: 6px
@@ -15,9 +22,7 @@ body {
   margin-left: 16px;
   margin-bottom: 3px;
 }
-.small-card {
-  height: 40vh;
-}
+\
 /***** Filter Styling *****/
 
 .filter-by{

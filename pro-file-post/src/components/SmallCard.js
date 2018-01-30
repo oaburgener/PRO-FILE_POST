@@ -6,15 +6,17 @@ import Subheader from 'material-ui/Subheader'
 import StarBorder from 'material-ui/svg-icons/toggle/star-border'
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import{Grid, Row, Col, Image} from 'react-bootstrap'
+
 
 const SmallCard = ({article, getArticleId}) => {
   console.log(article)
   return (
-      <div className="smallCard">
+      <Col xs={6} sm={4} md={4}>
         <Card
           style=
-          {{width:'375px',
-            marginLeft: '10px',
+          {{width:'auto',
+            maxHeight:'350px',
           marginBottom: '14px'}}>
           <Link to={`/article/${article.id}`}
           >
@@ -24,7 +26,7 @@ const SmallCard = ({article, getArticleId}) => {
 
             >
 
-              <img className="smallPic" src="https://images.unsplash.com/photo-1496283391099-4bda095db381?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8794ebd95c8b75f60953619f92e71ba2&auto=format&fit=crop&w=829&q=80" alt="" />
+              <Image className="smallPic" src="https://images.unsplash.com/photo-1496283391099-4bda095db381?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8794ebd95c8b75f60953619f92e71ba2&auto=format&fit=crop&w=829&q=80" alt="" responsive/>
 
             </CardMedia>
           </Link>
@@ -39,7 +41,7 @@ const SmallCard = ({article, getArticleId}) => {
             <FlatButton label="See more" />
           </CardActions>
         </Card>
-      </div>    )
+      </Col>    )
       }
 
 

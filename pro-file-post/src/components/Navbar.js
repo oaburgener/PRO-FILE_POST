@@ -20,12 +20,13 @@ const titleStyle={
 
 const toolbar={
   zIndex: '9',
+  position:'fixed',
+  top:'0',
   backgroundColor:'white',
   marginBottom:'18px',
-  position:'fixed',
-  width:'100vw',
+  width:'100%',
   paddingTop: '5px',
-  height: '45px'
+  height: '49px'
 }
 
 const toolImage={

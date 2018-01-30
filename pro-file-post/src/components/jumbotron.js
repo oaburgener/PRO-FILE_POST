@@ -6,7 +6,7 @@ const Jumbotron = ({ trending_articles }) => {
 
   return (
 
-    <div className="container-fluid">
+    <div className="container-fluid" style={{marginTop:'70px'}}>
       <div className="row">
         {/* <div className='row'> */}
         {trending_articles.map(article=> (<LargePics key={article.id} article={article}/>))}
