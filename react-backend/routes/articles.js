@@ -77,5 +77,6 @@ module.exports = {
   getArticleId,
   postArticles,
   deleteArticle,
-  filter
+  filter,
+  updateViews
 }
