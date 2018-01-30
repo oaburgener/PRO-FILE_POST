@@ -8,8 +8,7 @@ const LargePics = ({ article }) => {
   return (
     <Col xs={12} md={4} lg={4}>
       <div className='lagreCard'>
-        <div className='image' style={{backgroundImage: `url(${article.image_url})`, backgroundSize: 'cover', padding:'12px', width:'auto', height:'600px', backgroundRepeat:'no-repeat',
-        }}>
+        <div className='imageBig' style={{backgroundImage: `url(${article.image_url})` }}>
           <h2>{article.title}</h2>
           <h4>{article.first_name} {article.last_name}</h4>
         </div>

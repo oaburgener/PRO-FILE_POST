@@ -102,5 +102,17 @@ footer{
   padding: 16px 32px;
 }
 
+.imageBig {
+background-size: cover;
+padding:12px;
+ width:auto;
+  height:600px;
+  background-repeat:no-repeat,
+}
 
- /*****END FOOTER STYLING *****/
+ /*****END JUMBOTRON STYLING *****/
+@media screen and (max-width: 1000px) {
+.imageBig{
+  height: 500px;
+}
+}
