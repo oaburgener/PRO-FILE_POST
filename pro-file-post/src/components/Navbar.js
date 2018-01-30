@@ -11,22 +11,24 @@ import Paper from 'material-ui/Paper';
 
 
 const titleStyle={
-  color: 'red',
+  color: 'firebrick',
   fontFamily:"Helvetica Neue",
   fontWeight: 'bold',
+  marginLeft: '3px',
   marginTop:'3px',
-  size:'15px'
+  fontSize:'30px'
 }
 
 const toolbar={
   zIndex: '9',
   position:'fixed',
   top:'0',
-  backgroundColor:'white',
+  backgroundColor:'lightgray',
   marginBottom:'18px',
   width:'100%',
   paddingTop: '5px',
-  height: '49px'
+  paddingBottom:'7px',
+  height: '56px'
 }
 
 const toolImage={

@@ -26,7 +26,9 @@ body {
 /***** Filter Styling *****/
 
 .filter-by{
-  font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  display: inline-block;
+  font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  float: left;
   font-size: 22px;
 }
 
@@ -68,11 +70,15 @@ footer{
 }
 
 /* End Footer */
-/* .container {
-    position: relative;
-    width: 100%;
-} */
 
+/* Jumbotron */
+
+.topRow{
+  margin-top: 80px;
+  margin-left: -95px;
+  margin-right: -95px;
+  margin-bottom: 15px;
+}
 .image {
   opacity: 1;
   display: block;
@@ -93,11 +99,15 @@ footer{
   text-align: center;
 }
 
-.lagreCard:hover .image {
+.largeCard:hover .image {
   opacity: 0.7;
 }
 
-.lagreCard:hover .middle {
+/* .largeCard{
+  position:relative;
+} */
+
+.largeCard:hover .middle {
   opacity: 1;
 }
 
@@ -107,16 +117,40 @@ footer{
   padding: 16px 32px;
 }
 
+.largeTitle{
+  font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  color: white;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.largeSub{
+  font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  color: white;
+  text-align: left;
+  font-weight: lighter;
+}
+
+.box{
+  background-color: rgba(0,0,0,.6);
+  width: 100%;
+  height:33%;
+  padding-left:15px;
+  padding-right: 15px;
+  padding-top: 25%;
+  top: 67%;
+  position: relative;
+}
+
 .imageBig {
 background-size: cover;
-padding:12px;
  width:auto;
   height:600px;
   background-repeat:no-repeat,
 }
 
  /*****END JUMBOTRON STYLING *****/
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
 .imageBig{
   height: 500px;
 }
