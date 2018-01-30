@@ -21,6 +21,7 @@ import ArticleContainer from './containers/ArticleContainer'
 import SmallCard from './components/SmallCard'
 import Login from './components/Login'
 import SubmitButton from './components/Login'
+import Form from './components/Form'
 
 class App extends Component {
 
@@ -50,6 +51,11 @@ class App extends Component {
             </div>
           )}/>
 
+<<<<<<< HEAD
+          <Route exact path ="/article-submit" render={() => (
+            <div>
+              <Form />
+=======
           <Route exact path ="/about" render={() => (
             <div>
               <About />
@@ -59,6 +65,7 @@ class App extends Component {
           <Route exact path ="/login" render={() => (
             <div>
               <Login />
+>>>>>>> 6b5701cb95460528565f0fc982a1174b3cea8d6a
             </div>
           )}/>
 
