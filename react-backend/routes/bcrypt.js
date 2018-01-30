@@ -26,11 +26,14 @@ const compare = (req,res,sendit)=>{
   email: req.body.email
   }).first()
   .then(user=>{
+    if(!user) res.sendStatus(401)
     bcrypt.compare(req.body.password, user.password, function(err, ver) {
+      console.log(err,ver);
+      if(err){res.sendStatus(401)}
         var token = jwt.sign({ id: user.id, admin: user.is_admin }, secret)
         ver ? res.status(200).send({token}): res.sendStatus(401)
     })
-  .catch(err=>{next(err)})
+  .catch(err=>{res.sendStatus(401) })
   })
 }
 module.exports = {
