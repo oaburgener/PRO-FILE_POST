@@ -4,6 +4,8 @@ export const GET_ARTICLES = 'GET_ARTICLES'
 export const GET_SPORT = 'GET_SPORT'
 export const GET_ONE_ARTICLE = 'GET_ONE_ARTICLE'
 export const CREATE_ARTICLE='CREATE_ARTICLE'
+export const LOGIN = 'LOGIN'
+export const UNAUTHORIZED = 'UNAUTHORIZED'
 
 export const getArticles = () => {
 
@@ -47,6 +49,7 @@ export const getArticleId = (id) => {
     })
   }
 }
+<<<<<<< HEAD
 
 export const createArticle = (event) => {
   event.preventDefault()
@@ -74,4 +77,34 @@ export const createArticle = (event) => {
       data: [...store.getState().splash.all_articles, ...json]
     })
   }
+=======
+export const logInVerify = (user) =>{
+let body = JSON.stringify(user)
+return async (dispatch) =>{
+    const response = await fetch('http://localhost:3001/users/',{
+      method: 'PUT',
+      headers: {
+        'Content-Type' : 'application/json',
+        'Accept': 'application/json'
+      },
+      body:body
+    })
+    if(response.status===401){
+      console.log(401);
+      dispatch({
+      type: UNAUTHORIZED,
+      data: true
+      })
+    }else{
+      const json = await response.json()
+      let cookie = `jwt=${json.token}`
+      document.cookie = cookie
+      console.log(json);
+      dispatch({
+       type: LOGIN,
+       data: true
+    })
+  }
+  }
+>>>>>>> bcd4c91195bc3d4f197be16464826c808bbcdc0e
 }
