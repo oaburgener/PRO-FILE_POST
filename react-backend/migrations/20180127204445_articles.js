@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
     table.foreign('user_id').references('users.id')
     table.string('title').notNullable()
     table.string('summary').notNullable()
-    table.string('body').notNullable()
+    table.string('body', 200000).notNullable()
     table.string('image_url').notNullable()
     table.string('sport').notNullable()
     table.integer('views').notNullable().defaultsTo(0)
