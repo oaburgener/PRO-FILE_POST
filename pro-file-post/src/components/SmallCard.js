@@ -4,9 +4,8 @@ import {GridList, GridTile} from 'material-ui/GridList'
 import IconButton from 'material-ui/IconButton'
 import Subheader from 'material-ui/Subheader'
 import StarBorder from 'material-ui/svg-icons/toggle/star-border'
-import {Image} from 'react-bootstrap'
-
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { Grid, Row, Col, Image } from 'react-bootstrap'
 
 const styles = {
 root: {
