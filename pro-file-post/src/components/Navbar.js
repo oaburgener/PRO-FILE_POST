@@ -25,23 +25,24 @@ const toolbar={
   position:'fixed',
   width:'100vw',
   paddingTop: '5px',
-  height: '45px'
+  height: '65px'
 }
 
 const toolImage={
-  maxHeight: '60px',
-  maxWidth: '60px',
+  maxHeight: '55px',
+  maxWidth: '101px',
   paddingLeft: '24px',
 }
 
-export default class ToolbarExamplesSimple extends React.Component {
+export default class Navbar extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      value: 3,
+      value: 3
     };
   }
+
 
   handleChange = (event, index, value) => this.setState({value});
 
@@ -52,12 +53,11 @@ export default class ToolbarExamplesSimple extends React.Component {
           <ToolbarGroup firstChild={true}>
 
             <Link to='/' style={{ textDecoration: 'none' }}>
-              <img src={require("../logos/greenLogo.png")} alt="Logo" style={toolImage} />
+              <img src={require("../logos/greenLogo.png")} height="180" width= "332" alt="Logo" style={toolImage} />
 
             </Link>
 
             <FontIcon className="muidocs-icon-custom-sort" />
-            <ToolbarSeparator />
           </ToolbarGroup>
           <ToolbarGroup>
             <a href="https://twitter.com/PRO__file" style={{marginLeft:'3px', marginRight:'2px'}}>
@@ -80,33 +80,29 @@ export default class ToolbarExamplesSimple extends React.Component {
                   <path d="M0 0h24v24H0z" fill="none" />
                 </svg>
                 </IconButton> }
-                  style={{
-                    marginBottom:'6px',
-                    marginLeft:'3px',
-                  }}>
-                <Link to='/login' style={{ textDecoration: 'none' }}>
-                  <MenuItem primaryText="Log in" />
-                </Link>
+              style={{marginBottom:'6px', marginLeft:'3px'}}>
+              <Link to='/login' style={{ textDecoration: 'none' }}>
+                <MenuItem primaryText="Log in" />
+              </Link>
               <MenuItem primaryText="Sign up" />
             </IconMenu>
 
-            <IconMenu iconButtonElement={<IconButton><svg fill="#000000" height="25" viewBox="0 0 24 24" width="25" xmlns="http://www.w3.org/2000/svg">
+            <IconMenu
+              iconButtonElement=
+              {<IconButton><svg fill="#000000" height="25" viewBox="0 0 24 24" width="25" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 0h24v24H0z" fill="none"/>
                 <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
               </svg></IconButton>}
+
               onChange={this.handleChangeSingle}
               value={this.state.valueSingle}
-              style={{
-                marginBottom:'4px',
-                marginLeft: '-3px'
-              }}>
-
+              style={{marginBottom:'4px', marginLeft: '-3px' }}>
               <Link to='/about' style={{ textDecoration: 'none' }}>
-                <MenuItem value={1} href="#" primaryText="About" className="menu"/>
+                <MenuItem  value={1} href="#" primaryText="About" className="menu"/>
               </Link>
-
-              <MenuItem value={2} href="#" primaryText="Submit article" className="menu"/>
-
+              <Link to="/article-submit" style={{ textDecoration: 'none' }}>
+                <MenuItem value={2} href="#" primaryText="Submit article" className="menu"/>
+              </Link>
             </IconMenu>
           </ToolbarGroup>
         </Toolbar>
