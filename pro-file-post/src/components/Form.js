@@ -16,18 +16,18 @@ const Form = ()=> {
           <fieldset>
             <p id="legend" className="form-headers">Submissions</p>
             <legend className="form-field-submission">Name <span className="orange">*</span></legend>
-              <input className="form-small-input" type="text" name="text"/>
+              <input id="name" className="form-small-input" type="text" name="text" required/>
             <legend className="form-field-submission">Email <span className="orange">*</span></legend>
-              <input className="form-small-input" type="email" name="email"/>
+              <input id="email" className="form-small-input" type="email" name="email" required/>
             <legend className="form-field-submission">Title <span className="orange">*</span></legend>
-              <textarea className="form-large-input" name="title"></textarea>
+              <textarea id="title" className="form-large-input" name="title" required></textarea>
           </fieldset>
           <fieldset>
             <legend className="form-field-submission">Text <span className="orange">*</span></legend>
-              <textarea id="article-submission-text"  className="form-large-input" name="text"></textarea>
+              <textarea id="article-body" id="article-submission-text"  className="form-large-input" name="text" required></textarea>
           </fieldset>
             <legend className="form-field-submission">Image URL</legend>
-              <input className="form-small-input" type="text" name="image"/>
+              <input id="image" className="form-small-input" type="text" name="image" />
             <input className="form-button" type="submit" value="Submit" />
         </form>
       </div>

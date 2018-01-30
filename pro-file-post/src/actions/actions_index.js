@@ -1,6 +1,9 @@
+import store from '../store'
+
 export const GET_ARTICLES = 'GET_ARTICLES'
 export const GET_SPORT = 'GET_SPORT'
 export const GET_ONE_ARTICLE = 'GET_ONE_ARTICLE'
+export const CREATE_ARTICLE='CREATE_ARTICLE'
 
 export const getArticles = () => {
 
@@ -41,6 +44,34 @@ export const getArticleId = (id) => {
       type: GET_ONE_ARTICLE,
       data: json.data,
       body: body
+    })
+  }
+}
+
+export const createArticle = (event) => {
+  event.preventDefault()
+
+  let author = document.getElementById('name')
+  let email = document.getElementById('email')
+  let title = document.getElementById('name')
+  let articleBody = document.getElementById('article-body')
+  let image = document.getElementById('image')
+
+  let body = {}
+
+  return async (dispatch) => {
+    const response = await fetch('http://localhost:3001/articles/', {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }
+    })
+    const json = await response.json()
+    dispatch({
+      type: CREATE_ARTICLE,
+      data: [...store.getState().splash.all_articles, ...json]
     })
   }
 }
