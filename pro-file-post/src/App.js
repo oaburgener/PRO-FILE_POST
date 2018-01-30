@@ -6,6 +6,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Jumbotron from './components/jumbotron'
 import Navbar from './components/Navbar'
+import About from './components/About'
 import {pinkA200} from 'material-ui/styles/colors';
 // import Body from './components/Body'
 import Footer from './components/Footer'
@@ -21,15 +22,11 @@ import SmallCard from './components/SmallCard'
 import Login from './components/Login'
 import LoginContainer from './containers/LoginContainer'
 
-
-
 class App extends Component {
-
 
   componentDidMount() {
     this.props.getArticles()
   }
-
 
   render() {
     return (
@@ -54,6 +51,18 @@ class App extends Component {
             </div>
           )}/>
 
+          <Route exact path ="/about" render={() => (
+            <div>
+              <About />
+            </div>
+          )}/>
+
+          <Route exact path ="/login" render={() => (
+            <div>
+              <Login />
+            </div>
+          )}/>
+
           <Footer />
 
         </MuiThemeProvider>
@@ -61,7 +70,7 @@ class App extends Component {
       </div>
     </Router>
 
-    );
+    )
   }
 }
 
