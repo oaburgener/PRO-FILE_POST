@@ -1,73 +1,48 @@
 import React from 'react';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
+import { Redirect } from 'react-router'
 
-const style = {
-  margin: 12,
-};
+class Login extends React.Component {
+  constructor(props) {
+    super(props)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    //this.showAlert = this.showAlert.bind(this)
+  }
+  handleSubmit(event) {
+    event.preventDefault()
+    var data = {email: this.refs.email.value, password: this.refs.password.value}
+    this.props.logInVerify(data)
+  }
+//  showAlert(){
+// this.props.toast  ? alert('username or password does not match'):null
+//   }
+  render() {
+    return (
+      <div>
 
-const Login = () => (
+      {this.props.toast ? <div>
+        <p>'username or password does not match'</p>
+          <button type = 'button' >ok</button>
+      </div>: null}
+      {this.props.token ? <Redirect to= '/' />:
+        <form onSubmit={this.handleSubmit}>
+      <h2 className='signIn'>login/signup</h2>
 
-  <div>
-    <h2 className = 'signIn'>login/signup</h2>
-    {/* <TextField
-      hintText="Hint Text"
-    /><br />
-    <br />
-    <TextField
-      hintText="The hint text can be as long as you want, it will wrap."
-    /><br /> */}
-    <TextField
-      id="text-field-default"
-      defaultValue="email address"
-     /><br />
-    {/* <TextField
-      hintText="Hint Text"
-      floatingLabelText="password"
-    /><br />
-    <TextField
-      defaultValue="Default Value"
-      floatingLabelText="Floating Label Text"
-    /><br /> */}
-    {/* <TextField
-      hintText="Hint Text"
-      floatingLabelText="Fixed Floating Label Text"
-      floatingLabelFixed={true}
-    /><br /> */}
-    <TextField
-      hintText="Password Field"
-      floatingLabelText="Password"
-      type="password"
-    /><br />
-    {/* <TextField
-      hintText="MultiLine with rows: 2 and rowsMax: 4"
-      multiLine={true}
-      rows={2}
-      rowsMax={4}
-    /><br />
-    <TextField
-      hintText="Message Field"
-      floatingLabelText="MultiLine and FloatingLabel"
-      multiLine={true}
-      rows={2}
-    /><br />
-    <TextField
-      hintText="Full width"
-      fullWidth={true}
-    /> */}
+      <label htmlFor="email">Enter your email</label>
+      <input id="email" ref = "email" name="email" type="email"/>
+
+      <label htmlFor="username">Enter Password</label>
+      <input id="username" ref = "password" name="username" type="password"/>
 
 
 
-      <RaisedButton label="Submit" style={style} />
-      <RaisedButton label="Sign Up" primary={true} style={style} />
-      {/* <RaisedButton label="Secondary" secondary={true} style={style} />
-      <RaisedButton label="Disabled" disabled={true} style={style} />
-      <br />
-      <br />
-      <RaisedButton label="Full width" fullWidth={true} /> */}
+      <button label="Submit">Submit</button>
+      <button label="Sign Up">Sign up</button>
 
+    </form>}
+    </div>
+  )
+  }
 
-  </div>
-);
+}
 
 export default Login
