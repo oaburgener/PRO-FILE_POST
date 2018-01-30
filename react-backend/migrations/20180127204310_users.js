@@ -7,7 +7,6 @@ exports.up = function(knex, Promise) {
     table.string('password').notNullable()
     table.integer('rating').notNullable().defaultsTo(0)
     table.boolean('is_admin').notNullable().defaultsTo(false)
-    table.text('salt').notNullable()
     table.integer('total_views').notNullable().defaultsTo(0)
     table.integer('total_likes').notNullable().defaultsTo(0)
     table.timestamps(true, true)
