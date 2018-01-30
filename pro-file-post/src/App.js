@@ -37,7 +37,7 @@ class App extends Component {
             <Navbar />
 
             <Route exact path="/" render={() => (
-              <div>
+              <div className='container-fluid'>
               <JumbotronContainer />
                 <Filters />
               <BodyContainer />
