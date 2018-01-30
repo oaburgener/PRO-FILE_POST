@@ -6,7 +6,7 @@ import { Grid, Row, Col, Image } from 'react-bootstrap'
 const LargePics = ({ article }) => {
 
   return (
-    <div className='col-xs-5'>
+    <div className='largeCard'>
       <div className='container'>
         <div className='image' style={{backgroundImage: `url(${article.image_url})`, backgroundSize: '400px 600px', padding:'12px', width:'400px', height:'600px', backgroundRepeat:'no-repeat',
         }}>

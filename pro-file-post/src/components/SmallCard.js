@@ -1,39 +1,44 @@
 import React from 'react'
 import '../index.css'
-import {GridList, GridTile} from 'material-ui/GridList'
+import FlatButton from 'material-ui/GridList'
 import IconButton from 'material-ui/IconButton'
 import Subheader from 'material-ui/Subheader'
 import StarBorder from 'material-ui/svg-icons/toggle/star-border'
-import {Image} from 'react-bootstrap'
-
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-const styles = {
-root: {
-display: 'flex',
-flexWrap: 'wrap',
-justifyContent: 'space-around',
-},
-
-gridList: {
-width: 800,
-height: 750,
-},
-};
-
 const SmallCard = ({article, getArticleId}) => {
-  console.log(article);
+  console.log(article)
   return (
+      <div className="smallCard">
+        <Card
+          style=
+          {{width:'375px',
+            marginLeft: '10px',
+          marginBottom: '14px'}}>
+          <Link to={`/article/${article.id}`}
+          >
+            <CardMedia
+              onClick={(event)=>{getArticleId(article.id)}}
+              overlay={<CardTitle title={article.title} subtitle={article.first_name + ' ' +article.last_name} />}
 
-      <div style={styles.root}>
-        <GridTile> <Link to={`/article/${article.id}`}>
-          <Image onClick={(event)=>{getArticleId(article.id)}}
-            className="small-card"  src="https://images.unsplash.com/photo-1496283391099-4bda095db381?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8794ebd95c8b75f60953619f92e71ba2&auto=format&fit=crop&w=829&q=80" responsive
-          /></Link>
+            >
 
-          <h4>{article.title}</h4>
-          <p>Author</p>
-        </GridTile>
+              <img className="smallPic" src="https://images.unsplash.com/photo-1496283391099-4bda095db381?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8794ebd95c8b75f60953619f92e71ba2&auto=format&fit=crop&w=829&q=80" alt="" />
+
+            </CardMedia>
+          </Link>
+          <CardTitle ttitle={article.title} subtitle={article.author} />
+          <CardText expandable={true}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
+            Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
+            Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
+          </CardText>
+          <CardActions actAsExpander={true}>
+            <FlatButton label="See more" />
+          </CardActions>
+        </Card>
       </div>    )
       }
 

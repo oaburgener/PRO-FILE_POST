@@ -17,18 +17,22 @@ class BottomNavigationExampleSimple extends Component {
 
   render() {
     return (
-      <Paper zDepth={1}>
-        <BottomNavigation style={{
-          height:'29px'
-        }}>
-          <h6 style={{
-            marginTop:'6px',
-            fontFamily:'Helvetica',
-            color:'darkgray',
-            fontSize:'14px'
-          }}>Copyright 2018 PRO-Post Media</h6>
-        </BottomNavigation>
-      </Paper>
+      <footer className='footer'>
+        <div>
+          <Paper zDepth={1}>
+            <BottomNavigation style={{
+              height:'29px',
+            }}>
+              <h6 style={{
+                marginTop:'6px',
+                fontFamily:'Helvetica',
+                color:'darkgray',
+                fontSize:'14px'
+              }}>Copyright 2018 PRO-Post Media</h6>
+            </BottomNavigation>
+          </Paper>
+        </div>
+      </footer>
     );
   }
 }

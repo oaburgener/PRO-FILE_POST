@@ -47,7 +47,7 @@ export default class ToolbarExamplesSimple extends React.Component {
 
   render() {
     return (
-
+      <div className="header">
         <Toolbar style={toolbar}>
 
           <ToolbarGroup firstChild={true}>
@@ -107,6 +107,7 @@ export default class ToolbarExamplesSimple extends React.Component {
             </IconMenu>
           </ToolbarGroup>
         </Toolbar>
+      </div>
     );
   }
 }

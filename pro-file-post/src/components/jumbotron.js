@@ -5,7 +5,7 @@ const Jumbotron = ({ trending_articles }) => {
 
   return (
 
-    <div className='main'>
+    <div className='jumbotron'>
       <div className='grid'>
         <div className='row'>
           {trending_articles.map(article=> (<LargePics key={article.id} article={article}/>))}

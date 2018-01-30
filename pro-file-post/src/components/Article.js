@@ -9,7 +9,7 @@ class Article extends Component {
 
   render(){
     return (
-    <div>
+    <div className="article">
       <Image src={this.props.article.image_url}/>
       {this.props.article.title}
       {this.props.article.first_name}
