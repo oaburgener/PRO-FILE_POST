@@ -3,8 +3,8 @@ exports.seed = function(knex, Promise){
       return knex('users').insert([
         {
           id: 1,
-          first_name: 'Ashley',
-          last_name: 'Amato',
+          first_name: 'Derek',
+          last_name: 'Rodrigues',
           email: 'ashley@gmail.com',
           password: 'gfehfhjegf773t2igFFFFuywi?',
           rating: 2,

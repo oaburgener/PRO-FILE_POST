@@ -23,9 +23,11 @@ export const getArticleId = (id) => {
   return async (dispatch) => {
     const response = await fetch(`http://localhost:3001/articles/${id}`)
     const json = await response.json()
+    const body = json.data.body.split('\n')
     dispatch({
       type: GET_ONE_ARTICLE,
-      data: json.data
+      data: json.data,
+      body: body
     })
   }
 }
