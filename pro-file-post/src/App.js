@@ -34,30 +34,29 @@ class App extends Component {
   render() {
     return (
       <Router>
-      <div className="App">
+        <div className="App">
 
-        <MuiThemeProvider>
-          <Navbar />
-
-          <Route exact path="/" render={() => (
-            <div>
-              <JumbotronContainer />
+          <MuiThemeProvider>
+            <Navbar />
+            <Route exact path="/" render={() => (
+              <div className="splash">
+                <JumbotronContainer />
                 <Filters />
-              <BodyContainer />
-            </div>
-          )}/>
+                <BodyContainer />
+              </div>
+            )}/>
 
-          <Route exact path ="/article/:id" render={() => (
-            <div>
-              <ArticleContainer />
-            </div>
-          )}/>
+            <Route exact path ="/article/:id" render={() => (
+              <div>
+                <ArticleContainer />
+              </div>
+            )}/>
 
-          <Footer />
-        </MuiThemeProvider>
+            <Footer />
+          </MuiThemeProvider>
 
-      </div>
-    </Router>
+        </div>
+      </Router>
 
     );
   }
