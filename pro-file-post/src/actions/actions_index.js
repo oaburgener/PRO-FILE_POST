@@ -2,6 +2,7 @@ export const GET_ARTICLES = 'GET_ARTICLES'
 export const GET_SPORT = 'GET_SPORT'
 export const GET_ONE_ARTICLE = 'GET_ONE_ARTICLE'
 export const LOGIN = 'LOGIN'
+export const UNAUTHORIZED = 'UNAUTHORIZED'
 export const getArticles = () => {
 
   return async (dispatch) => {
@@ -55,14 +56,21 @@ return async (dispatch) =>{
       },
       body:body
     })
-    console.log(response);
-  //   }else{
-  //   const json = await response.json()
-  //   console.log(json);
-  //   dispatch({
-  //    type: LOGIN,
-  //    data: json.token
-  //   })
-  // }
+    if(response.status===401){
+      console.log(401);
+      dispatch({
+      type: UNAUTHORIZED,
+      data: true
+      })
+    }else{
+      const json = await response.json()
+      let cookie = `jwt=${json.token}`
+      document.cookie = cookie
+      console.log(json);
+      dispatch({
+       type: LOGIN,
+       data: true
+    })
+  }
   }
 }

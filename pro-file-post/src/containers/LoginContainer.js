@@ -5,7 +5,8 @@ import Login from '../components/Login.js'
 import {logInVerify} from '../actions/actions_index.js'
 
 const mapStateToProps = state => ({
-  trending_articles:state.splash.trending_articles,
+  token: state.login.token,
+  toast: state.login.toast
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({

@@ -1,8 +1,24 @@
-import { combineReducers } from 'redux';
-import { reducer as formReducer } from 'redux-form';
+import {
+  UNAUTHORIZED,
+  LOGIN,
+} from '../actions/actions_index'
 
-const rootReducer = combineReducers({
-form: formReducer
-});
-
-export default rootReducer;
+var initialState = {
+  toast:false,
+  token: false,
+}
+export default (state = initialState, action) => {
+  switch (action.type) {
+    case LOGIN:
+    return {
+      ...state,
+      token: action.data
+    }
+    case UNAUTHORIZED:
+    return{
+      ...state,
+      toast: action.data
+    }
+    default: return state
+  }
+}
