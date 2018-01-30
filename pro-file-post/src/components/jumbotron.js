@@ -5,9 +5,7 @@ import{Grid, Row, Column} from 'react-bootstrap'
 const Jumbotron = ({ trending_articles }) => {
 
   return (
-
-
-      <div className="row topRow">
+      <div className="row topRow" style={{backgroundColor:'black'}}>
         {trending_articles.map(article=> (<LargePics key={article.id} article={article}/>))}
       </div>
   )

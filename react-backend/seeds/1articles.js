@@ -32,7 +32,7 @@ exports.seed = function(knex, Promise){
           title: 'How To Make a Milli',
           summary: 'I am Eddie and this is my story on how to make a milli',
           body: "blah blah blah blah",
-          image_url: 'https://images.unsplash.com/photo-1502904550040-7534597429ae?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5d9575e86751b65d41da8dfe6f09e23a&auto=format&fit=crop&w=1549&q=80',
+          image_url: 'https://images.unsplash.com/photo-1508801935195-1fec42cd1d6a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c1f7e7df18cabc5743203ceadbf375b5&auto=format&fit=crop&w=1650&q=80',
           sport: 'baseball',
           views: 10,
           likes: 4,
@@ -58,13 +58,26 @@ exports.seed = function(knex, Promise){
           title: 'How To Make a Milli',
           summary: 'I am Eddie and this is my story on how to make a milli',
           body: "blah blah blah blah",
-          image_url: 'https://unsplash.com/photos/8-s5QuUBtyM',
+          image_url: 'https://images.unsplash.com/photo-1449356669056-f1c1e6e56b0f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=479fe3ea838301cd6b6b89ff99392995&auto=format&fit=crop&w=1566&q=80',
           sport: 'baseball',
           views: 10,
-          likes: 4,
+          likes: 8,
           created_at: new Date('2016-06-26 14:26:16 UTC'),
           updated_at: new Date('2016-06-26 14:26:16 UTC')
-        }
+        },
+        {
+                  id: 6,
+                  user_id: 2,
+                  title: 'Header goes here please',
+                  summary: 'I am Eddie and this is my story on how to make a milli',
+                  body: "blah blah blah blah",
+                  image_url: 'https://images.unsplash.com/photo-1471295253337-3ceaaedca402?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=214d4b3c50b289db475238a0c19c5ef5&auto=format&fit=crop&w=2848&q=80',
+                  sport: 'baseball',
+                  views: 10,
+                  likes: 8,
+                  created_at: new Date('2016-06-26 14:26:16 UTC'),
+                  updated_at: new Date('2016-06-26 14:26:16 UTC')
+                }
       ])
 
     .then(function(){

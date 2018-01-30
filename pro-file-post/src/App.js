@@ -36,7 +36,7 @@ class App extends Component {
           <MuiThemeProvider>
             <Navbar />
             <Route exact path="/" render={() => (
-              <div className="container splash">
+              <div className="container-fluid splash">
                 <JumbotronContainer />
                 <Filters />
                 <BodyContainer />

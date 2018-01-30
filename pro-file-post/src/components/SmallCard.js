@@ -15,30 +15,15 @@ const SmallCard = ({article, getArticleId}) => {
         <Card
           style=
           {{width:'auto',
-            maxHeight:'350px',
           marginBottom: '14px'}}>
           <Link to={`/article/${article.id}`}
           >
             <CardMedia
               onClick={(event)=>{getArticleId(article.id)}}
-              overlay={<CardTitle title={article.title} subtitle={article.first_name + ' ' +article.last_name} />}
-
-            >
-
-              <Image className="smallPic" src="https://images.unsplash.com/photo-1496283391099-4bda095db381?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8794ebd95c8b75f60953619f92e71ba2&auto=format&fit=crop&w=829&q=80" alt="" responsive/>
-
+              overlay={<CardTitle title={article.title} subtitle={article.first_name + ' ' +article.last_name} />}>
+              <Image className="smallPic" src={article.image_url} alt="" responsive/>
             </CardMedia>
           </Link>
-          <CardTitle ttitle={article.title} subtitle={article.author} />
-          <CardText expandable={true}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Donec mattis pretium massa. Aliquam erat volutpat. Nulla facilisi.
-            Donec vulputate interdum sollicitudin. Nunc lacinia auctor quam sed pellentesque.
-            Aliquam dui mauris, mattis quis lacus id, pellentesque lobortis odio.
-          </CardText>
-          <CardActions actAsExpander={true}>
-            <FlatButton label="See more" />
-          </CardActions>
         </Card>
       </Col>    )
       }

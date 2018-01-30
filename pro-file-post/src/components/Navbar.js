@@ -23,7 +23,7 @@ const toolbar={
   zIndex: '9',
   position:'fixed',
   top:'0',
-  backgroundColor:'lightgray',
+  backgroundColor:'white',
   marginBottom:'18px',
   width:'100%',
   paddingTop: '5px',
