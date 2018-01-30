@@ -10,7 +10,7 @@ exports.seed = function(knex, Promise){
           image_url: 'https://images.unsplash.com/photo-1463253897230-4e281bf226c0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b72fcba78c273e8d51a8522946f3b3b7&auto=format&fit=crop&w=1489&q=80',
           sport: 'basketball',
           views: 2,
-          likes: 12,
+          likes: 22,
           created_at: new Date('2016-06-26 14:26:16 UTC'),
           updated_at: new Date('2016-06-26 14:26:16 UTC')
         }, {
@@ -22,7 +22,7 @@ exports.seed = function(knex, Promise){
           image_url: 'https://images.unsplash.com/photo-1508209495879-445d5febf597?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=21c5338e49216b8fb6f3bee2aa174698&auto=format&fit=crop&w=1350&q=80',
           sport: 'hockey',
           views: 10,
-          likes: 4,
+          likes: 14,
           created_at: new Date('2016-06-26 14:26:16 UTC'),
           updated_at: new Date('2016-06-26 14:26:16 UTC')
         },
@@ -70,14 +70,27 @@ exports.seed = function(knex, Promise){
                   user_id: 2,
                   title: 'Header goes here please',
                   summary: 'I am Eddie and this is my story on how to make a milli',
-                  body: "blah blah blah blah",
+                  body: "hen Lane Johnson has that look on his face, you know something’s up. That mischievous vibe. I see it all the time, man.\nI’m sitting at the pregame meal on Friday night before the Falcons game, and it’s me, Lane, Chris Long, Jason Kelce and Brent Celek. When you’re with those four guys, something’s always going on. Jason’s looking at me and Brent, kind of like a little kid who can’t contain himself, you know?\nAnd he says, “Lane, tell ’em. Tell ’em, dude.”\nWe’re like, “What? Tell us what?”\nHe says, “Tell ’em what we ordered.”\nAnd so Lane kind of leans across the table all … what’s the word? I guess you’d call it conspiratorial, like it’s Ocean’s Eleven or something. And he’s like, “You know how everyone keeps saying we’re underdogs? Even though we’re the No. 1 seed? Well … we were on Amazon last night, and we ordered these dog masks.”\nAnd I’m kind of confused. I’m like, “What do you mean, like … a puppy?”\nLane says, “No, man. German shepherds. They’re creepy. Real creepy. Two-day shipping. They’re coming tomorrow.”\nBefore I can even think, like, What the heck are you going to do with a creepy dog mask? Lane says, “Yeah, and when we win, because we’re gonna freaking win, we’re going to do everything in the masks. Media. Postgame. Everything. Dogs.”\nChris and Jason don’t even say anything. They’re just nodding, like, Genius, right? Dogs.  \nUnderdogs. No shot. Dead in the water. We heard it about 10,000 times over the course of that week: The first No. 1 seed since 1970 to be ’dogs in the divisional round. It wasn’t just us who embraced it. The whole city embraced it. If you’re an outsider, you probably don’t really get it. But if you’re from Philly, and if you’ve been following this team all year, then you know. It’s not just Carson Wentz who went down. It was Jason Peters and Darren Sproles and Jordan Hicks and Chris Maragos. We could probably field an All-Pro team of injured guys, but instead of crumbling under all the adversity, it only made us more united.h",
                   image_url: 'https://images.unsplash.com/photo-1471295253337-3ceaaedca402?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=214d4b3c50b289db475238a0c19c5ef5&auto=format&fit=crop&w=2848&q=80',
-                  sport: 'baseball',
+                  sport: 'football',
                   views: 10,
                   likes: 8,
                   created_at: new Date('2016-06-26 14:26:16 UTC'),
                   updated_at: new Date('2016-06-26 14:26:16 UTC')
-                }
+                },
+                {
+                          id: 7,
+                          user_id: 2,
+                          title: 'Header goes here please',
+                          summary: 'I am Eddie and this is my story on how to make a milli',
+                          body: "hen Lane Johnson has that look on his face, you know something’s up. That mischievous vibe. I see it all the time, man.\nI’m sitting at the pregame meal on Friday night before the Falcons game, and it’s me, Lane, Chris Long, Jason Kelce and Brent Celek. When you’re with those four guys, something’s always going on. Jason’s looking at me and Brent, kind of like a little kid who can’t contain himself, you know?\nAnd he says, “Lane, tell ’em. Tell ’em, dude.”\nWe’re like, “What? Tell us what?”\nHe says, “Tell ’em what we ordered.”\nAnd so Lane kind of leans across the table all … what’s the word? I guess you’d call it conspiratorial, like it’s Ocean’s Eleven or something. And he’s like, “You know how everyone keeps saying we’re underdogs? Even though we’re the No. 1 seed? Well … we were on Amazon last night, and we ordered these dog masks.”\nAnd I’m kind of confused. I’m like, “What do you mean, like … a puppy?”\nLane says, “No, man. German shepherds. They’re creepy. Real creepy. Two-day shipping. They’re coming tomorrow.”\nBefore I can even think, like, What the heck are you going to do with a creepy dog mask? Lane says, “Yeah, and when we win, because we’re gonna freaking win, we’re going to do everything in the masks. Media. Postgame. Everything. Dogs.”\nChris and Jason don’t even say anything. They’re just nodding, like, Genius, right? Dogs.  \nUnderdogs. No shot. Dead in the water. We heard it about 10,000 times over the course of that week: The first No. 1 seed since 1970 to be ’dogs in the divisional round. It wasn’t just us who embraced it. The whole city embraced it. If you’re an outsider, you probably don’t really get it. But if you’re from Philly, and if you’ve been following this team all year, then you know. It’s not just Carson Wentz who went down. It was Jason Peters and Darren Sproles and Jordan Hicks and Chris Maragos. We could probably field an All-Pro team of injured guys, but instead of crumbling under all the adversity, it only made us more united.h",
+                          image_url: 'https://images.unsplash.com/photo-1485426337939-af69cf101909?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7ec5df8fa5047c3b39c8b885a904dd43&auto=format&fit=crop&w=1650&q=80',
+                          sport: 'football',
+                          views: 10,
+                          likes: 18,
+                          created_at: new Date('2016-06-26 14:26:16 UTC'),
+                          updated_at: new Date('2016-06-26 14:26:16 UTC')
+                        }
       ])
 
     .then(function(){
