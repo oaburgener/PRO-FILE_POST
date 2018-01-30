@@ -45,20 +45,24 @@ export const getArticleId = (id) => {
   }
 }
 export const logInVerify = (user) =>{
-console.log(user);
+let body = JSON.stringify(user)
 return async (dispatch) =>{
     const response = await fetch('http://localhost:3001/users/',{
       method: 'PUT',
-      body:{
-        email: `${user.email}`,
-        password: `${user.password}`
-      }
+      headers: {
+        'Content-Type' : 'application/json',
+        'Accept': 'application/json'
+      },
+      body:body
     })
-    //const json = await response.json()
-    //dispatch({
-    //  type: LOGIN,
-      //verified:200 ? 404
-    //  data: json.token
-    //})
+    console.log(response);
+  //   }else{
+  //   const json = await response.json()
+  //   console.log(json);
+  //   dispatch({
+  //    type: LOGIN,
+  //    data: json.token
+  //   })
+  // }
   }
 }
