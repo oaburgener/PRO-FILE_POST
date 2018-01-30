@@ -117,14 +117,13 @@ footer{
   padding: 16px 32px;
 }
 
-<<<<<<< HEAD
 .largeTitle{
   font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif !important;
   color: white;
   text-transform: uppercase;
   text-align: left;
 }
-=======
+
 .article_title{
   font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif ;
   font-size: 70px;
@@ -154,7 +153,6 @@ footer{
   line-height: 1.70;
 }
 
->>>>>>> 2d6b98acadfcbf106e96d6e57d7c5ded511f380f
 
 .largeSub{
   font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif !important;
