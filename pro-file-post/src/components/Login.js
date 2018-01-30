@@ -1,49 +1,32 @@
 import React from 'react';
-import TextField from 'material-ui/TextField';
-import RaisedButton from 'material-ui/RaisedButton';
 
-const style = {
-  margin: 12,
-};
-const handleUserChange = (event) => {
-let username = event.target.value
+class Login extends React.Component {
+  constructor(props) {
+    super(props)
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+  handleSubmit(event) {
+    event.preventDefault()
+    var data = {email: this.refs.email.value, password: this.refs.password.value}
+    this.props.logInVerify(data)
+  }
+  render() {
+    return (<form onSubmit={this.handleSubmit}>
+      <h2 className='signIn'>login/signup</h2>
+
+      <label htmlFor="email">Enter your email</label>
+      <input id="email" ref = "email" name="email" type="email"/>
+
+      <label htmlFor="username">Enter Password</label>
+      <input id="username" ref = "password" name="username" type="password"/>
+
+
+
+      <button label="Submit">Submit</button>
+      <button label="Sign Up">Sign up</button>
+
+    </form>)
+  }
 }
-const handlePwordChange = (event) => {
-  let password = event.targetvalue
-  console.log(password);
-}
-const Login = () => (
-
-  <div>
-    <h2 className = 'signIn'>login/signup</h2>
-
-    <TextField
-      id="text-field-default"
-      hintText="email address "
-      floatingLabelText="username"
-      onChange = {handleUserChange}
-
-    //  defaultValue="email address"
-     /><br />
-
-    <TextField
-      hintText="Password"
-      floatingLabelText="Password"
-      type="password"
-      onChange = {handlePwordChange}
-    /><br />
-
-
-
-
-
-
-      <RaisedButton label="Submit" style={style} />
-      <RaisedButton label="Sign Up" primary={true} style={style} />
-
-
-
-  </div>
-);
 
 export default Login

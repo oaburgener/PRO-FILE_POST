@@ -37,7 +37,7 @@ class App extends Component {
       <div className="App">
 
         <MuiThemeProvider>
-          <Login />
+          <LoginContainer />
           <Navbar />
 
           <Route exact path="/" render={() => (

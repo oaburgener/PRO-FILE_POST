@@ -43,19 +43,20 @@ export const getArticleId = (id) => {
   }
 }
 export const logInVerify = (user) =>{
-console.log(this.username);  return async (dispatch) =>{
+console.log(user);
+return async (dispatch) =>{
     const response = await fetch('http://localhost:3001/users/',{
-      method: 'put',
+      method: 'PUT',
       body:{
-        email: `${this.username}`,
-        password: `${this.password}`
+        email: `${user.email}`,
+        password: `${user.password}`
       }
     })
-    const json = await response.json()
-    dispatch({
-      type: LOGIN,
+    //const json = await response.json()
+    //dispatch({
+    //  type: LOGIN,
       //verified:200 ? 404
-      data: json.token
-    })
+    //  data: json.token
+    //})
   }
 }
