@@ -1,7 +1,9 @@
 const knex = require('../knex.js')
 const express = require('express')
 const bodyParser = require('body-parser')
-
+const secret = process.env.SECRET || 'A4e2n84E0OpF3wW21'
+const jwt = require('jsonwebtoken')
+const cookieParser = require('cookie-parser')
 
 const getArticles = (req,res,next) =>{
   knex('users')
@@ -9,9 +11,8 @@ const getArticles = (req,res,next) =>{
   .select('articles.id', 'users.first_name', 'users.last_name', 'articles.title', 'articles.summary',
   'articles.body', 'articles.image_url', 'articles.sport', 'articles.views',
   'articles.likes', 'articles.created_at', 'articles.updated_at')
-  .then(data => {res.send({ data })
+  .then(data => {res.send({ data })})
   .catch(err => {next(err)})
-  })
 }
 
 const filter = (req,res,next) => {
@@ -45,6 +46,14 @@ const postArticles = (req,res,next) => {
 }
 
 const deleteArticle = (req,res,next) => {
+  var decoded = jwt.verify(req.cookies.jwt, 'A4e2n84E0OpF3wW21', function(err, decoded) {
+    if(err){
+      next(err)
+    }else{
+      return decoded
+    }
+  })
+  if(!decoded.admin)res.sendStatus(403)
   knex('articles').where({id: req.params.id})
   .then(data=>{res.sendStatus(200)})
   .catch(err=>{next(err)})

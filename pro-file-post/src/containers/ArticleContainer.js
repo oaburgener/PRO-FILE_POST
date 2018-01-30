@@ -6,6 +6,7 @@ import Article from '../components/Article.js'
 
 const mapStateToProps = state => ({
   article:state.article.article,
+  body: state.article.body,
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({

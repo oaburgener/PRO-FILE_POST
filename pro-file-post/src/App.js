@@ -6,6 +6,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Jumbotron from './components/jumbotron'
 import Navbar from './components/Navbar'
+import About from './components/About'
 import {pinkA200} from 'material-ui/styles/colors';
 // import Body from './components/Body'
 import Footer from './components/Footer'
@@ -50,9 +51,21 @@ class App extends Component {
             </div>
           )}/>
 
+<<<<<<< HEAD
           <Route exact path ="/article-submit" render={() => (
             <div>
               <Form />
+=======
+          <Route exact path ="/about" render={() => (
+            <div>
+              <About />
+            </div>
+          )}/>
+
+          <Route exact path ="/login" render={() => (
+            <div>
+              <Login />
+>>>>>>> 6b5701cb95460528565f0fc982a1174b3cea8d6a
             </div>
           )}/>
 
