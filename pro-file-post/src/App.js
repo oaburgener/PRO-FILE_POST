@@ -23,6 +23,8 @@ import Login from './components/Login'
 
 import LoginContainer from './containers/LoginContainer'
 
+import Form from './components/Form'
+
 
 class App extends Component {
 
