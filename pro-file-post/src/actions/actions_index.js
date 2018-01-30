@@ -49,7 +49,6 @@ export const getArticleId = (id) => {
     })
   }
 }
-<<<<<<< HEAD
 
 export const createArticle = (event) => {
   event.preventDefault()
@@ -77,7 +76,8 @@ export const createArticle = (event) => {
       data: [...store.getState().splash.all_articles, ...json]
     })
   }
-=======
+}
+
 export const logInVerify = (user) =>{
 let body = JSON.stringify(user)
 return async (dispatch) =>{
@@ -106,5 +106,4 @@ return async (dispatch) =>{
     })
   }
   }
->>>>>>> bcd4c91195bc3d4f197be16464826c808bbcdc0e
 }
