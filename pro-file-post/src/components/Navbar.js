@@ -52,9 +52,8 @@ export default class ToolbarExamplesSimple extends React.Component {
           <ToolbarGroup firstChild={true}>
 
             <Link to='/' style={{ textDecoration: 'none' }}>
-              <img src={require("../logos/round-logo.png")} alt="Logo" style={toolImage} />
-              <ToolbarTitle text="ost"
-                style={titleStyle}/>
+              <img src={require("../logos/greenLogo.png")} alt="Logo" style={toolImage} />
+
             </Link>
 
             <FontIcon className="muidocs-icon-custom-sort" />
