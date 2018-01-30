@@ -1,7 +1,7 @@
 export const GET_ARTICLES = 'GET_ARTICLES'
 export const GET_SPORT = 'GET_SPORT'
 export const GET_ONE_ARTICLE = 'GET_ONE_ARTICLE'
-
+export const LOGIN = 'LOGIN'
 export const getArticles = () => {
 
   return async (dispatch) => {
@@ -43,17 +43,20 @@ export const getArticleId = (id) => {
     })
   }
 }
-export const logInVerify = (username, password){
-
-  return async (dispatch) =>{
+export const logInVerify = (user) =>{
+console.log(this.username);  return async (dispatch) =>{
     const response = await fetch('http://localhost:3001/users/',{
-      body:{}
+      method: 'put',
+      body:{
+        email: `${this.username}`,
+        password: `${this.password}`
+      }
     })
     const json = await response.json()
     dispatch({
-      type:
-      verified:200 ? 404
-      token: json.token
+      type: LOGIN,
+      //verified:200 ? 404
+      data: json.token
     })
   }
 }
