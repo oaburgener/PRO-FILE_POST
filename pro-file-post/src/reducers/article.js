@@ -5,6 +5,7 @@ import {
 const initialState = {
   user_id: 0,
   article: {},
+  body: [],
   is_admin: false
 }
 
@@ -13,7 +14,8 @@ export default (state = initialState, action) => {
     case GET_ONE_ARTICLE:
     return {
       ...state,
-      article: action.data
+      article: action.data,
+      body: action.body
     }
     default: return state
   }

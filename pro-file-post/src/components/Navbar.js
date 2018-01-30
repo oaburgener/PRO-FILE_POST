@@ -8,7 +8,7 @@ import DropDownMenu from 'material-ui/DropDownMenu';
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
 import Menu from 'material-ui/svg-icons/navigation/menu';
 import Paper from 'material-ui/Paper';
-
+import { Link } from 'react-router-dom'
 
 const titleStyle={
   color: 'firebrick',
@@ -52,28 +52,29 @@ export default class ToolbarExamplesSimple extends React.Component {
     return (
 
         <Toolbar style={toolbar}>
-
           <ToolbarGroup firstChild={true}>
-            <img src={require("../logos/round-logo.png")} alt="Logo" style={toolImage}/>
-            <ToolbarTitle text="ost"
-              style={titleStyle}/>
+
+            <Link to='/' style={{ textDecoration: 'none' }}>
+              <img src={require("../logos/round-logo.png")} alt="Logo" style={toolImage} />
+              <ToolbarTitle text="ost"
+                style={titleStyle}/>
+            </Link>
+
             <FontIcon className="muidocs-icon-custom-sort" />
             <ToolbarSeparator />
           </ToolbarGroup>
           <ToolbarGroup>
-          </ToolbarGroup>
-          <ToolbarGroup>
-            {/* <a href="https://www.facebook.com">
-              <img src={require('../logos/blackFbLogo.jpg')} className="icons"/>
-            </a> */}
-            <a href="https://www.twitter.com" style={{marginLeft:'3px', marginRight:'2px'}}>
+            <a href="https://twitter.com/PRO__file" style={{marginLeft:'3px', marginRight:'2px'}}>
               <img src={require('../logos/black twitter.png')} className="icons"/>
             </a>
-            <a href="https://www.instagram.com">
+            <a href="https://www.instagram.com/pro.file.sports/?hl=en">
               <img src={require('../logos/blackGramLogo.png')} className="icons"/>
             </a>
-            <a href="https://www.facebook.com">
+            <a href="https://www.facebook.com/profilesportsinc/">
               <img src={require('../logos/blackFbLogo.jpg')} className="icons"/>
+            </a>
+            <a href="http://pro-file.us/#/">
+              <img src={require('../logos/round-logo.png')} className="icons"/>
             </a>
 
             <IconMenu
@@ -83,16 +84,17 @@ export default class ToolbarExamplesSimple extends React.Component {
                   <path d="M0 0h24v24H0z" fill="none" />
                 </svg>
                 </IconButton> }
-              style={{
-                marginBottom:'6px',
-                marginLeft:'3px',
-              }}
-            >
-              <MenuItem primaryText="Log in" />
+                  style={{
+                    marginBottom:'6px',
+                    marginLeft:'3px',
+                  }}>
+                <Link to='/login' style={{ textDecoration: 'none' }}>
+                  <MenuItem primaryText="Log in" />
+                </Link>
               <MenuItem primaryText="Sign up" />
             </IconMenu>
-            <IconMenu
-              iconButtonElement={<IconButton><svg fill="#000000" height="25" viewBox="0 0 24 24" width="25" xmlns="http://www.w3.org/2000/svg">
+
+            <IconMenu iconButtonElement={<IconButton><svg fill="#000000" height="25" viewBox="0 0 24 24" width="25" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 0h24v24H0z" fill="none"/>
                 <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
               </svg></IconButton>}
@@ -103,9 +105,11 @@ export default class ToolbarExamplesSimple extends React.Component {
                 marginLeft: '-3px'
               }}>
 
-              <MenuItem value={1} primaryText="About" className="menu"/>
-              <MenuItem value={2} primaryText="Submit article" className="menu"/>
-              <MenuItem value={3} primaryText="Contact" className="menu"/>
+              <Link to='/about' style={{ textDecoration: 'none' }}>
+                <MenuItem value={1} href="#" primaryText="About" className="menu"/>
+              </Link>
+
+              <MenuItem value={2} href="#" primaryText="Submit article" className="menu"/>
 
             </IconMenu>
           </ToolbarGroup>
