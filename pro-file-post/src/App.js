@@ -51,11 +51,12 @@ class App extends Component {
             </div>
           )}/>
 
-<<<<<<< HEAD
           <Route exact path ="/article-submit" render={() => (
             <div>
               <Form />
-=======
+            </div>
+          )}/>
+
           <Route exact path ="/about" render={() => (
             <div>
               <About />
@@ -65,7 +66,6 @@ class App extends Component {
           <Route exact path ="/login" render={() => (
             <div>
               <Login />
->>>>>>> 6b5701cb95460528565f0fc982a1174b3cea8d6a
             </div>
           )}/>
 
