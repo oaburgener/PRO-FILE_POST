@@ -8,7 +8,8 @@ class Article extends Component {
     super(props)
   }
   getLikes() {
-    console.log(this.props.article)
+    this.props.article.likes += 1
+    console.log(this.props.article.likes);
   }
 
   render(){
@@ -24,8 +25,9 @@ class Article extends Component {
       {this.props.body.map(paragraph=>(<p className='article_body'>{paragraph}</p>))}
 
       <button><i onClick= {this.getLikes()} class="material-icons">thumb_up</i></button>
+      <div> 
       <div className="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/share-button#configurator" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2Fshare-button%23configurator&amp;src=sdkpreparse">Share</a></div>
-      <a className="twitter-share-button" target= "_blank" href="https://twitter.com/intent/tweet?text=Hello%20world" data-size="large">Tweet</a>
+      <a target= "_blank" href="https://twitter.com/intent/tweet?text=Hello%20world" data-size="large"><img className="twitter-share-button" src={require('../logos/tweetLogo.png')} /></a>
     </div>
     )
   }

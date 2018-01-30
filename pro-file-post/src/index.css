@@ -117,6 +117,10 @@ body {
   font-size: 23px;
   float: left;
 }
+.twitter-share-button{
+  height: 25px;
+  width: 25px;
+}
 
 .fb-share-button{
   margin: 8px;
