@@ -20,16 +20,13 @@ import ArticleContainer from './containers/ArticleContainer'
 import SmallCard from './components/SmallCard'
 import Login from './components/Login'
 import SubmitButton from './components/Login'
-
-
+import Form from './components/Form'
 
 class App extends Component {
-
 
   componentDidMount() {
     this.props.getArticles()
   }
-
 
   render() {
     return (
@@ -53,13 +50,19 @@ class App extends Component {
             </div>
           )}/>
 
+          <Route exact path ="/article-submit" render={() => (
+            <div>
+              <Form />
+            </div>
+          )}/>
+
           <Footer />
         </MuiThemeProvider>
 
       </div>
     </Router>
 
-    );
+    )
   }
 }
 
