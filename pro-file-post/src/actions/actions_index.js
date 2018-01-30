@@ -1,7 +1,8 @@
 export const GET_ARTICLES = 'GET_ARTICLES'
 export const GET_SPORT = 'GET_SPORT'
 export const GET_ONE_ARTICLE = 'GET_ONE_ARTICLE'
-
+export const LOGIN = 'LOGIN'
+export const UNAUTHORIZED = 'UNAUTHORIZED'
 export const getArticles = () => {
 
   return async (dispatch) => {
@@ -42,5 +43,34 @@ export const getArticleId = (id) => {
       data: json.data,
       body: body
     })
+  }
+}
+export const logInVerify = (user) =>{
+let body = JSON.stringify(user)
+return async (dispatch) =>{
+    const response = await fetch('http://localhost:3001/users/',{
+      method: 'PUT',
+      headers: {
+        'Content-Type' : 'application/json',
+        'Accept': 'application/json'
+      },
+      body:body
+    })
+    if(response.status===401){
+      console.log(401);
+      dispatch({
+      type: UNAUTHORIZED,
+      data: true
+      })
+    }else{
+      const json = await response.json()
+      let cookie = `jwt=${json.token}`
+      document.cookie = cookie
+      console.log(json);
+      dispatch({
+       type: LOGIN,
+       data: true
+    })
+  }
   }
 }
