@@ -24,6 +24,7 @@ import SignUp from './containers/SignUpContainer'
 import LoginContainer from './containers/LoginContainer'
 import Form from './components/Form'
 import FormContainer from './containers/FormContainer'
+import NavContainer from './containers/NavContainer'
 
 class App extends Component {
 
@@ -37,7 +38,7 @@ class App extends Component {
         <div className="App">
 
           <MuiThemeProvider>
-            <Navbar />
+            <NavContainer />
             <Route exact path="/" render={() => (
               <div className='container-fluid'>
               <JumbotronContainer />

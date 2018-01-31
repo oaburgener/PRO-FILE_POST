@@ -43,24 +43,14 @@ export default class Navbar extends React.Component {
     this.state = {
       value: 3
     };
-  }
 
+  }
 
   handleChange = (event, index, value) => this.setState({value});
 
-  handleCookie = () => {
-    var admin = document.cookie.split(';')[1].split(',')[1].split('=')[1]
-    var verify = (admin==='true') ? true : false
-   console.log(verify);
-   return verify
-  }
+
 
   render() {
-    document.cookie = document.cookie || 'JWT=sdlakfjlsdaj,admin=laksjdflajsdf,id=laksdflksjf'
-    console.log(typeof(document.cookie));
-      var admin = this.handleCookie()
-      console.log(admin)
-
     return (
 
         <Toolbar style={toolbar}>
@@ -126,7 +116,7 @@ export default class Navbar extends React.Component {
               <Link to="/article-submit" style={{ textDecoration: 'none' }}>
                 <MenuItem value={2} href="#" primaryText="Submit article" className="menu"/>
               </Link>
-              {admin ? <Link to='/admin' style={{ textDecoration: 'none' }}>
+              {this.props.cookie.admin ? <Link to='/admin' style={{ textDecoration: 'none' }}>
                 <MenuItem primaryText="Admin View" />
               </Link> : null}
             </IconMenu>

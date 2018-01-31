@@ -41,12 +41,12 @@ const getArticleId = (req,res,next) => {
 
 const postArticles = (req,res,next) => {
   knex('articles').insert({
-    firstName:req.body.title,
-    lastName:req.body.summary,
-    sport:req.body.tags,
-    body:req.body.body
-  },'*').then(data => {res.sendStatus(204)})
-  .catch(err => {next(err)})
+    user_id:req.body.user_id,
+    title:req.body.title,
+    summary:req.body.summary,
+    sport:req.body.sport,
+    body:req.body.body,
+  },'*').then(data => {res.status(204).send({article:data[0]})})
 }
 
 const deleteArticle = (req,res,next) => {
