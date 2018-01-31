@@ -10,10 +10,7 @@ import{Grid, Row, Col, Image} from 'react-bootstrap'
 
 
 const SmallCard = ({article, getArticleId}) => {
-<<<<<<< HEAD
 
-=======
->>>>>>> e3dc154c072d04a2805236eec8a682a5358722bc
   return (
       <Col xs={12} sm={6} md={4}>
         <Card

@@ -2,7 +2,7 @@ exports.up = function(knex, Promise) {
   return knex.schema.createTable('articles', table => {
     table.increments('id')
     table.integer('user_id').notNullable()
-    table.foreign('user_id').references('users.id')
+    table.foreign('user_id').references('users.id').onDelete('CASCADE')
     table.string('title').notNullable()
     table.string('summary').notNullable()
     table.string('body', 200000).notNullable()

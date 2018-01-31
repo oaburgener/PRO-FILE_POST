@@ -52,6 +52,12 @@ class App extends Component {
             </div>
           )}/>
 
+          <Route exact path ='/admin' render={() =>(
+            <div>
+              <AdminContainer />
+            </div>
+          )}/>
+
           <Route exact path ="/article/:id" render={() => (
             <div>
               <ArticleContainer />
@@ -67,7 +73,6 @@ class App extends Component {
           <Route exact path ="/about" render={() => (
             <div>
               <About />
-              <AdminContainer />
             </div>
           )}/>
 
