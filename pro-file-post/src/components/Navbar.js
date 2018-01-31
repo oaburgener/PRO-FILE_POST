@@ -49,6 +49,12 @@ export default class Navbar extends React.Component {
   handleChange = (event, index, value) => this.setState({value});
 
   render() {
+    console.log(typeof(document.cookie));
+    if(document.cookie){
+      var admin = document.cookie.split(',')[1].split('=')[1]
+      admin = (admin==='true') ? true : false
+      console.log(admin)
+    }
     return (
 
         <Toolbar style={toolbar}>
@@ -114,6 +120,9 @@ export default class Navbar extends React.Component {
               <Link to="/article-submit" style={{ textDecoration: 'none' }}>
                 <MenuItem value={2} href="#" primaryText="Submit article" className="menu"/>
               </Link>
+              {admin ? <Link to='/admin' style={{ textDecoration: 'none' }}>
+                <MenuItem primaryText="Admin View" />
+              </Link> : null}
             </IconMenu>
           </ToolbarGroup>
         </Toolbar>
