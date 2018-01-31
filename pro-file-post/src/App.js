@@ -21,12 +21,14 @@ import ArticleContainer from './containers/ArticleContainer'
 import SmallCard from './components/SmallCard'
 import Login from './components/Login'
 import SubmitButton from './components/Login'
+import AdminContainer from './containers/AdminContainer'
 
 class App extends Component {
 
   componentDidMount() {
     this.props.getArticles()
   }
+
 
   render() {
     return (
@@ -53,6 +55,7 @@ class App extends Component {
           <Route exact path ="/about" render={() => (
             <div>
               <About />
+              <AdminContainer />
             </div>
           )}/>
 

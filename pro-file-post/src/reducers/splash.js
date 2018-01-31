@@ -8,7 +8,7 @@ const initialState = {
   all_articles: [],
   trending_articles: [],
   filtered_articles: [],
-  is_admin: false
+  is_admin: false,
 }
 
 export default (state = initialState, action) => {

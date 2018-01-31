@@ -1,6 +1,7 @@
 export const GET_ARTICLES = 'GET_ARTICLES'
 export const GET_SPORT = 'GET_SPORT'
 export const GET_ONE_ARTICLE = 'GET_ONE_ARTICLE'
+export const GET_USERS = 'GET_USERS'
 
 export const getArticles = () => {
 
@@ -36,11 +37,25 @@ export const getArticleId = (id) => {
   return async (dispatch) => {
     const response = await fetch(`http://localhost:3001/articles/${id}`)
     const json = await response.json()
-    const body = json.data.body.split('\n')
+    console.log(json.data);
+
+    // const body = json.data.body.split('\n')
     dispatch({
       type: GET_ONE_ARTICLE,
       data: json.data,
-      body: body
+      // body: body
+    })
+  }
+}
+
+export const getUsers = () => {
+  return async (dispatch) => {
+    const response = await fetch ('http://localhost:3001/users/')
+    const json = await response.json()
+    console.log(json);
+    dispatch({
+      type: GET_USERS,
+      data: json.data,
     })
   }
 }

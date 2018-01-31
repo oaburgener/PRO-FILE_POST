@@ -21,7 +21,7 @@ height: 750,
 };
 
 const SmallCard = ({article, getArticleId}) => {
-  console.log(article);
+
   return (
 
       <div style={styles.root}>

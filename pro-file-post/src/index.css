@@ -130,5 +130,15 @@ footer{
   line-height: 1.70;
 }
 
+.admin-button {
+  background-color: #00C988;
+  color:white;
+  margin-left: 80%;
+}
 
+.user_info{
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 2%;
+}
  /*****END FOOTER STYLING *****/
