@@ -25,15 +25,14 @@ const compare = (req,res,sendit)=>{
   knex('users').where({
   email: req.body.email
   }).first()
-  .then(user=>{
-    if(!user) res.sendStatus(401)
+  .then(user =>{
     bcrypt.compare(req.body.password, user.password, function(err, ver) {
-      console.log(err,ver);
-      if(err){res.sendStatus(401)}
         var token = jwt.sign({ id: user.id, admin: user.is_admin }, secret)
-        ver ? res.status(200).send({token}): res.sendStatus(401)
+        var admin = user.is_admin
+        var id = user.id
+        ver ? res.status(200).send({token,admin,id}): res.sendStatus(401)
     })
-  .catch(err=>{res.sendStatus(401) })
+  .catch(err=>{next(err)})
   })
 }
 module.exports = {
