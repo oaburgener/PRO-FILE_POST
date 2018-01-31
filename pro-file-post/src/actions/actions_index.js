@@ -52,12 +52,13 @@ export const getArticleId = (id) => {
   }
 }
 
+
 export const createArticle = (id) => {
-  // let author = document.getElementById('name').value
+
+
   let title = document.getElementById('title').value
   let summary = document.getElementById('summary').value
   let articleBody = document.getElementById('article-body').value
-  console.log(articleBody);
   let sport = document.getElementById('dropdown').value
   // let image = document.getElementById('image').value
 
@@ -80,30 +81,32 @@ export const createArticle = (id) => {
 }
 
 export const logInVerify = (user) =>{
-let body = JSON.stringify(user)
-return async (dispatch) =>{
-    const response = await fetch('http://localhost:3001/users/',{
-      method: 'PUT',
-      headers: {
-        'Content-Type' : 'application/json',
-        'Accept': 'application/json'
-      },
-      body:body
-    })
-    if(response.status===401){
-      dispatch({
-      type: UNAUTHORIZED,
-      data: true
+  let body = JSON.stringify(user)
+  return async (dispatch) =>{
+      const response = await fetch('http://localhost:3001/users/',{
+        method: 'PUT',
+        headers: {
+          'Content-Type' : 'application/json',
+          'Accept': 'application/json'
+        },
+        body:body
       })
-    }else{
-      const json = await response.json()
-      let cookie = {jwt:json.token,admin:json.admin,id:json.id}
-      document.cookie = cookie
-      dispatch({
-       type: LOGIN,
-       data: true,
-       cookie: cookie,
-    })
+
+      if(response.status===401){
+        console.log(401);
+        dispatch({
+          type: UNAUTHORIZED,
+          data: true
+        })
+      }else{
+        const json = await response.json()
+        let cookie = {jwt:json.token,admin:json.admin,id:json.id}
+        document.cookie = cookie
+        dispatch({
+         type: LOGIN,
+         data: true,
+         cookie: cookie,
+      })
     }
   }
 }

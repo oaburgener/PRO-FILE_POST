@@ -78,6 +78,8 @@ export default class Navbar extends React.Component {
             </a>
 
             <IconMenu
+              className= "login-menu"
+
 
               iconButtonElement={
                 <IconButton style={{marginLeft:'10px'}} touch={true}> <svg fill="#000000" height="34" viewBox="0 0 24 24" width="34" xmlns="http://www.w3.org/2000/svg">
@@ -100,6 +102,7 @@ export default class Navbar extends React.Component {
             </IconMenu>
 
             <IconMenu
+
               className='hamburger'
               iconButtonElement=
               {<IconButton style={{marginLeft:'10px'}}>  <svg fill="#000000" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
