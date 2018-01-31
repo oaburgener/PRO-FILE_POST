@@ -20,7 +20,10 @@ const SmallCard = ({article, getArticleId}) => {
           <Link to={`/article/${article.id}`}>
             <CardMedia
               onClick={(event)=>{getArticleId(article.id)}}
-              overlay={<CardTitle title={article.title} subtitle={article.first_name + ' ' +article.last_name} />}>
+              overlay={<CardTitle
+                title={article.title}
+                titleStyle={{fontWeight:'500', fontFamily:'Lato', fontFamily:'Helvetica Neue'}}
+                subtitle={article.first_name + ' ' +article.last_name} />}>
               {/* <p>{article.summary}</p> */}
               <Image className="smallPic" src={article.image_url} alt="" responsive/>
             </CardMedia>
