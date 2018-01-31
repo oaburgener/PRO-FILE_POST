@@ -10,7 +10,7 @@ const getArticles = (req,res,next) =>{
   .join('articles', 'users.id', '=', 'articles.user_id')
   .select('articles.id', 'users.first_name', 'users.last_name', 'articles.title', 'articles.summary',
   'articles.body', 'articles.image_url', 'articles.sport', 'articles.views',
-  'articles.likes', 'articles.created_at', 'articles.updated_at')
+  'articles.likes', 'articles.created_at', 'articles.updated_at', 'articles.user_id')
   .then(data => {
     res.status(200).send({ data })
   })
@@ -41,12 +41,12 @@ const getArticleId = (req,res,next) => {
 
 const postArticles = (req,res,next) => {
   knex('articles').insert({
-    firstName:req.body.title,
-    lastName:req.body.summary,
-    sport:req.body.tags,
-    body:req.body.body
-  },'*').then(data => {res.sendStatus(204)})
-  .catch(err => {next(err)})
+    user_id:req.body.user_id,
+    title:req.body.title,
+    summary:req.body.summary,
+    sport:req.body.sport,
+    body:req.body.body,
+  },'*').then(data => {res.status(204).send({article:data[0]})})
 }
 
 const deleteArticle = (req,res,next) => {

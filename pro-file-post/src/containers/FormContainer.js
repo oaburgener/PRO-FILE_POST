@@ -4,12 +4,16 @@ import { bindActionCreators } from 'redux'
 import { createArticle } from '../actions/actions_index.js'
 import Form from '../components/Form.js'
 
+const mapStateToProps = state => ({
+  cookie: state.login.cookie,
+})
+
 const mapDispatchToProps = dispatch => bindActionCreators({
   createArticle
 }, dispatch)
 
 const FormContainer = connect (
-  mapDispatchToProps,
+  mapStateToProps,
   mapDispatchToProps,
 )(Form)
 
