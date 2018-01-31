@@ -20,17 +20,22 @@ import ArticleContainer from './containers/ArticleContainer'
 import SmallCard from './components/SmallCard'
 import Login from './components/Login'
 import SubmitButton from './components/Login'
+
+import AdminContainer from './containers/AdminContainer'
+
 import SignUp from './containers/SignUpContainer'
 import LoginContainer from './containers/LoginContainer'
 import Form from './components/Form'
 import FormContainer from './containers/FormContainer'
 import NavContainer from './containers/NavContainer'
 
+
 class App extends Component {
 
   componentDidMount() {
     this.props.getArticles()
   }
+
 
   render() {
     return (
@@ -49,6 +54,12 @@ class App extends Component {
                   <BodyContainer />
                 </MuiThemeProvider>
               </div>
+          )}/>
+
+          <Route exact path ='/admin' render={() =>(
+            <div>
+              <AdminContainer />
+            </div>
           )}/>
 
           <Route exact path ="/article/:id" render={() => (

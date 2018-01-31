@@ -389,6 +389,21 @@ footer {
 }
 
 
+
+.admin-button {
+  background-color: #00C988;
+  color:white;
+  margin-left: 80%;
+}
+
+.user_info{
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 2%;
+}
+ /*****END FOOTER STYLING *****/
+
+
 @media screen and (max-width: 768px)
 {
   .icons {
@@ -401,4 +416,5 @@ footer {
   height:240px;
 }
 }
+
 /* END Media Querries*/
