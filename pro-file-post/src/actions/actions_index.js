@@ -7,6 +7,7 @@ export const CREATE_ARTICLE='CREATE_ARTICLE'
 export const LOGIN = 'LOGIN'
 export const UNAUTHORIZED = 'UNAUTHORIZED'
 export const SIGNUP = 'SIGNUP'
+export const GET_COOKIE = 'GET_COOKIE'
 
 export const getArticles = () => {
 
@@ -51,65 +52,62 @@ export const getArticleId = (id) => {
   }
 }
 
-export const createArticle = () => {
 
-  console.log('IN CREATE ARTICLE!!!!');
+export const createArticle = (id) => {
 
-  let author = document.getElementById('name').value
+
   let title = document.getElementById('title').value
   let summary = document.getElementById('summary').value
   let articleBody = document.getElementById('article-body').value
   let sport = document.getElementById('dropdown').value
-  let image = document.getElementById('image').value
+  // let image = document.getElementById('image').value
 
-  let body = {user_id: 10, title:title, summary:summary, body:articleBody, sport:sport}
-  console.log('body', body);
+  let body = {user_id: id ,title:title, summary:summary, body:articleBody, sport:sport}
+  let bitchinbod = JSON.stringify(body)
   return async (dispatch) => {
     const response = await fetch('http://localhost:3001/articles/', {
       method: 'POST',
-      body: body,
+      body: bitchinbod,
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
       }
     })
-    const json = await response.json()
-    console.log('json', json);
     dispatch({
       type: CREATE_ARTICLE,
-      data: [...store.getState().splash.all_articles, ...json]
+      data: ['sauce']
     })
   }
 }
 
 export const logInVerify = (user) =>{
-let body = JSON.stringify(user)
-return async (dispatch) =>{
-    const response = await fetch('http://localhost:3001/users/',{
-      method: 'PUT',
-      headers: {
-        'Content-Type' : 'application/json',
-        'Accept': 'application/json'
-      },
-      body:body
-    })
-    if(response.status===401){
-      console.log(401);
-      dispatch({
-      type: UNAUTHORIZED,
-      data: true
+  let body = JSON.stringify(user)
+  return async (dispatch) =>{
+      const response = await fetch('http://localhost:3001/users/',{
+        method: 'PUT',
+        headers: {
+          'Content-Type' : 'application/json',
+          'Accept': 'application/json'
+        },
+        body:body
       })
-    }else{
-      const json = await response.json()
-      console.log(json);
-      let cookie = `jwt=${json.token},admin=${json.admin},id=${json.id}`
-      document.cookie = cookie
-      console.log(document.cookie);
-      dispatch({
-       type: LOGIN,
-       data: true
-    })
-  }
+
+      if(response.status===401){
+        console.log(401);
+        dispatch({
+          type: UNAUTHORIZED,
+          data: true
+        })
+      }else{
+        const json = await response.json()
+        let cookie = {jwt:json.token,admin:json.admin,id:json.id}
+        document.cookie = cookie
+        dispatch({
+         type: LOGIN,
+         data: true,
+         cookie: cookie,
+      })
+    }
   }
 }
 
