@@ -76,7 +76,9 @@ class App extends Component {
 
           <Route exact path ="/login" render={() => (
             <div>
-              <LoginContainer />
+              <MuiThemeProvider>
+                <LoginContainer />
+              </MuiThemeProvider>
             </div>
           )}/>
           <Route exact path ="/SignUp" render={()=>(
