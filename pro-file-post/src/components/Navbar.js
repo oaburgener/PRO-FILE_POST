@@ -80,11 +80,18 @@ export default class Navbar extends React.Component {
                   <path d="M0 0h24v24H0z" fill="none" />
                 </svg>
                 </IconButton> }
-              style={{marginBottom:'6px', marginLeft:'3px'}}>
-              <Link to='/login' style={{ textDecoration: 'none' }}>
-                <MenuItem primaryText="Log in" />
-              </Link>
+
+                  style={{
+                    marginBottom:'6px',
+                    marginLeft:'3px',
+                  }}>
+                <Link to='/login' style={{ textDecoration: 'none' }}>
+                  <MenuItem primaryText="Log in" />
+                </Link>
+                <Link to='/SignUp' style={{textDecoration: 'none'}}>
+
               <MenuItem primaryText="Sign up" />
+            </Link>
             </IconMenu>
 
             <IconMenu
