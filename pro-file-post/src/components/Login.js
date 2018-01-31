@@ -25,7 +25,7 @@ class Login extends React.Component {
         </div>: null}
         {this.props.token ? <Redirect to= '/' />:
         <form onSubmit={this.handleSubmit}>
-          <h2 className='signIn'>login/signup</h2>
+      <h2 className='signIn'>Login</h2>
 
           <label htmlFor="email">Enter your email</label>
           <input id="email" ref = "email" name="email" type="email"/>

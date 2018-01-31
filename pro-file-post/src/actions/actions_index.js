@@ -17,6 +17,7 @@ export const getArticles = () => {
     const trending =  json.data.sort(function(a,b){
       return (b.likes + b.views) - (a.likes + a.views)
     }).slice(0,2)
+    console.log(json.data);
     dispatch({
       type: GET_ARTICLES,
       data:json.data,
@@ -24,6 +25,8 @@ export const getArticles = () => {
     })
  }
 }
+
+
 
 export const getBySport = (sport)=> {
 
