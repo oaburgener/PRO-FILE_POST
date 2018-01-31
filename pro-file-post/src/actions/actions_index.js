@@ -55,14 +55,13 @@ export const getArticleId = (id) => {
 
 export const createArticle = (id) => {
 
-
   let title = document.getElementById('title').value
   let summary = document.getElementById('summary').value
   let articleBody = document.getElementById('article-body').value
   let sport = document.getElementById('dropdown').value
-  // let image = document.getElementById('image').value
+  let image = document.getElementById('image').value
 
-  let body = {user_id: id ,title:title, summary:summary, body:articleBody, sport:sport}
+  let body = {user_id: id ,title:title, summary:summary, body:articleBody, sport:sport, image_url:image}
   let bitchinbod = JSON.stringify(body)
   return async (dispatch) => {
     const response = await fetch('http://localhost:3001/articles/', {
@@ -75,7 +74,7 @@ export const createArticle = (id) => {
     })
     dispatch({
       type: CREATE_ARTICLE,
-      data: ['sauce']
+      data: [bitchinbod]
     })
   }
 }

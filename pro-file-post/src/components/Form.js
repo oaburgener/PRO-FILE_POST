@@ -35,8 +35,7 @@ console.log(createArticle,cookie);
             </select>
           <legend className="form-field-submission">Image URL</legend>
             <input id="image" className="form-small-input" type="text" name="image" />
-          <div onClick={(e)=>{
-            e.preventDefault()
+          <div onClick={()=>{
             createArticle(cookie.id)
           }}>
             <input className="form-button" type="submit" value="Submit"/>
