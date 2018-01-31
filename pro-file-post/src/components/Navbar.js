@@ -55,18 +55,14 @@ export default class Navbar extends React.Component {
     this.state = {
       value: 3
     };
-  }
 
+  }
 
   handleChange = (event, index, value) => this.setState({value});
 
+
+
   render() {
-    console.log(typeof(document.cookie));
-    if(document.cookie){
-      var admin = document.cookie.split(',')[1].split('=')[1]
-      admin = (admin==='true') ? true : false
-      console.log(admin)
-    }
     return (
 
         <Toolbar style={toolbar}>
@@ -94,6 +90,8 @@ export default class Navbar extends React.Component {
             </a>
 
             <IconMenu
+              className= "login-menu"
+
 
               iconButtonElement={
                 <IconButton style={{marginLeft:'10px'}} touch={true}> <svg fill="#000000" height="34" viewBox="0 0 24 24" width="34" xmlns="http://www.w3.org/2000/svg">
@@ -116,6 +114,7 @@ export default class Navbar extends React.Component {
             </IconMenu>
 
             <IconMenu
+
               className='hamburger'
               iconButtonElement=
               {<IconButton style={{marginLeft:'10px'}}>  <svg fill="#000000" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
@@ -132,7 +131,7 @@ export default class Navbar extends React.Component {
               <Link to="/article-submit" style={{ textDecoration: 'none' }}>
                 <MenuItem value={2} href="#" primaryText="Submit article" className="menu"/>
               </Link>
-              {admin ? <Link to='/admin' style={{ textDecoration: 'none' }}>
+              {this.props.cookie.admin ? <Link to='/admin' style={{ textDecoration: 'none' }}>
                 <MenuItem primaryText="Admin View" />
               </Link> : null}
             </IconMenu>

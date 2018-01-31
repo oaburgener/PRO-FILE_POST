@@ -1,9 +1,14 @@
+import store from '../store'
+
 export const GET_ARTICLES = 'GET_ARTICLES'
 export const GET_SPORT = 'GET_SPORT'
 export const GET_ONE_ARTICLE = 'GET_ONE_ARTICLE'
+export const CREATE_ARTICLE='CREATE_ARTICLE'
 export const LOGIN = 'LOGIN'
 export const UNAUTHORIZED = 'UNAUTHORIZED'
 export const SIGNUP = 'SIGNUP'
+export const GET_COOKIE = 'GET_COOKIE'
+
 export const getArticles = () => {
 
   return async (dispatch) => {
@@ -23,7 +28,7 @@ export const getArticles = () => {
 export const getBySport = (sport)=> {
 
   return async (dispatch) => {
-    const response = await fetch(`http://localhost:3001/articles/${sport}`)
+    const response = await fetch(`http://localhost:3001/articles/filter/${sport}`)
     const json = await response.json()
     dispatch({
       type: GET_SPORT,
@@ -46,34 +51,63 @@ export const getArticleId = (id) => {
     })
   }
 }
-export const logInVerify = (user) =>{
-let body = JSON.stringify(user)
-return async (dispatch) =>{
-    const response = await fetch('http://localhost:3001/users/',{
-      method: 'PUT',
+
+
+export const createArticle = (id) => {
+
+
+  let title = document.getElementById('title').value
+  let summary = document.getElementById('summary').value
+  let articleBody = document.getElementById('article-body').value
+  let sport = document.getElementById('dropdown').value
+  // let image = document.getElementById('image').value
+
+  let body = {user_id: id ,title:title, summary:summary, body:articleBody, sport:sport}
+  let bitchinbod = JSON.stringify(body)
+  return async (dispatch) => {
+    const response = await fetch('http://localhost:3001/articles/', {
+      method: 'POST',
+      body: bitchinbod,
       headers: {
-        'Content-Type' : 'application/json',
-        'Accept': 'application/json'
-      },
-      body:body
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }
     })
-    if(response.status===401){
-      console.log(401);
-      dispatch({
-      type: UNAUTHORIZED,
-      data: true
-      })
-    }else{
-      const json = await response.json()
-      console.log(json);
-      let cookie = `jwt=${json.token},admin=${json.admin},id=${json.id}`
-      document.cookie = cookie
-      console.log(document.cookie);
-      dispatch({
-       type: LOGIN,
-       data: true
+    dispatch({
+      type: CREATE_ARTICLE,
+      data: ['sauce']
     })
   }
+}
+
+export const logInVerify = (user) =>{
+  let body = JSON.stringify(user)
+  return async (dispatch) =>{
+      const response = await fetch('http://localhost:3001/users/',{
+        method: 'PUT',
+        headers: {
+          'Content-Type' : 'application/json',
+          'Accept': 'application/json'
+        },
+        body:body
+      })
+
+      if(response.status===401){
+        console.log(401);
+        dispatch({
+          type: UNAUTHORIZED,
+          data: true
+        })
+      }else{
+        const json = await response.json()
+        let cookie = {jwt:json.token,admin:json.admin,id:json.id}
+        document.cookie = cookie
+        dispatch({
+         type: LOGIN,
+         data: true,
+         cookie: cookie,
+      })
+    }
   }
 }
 

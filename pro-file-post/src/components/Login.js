@@ -17,7 +17,7 @@ class Login extends React.Component {
 //   }
   render() {
     return (
-      <div style={{marginTop: '28px'}}>
+      <div className="login-form">
 
         {this.props.toast ? <div>
           <p>'username or password does not match'</p>
