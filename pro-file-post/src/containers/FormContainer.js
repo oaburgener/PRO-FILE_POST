@@ -1,20 +1,20 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import Navbar from '../components/Navbar.js'
-import { logInVerify, createArticle } from '../actions/actions_index.js'
+import { createArticle } from '../actions/actions_index.js'
+import Form from '../components/Form.js'
 
 const mapStateToProps = state => ({
   cookie: state.login.cookie,
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  logInVerify
+  createArticle
 }, dispatch)
 
-const NavContainer = connect (
+const FormContainer = connect (
   mapStateToProps,
   mapDispatchToProps,
-)(Navbar)
+)(Form)
 
-export default NavContainer
+export default FormContainer

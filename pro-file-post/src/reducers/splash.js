@@ -1,6 +1,7 @@
 import {
   GET_ARTICLES,
   GET_SPORT,
+  CREATE_ARTICLE,
 } from '../actions/actions_index'
 
 const initialState = {
@@ -20,6 +21,11 @@ export default (state = initialState, action) => {
       trending_articles: action.trending
     }
     case GET_SPORT:
+    return {
+      ...state,
+      all_articles: action.data,
+    }
+    case CREATE_ARTICLE:
     return {
       ...state,
       all_articles: action.data,

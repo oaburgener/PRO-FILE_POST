@@ -10,8 +10,10 @@ const getArticles = (req,res,next) =>{
   .join('articles', 'users.id', '=', 'articles.user_id')
   .select('articles.id', 'users.first_name', 'users.last_name', 'articles.title', 'articles.summary',
   'articles.body', 'articles.image_url', 'articles.sport', 'articles.views',
-  'articles.likes', 'articles.created_at', 'articles.updated_at')
-  .then(data => {res.send({ data })})
+  'articles.likes', 'articles.created_at', 'articles.updated_at', 'articles.user_id')
+  .then(data => {
+    res.status(200).send({ data })
+  })
   .catch(err => {next(err)})
 }
 
@@ -25,24 +27,26 @@ const getArticleId = (req,res,next) => {
   var id = req.params.id
   knex('users')
   .join('articles', 'users.id', '=', 'articles.user_id')
-  .where('articles.id', id)
   .select('articles.id', 'users.first_name', 'users.last_name', 'articles.title', 'articles.summary',
   'articles.body', 'articles.image_url', 'articles.sport', 'articles.views',
   'articles.likes', 'articles.created_at', 'articles.updated_at')
+  .where('articles.id', id)
   .then(data => {
-    updateViews(id,next)
-    res.send({ data: data[0] })
-  }).catch(err => {next(err)})
+    updateViews(id)
+    res.status(200).send({ data: data[0] })
+  }).catch(err => {
+    next(err)
+  })
 }
 
 const postArticles = (req,res,next) => {
   knex('articles').insert({
-    firstName:req.body.title,
-    lastName:req.body.summary,
-    sport:req.body.tags,
-    body:req.body.body
-  },'*').then(data => {res.sendStatus(204)})
-  .catch(err => {next(err)})
+    user_id:req.body.user_id,
+    title:req.body.title,
+    summary:req.body.summary,
+    sport:req.body.sport,
+    body:req.body.body,
+  },'*').then(data => {res.status(204).send({article:data[0]})})
 }
 
 const deleteArticle = (req,res,next) => {
@@ -59,17 +63,22 @@ const deleteArticle = (req,res,next) => {
   .catch(err=>{next(err)})
 }
 
-const updateViews = (id, next) => {
+const updateViews = (id) => {
   knex('articles').where({id: id})
   .then((article)=> {
+    console.log('then');
     var newViews = Number(article[0].views) + 1
-    knex('articles').where({id: articleId}).update({views: newViews})
+    knex('articles').where({id: id}).update({views: newViews})
     .then(count=>{
       return;
     })
-    .catch(err=>{next(err)})
+    .catch(err=>{
+      res.sendStatus(304);
+    })
   })
-  .catch(err=>{next(err)})
+  .catch(err=>{
+    res.sendStatus(304);
+    })
 }
 
 module.exports = {

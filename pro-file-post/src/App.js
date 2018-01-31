@@ -8,7 +8,6 @@ import Jumbotron from './components/jumbotron'
 import Navbar from './components/Navbar'
 import About from './components/About'
 import {pinkA200} from 'material-ui/styles/colors';
-// import Body from './components/Body'
 import Footer from './components/Footer'
 import BodyContainer from './containers/BodyContainer'
 import { connect } from 'react-redux'
@@ -21,7 +20,15 @@ import ArticleContainer from './containers/ArticleContainer'
 import SmallCard from './components/SmallCard'
 import Login from './components/Login'
 import SubmitButton from './components/Login'
+
 import AdminContainer from './containers/AdminContainer'
+
+import SignUp from './containers/SignUpContainer'
+import LoginContainer from './containers/LoginContainer'
+import Form from './components/Form'
+import FormContainer from './containers/FormContainer'
+import NavContainer from './containers/NavContainer'
+
 
 class App extends Component {
 
@@ -33,13 +40,12 @@ class App extends Component {
   render() {
     return (
       <Router>
-      <div className="App">
+        <div className="App">
 
-        <MuiThemeProvider>
-          <Navbar />
-
-          <Route exact path="/" render={() => (
-            <div>
+          <MuiThemeProvider>
+            <NavContainer />
+            <Route exact path="/" render={() => (
+              <div className='container-fluid'>
               <JumbotronContainer />
                 <Filters />
               <BodyContainer />
@@ -52,6 +58,12 @@ class App extends Component {
             </div>
           )}/>
 
+          <Route exact path ="/article-submit" render={() => (
+            <div>
+              <FormContainer/>
+            </div>
+          )}/>
+
           <Route exact path ="/about" render={() => (
             <div>
               <About />
@@ -61,7 +73,12 @@ class App extends Component {
 
           <Route exact path ="/login" render={() => (
             <div>
-              <Login />
+              <LoginContainer />
+            </div>
+          )}/>
+          <Route exact path ="/SignUp" render={()=>(
+            <div>
+              <SignUp />
             </div>
           )}/>
 

@@ -3,31 +3,186 @@ body {
   padding: 0;
   font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif !important;
   font-weight: 50;
+  height: 100%;
+}
+
+/* Login Body */
+
+.login-form {
+  padding-top: 150px;
+}
+
+/* END login Body */
+
+/* Main Body */
+.smallPic{
+  max-width:100%;
+  height: 280px;
+  object-fit:cover;
+}
+.smallCard{
+  margin-bottom: 24px;
+}
+/* END Main body */
+
+.storyArea{
+  margin-top:25px;
 }
 
 .padding
 {
   margin-left: 6px
   }
-  .icons{
-  height: 20px;
+/* NAVBAR */
+.icons {
+  height: 23px;
   width: auto;
-  margin-left: 16px;
+  margin-left: 26px;
   margin-bottom: 3px;
 }
-.small-card {
-  height: 40vh;
+
+/* END NAVBAR */
+
+/***** Form Styling *****/
+
+#form-title {
+  padding-top: 30px;
 }
+
+#summary {
+  font-size:18px;
+  font-style: italic;
+}
+
+#dropdown {
+  border-color: none;
+  border-width: .5px;
+  width: 100%;
+  margin-bottom: 20px;
+  float: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+  border-color: #d4d7db;
+}
+
+.guidelines-container {
+  padding-top: 100px;
+}
+
+.form-headers {
+  padding-left: 300px;
+  padding-right: 300px;
+  font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 0;
+  font-size: 30px;
+}
+
+.form-text {
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 2.5%;
+  text-align: left;
+  font-size: 23px;
+  font-family: 'EB Garamond', serif;
+  line-height: 1.70;
+}
+
+#legend {
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+
+.form-button {
+  background-color: #00C988;
+  color: #fff;
+  height: 41px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 13px 40px;
+  border-radius: 3px;
+  border: none;
+  margin-bottom: 30px;
+}
+
+.orange {
+  color: #00C988;
+  font-size: 30px;
+}
+
+.submission-form {
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+#article-submission-text {
+  height: 70vh;
+}
+
+.form-small-input {
+  border-style: solid;
+  font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: 0;
+  padding: 7px;
+  width: 100%;
+  background-color: white;
+  border-color: #d4d7db;
+  margin-bottom: 30px;
+  display: block;
+  border-width: .5px;
+}
+
+.form-large-input {
+  font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: 0;
+  padding: 7px;
+  width: 100%;
+  background-color: white;
+  border-color: #d4d7db;
+  margin-bottom: 30px;
+  display: block;
+  border-width: .5px;
+}
+
+.form-field-submission {
+  text-align: left;
+  font-family: 'EB Garamond', serif;
+  font-size: 23px;
+  float: left;
+}
+
+.form-star {
+  float: left;
+}
+
 /***** Filter Styling *****/
+.filterbar{
+  margin-left: 7%;
+  margin-right: 7%;
+  align-items: center;
+}
 
 .filter-by{
-  font-family: "HelveticaNeue-Thin", "Helvetica Neue Thin", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-size: 22px;
+  display: inline;
+  font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  float: left;
+  font-size: 26px;
+  margin-top: 6px;
+  font-weight: bold;
 }
 
 .filter-icons{
-  height: 5vh;
-  margin: 17px;
+  height: 26px;
+  margin-left: 17px;
+  margin-top:8px;
 }
 
 .hover-icon{
@@ -37,14 +192,12 @@ body {
   box-shadow: 0px 2.5px ;
 }
 
-
-
 /***** End Filter Styling *****/
-
 
 .menu{
   font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif !important;
 }
+
  /***** FOOTER STYLING *****/
 .footerLogo{
   max-height: 80px;
@@ -52,31 +205,36 @@ body {
   color: black;
 }
 
-footer{
-  display: flex;
-  flex-wrap: wrap;
-
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 8px;
+  height: 45px;
+  width:100%;
+  background-color:white;
 }
 
 .footerTitle{
   justify-content: flex-end;
 }
 
-.container {
-    position: relative;
-    width: 100%;
+/* End Footer */
+
+/* JUMBOTRON */
+
+.topRow{
+  height:100%;
+  padding-top: 90px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 10px;
+  margin-bottom: 35px;
 }
 
-.image {
-  opacity: 1;
-  display: block;
-  width: 100%;
-  height: auto;
-  transition: .5s ease;
-  backface-visibility: hidden;
-}
 
-.middle {
+/* .middle {
   transition: .5s ease;
   opacity: 0;
   position: absolute;
@@ -85,13 +243,10 @@ footer{
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   text-align: center;
-}
+} */
 
-.container:hover .image {
-  opacity: 0.7;
-}
 
-.container:hover .middle {
+.largeCard:hover .middle {
   opacity: 1;
 }
 
@@ -99,6 +254,65 @@ footer{
   color: white;
   font-size: 20px;
   padding: 16px 32px;
+}
+
+.largeTitle{
+  font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  color: white;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.largeSub{
+  font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  color: white;
+  text-align: left;
+  font-weight: lighter;
+}
+
+.box{
+  background-color: rgba(0,0,0,.6);
+  width: 100%;
+  height:31%;
+  padding-left:15px;
+  padding-right: 15px;
+  padding-top: 9.5%;
+  top: 69%;
+  position: relative;
+}
+
+.imageBig {
+  background-size: cover;
+  /* max-width:100%; */
+  height:560px;
+  background-repeat:no-repeat,
+}
+
+/*****END JUMBOTRON STYLING *****/
+
+/* ARTICLE STYLE */
+
+.about-title{
+  font-size: 40px;
+  padding-bottom: 5px;
+}
+
+.about-container{
+  font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif ;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 10%;
+  text-align: left;
+  line-height: 1.70;
+}
+.about-paragraph{
+  font-size: 23px;
+  padding-top: 10px;
+  font-family: 'EB Garamond', serif;
+}
+.about-image{
+  float: left;
+  margin: 4px 10px 0px 0px;
 }
 
 .article_title{
@@ -129,6 +343,23 @@ footer{
   font-family: 'EB Garamond', serif;
   line-height: 1.70;
 }
+/* END ARTICLE STYLE */
+/* Media Querries*/
+@media screen and (max-width: 1000px) {
+.imageBig{
+  height: 250px;
+}
+.smallPic{
+  height:190px;
+}
+.box{
+  background-color: rgba(0,0,0,.8);
+  padding-top:2%;
+  height:49%;
+  top:51%
+}
+}
+
 
 .admin-button {
   background-color: #00C988;
@@ -142,3 +373,5 @@ footer{
   padding-top: 2%;
 }
  /*****END FOOTER STYLING *****/
+
+/* END Media Querries*/
