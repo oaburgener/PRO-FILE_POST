@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser')
 const secret = process.env.SECRET || 'A4e2n84E0OpF3wW21'
 
 const getUsers = function(req, res, next) {
-  var decoded = jwt.verify(req.cookies.jwt, 'A4e2n84E0OpF3wW21', function(err, decoded) {
+  var decoded = jwt.verify(req.cookies.jwt, secret, function(err, decoded) {
     if(err){
       next(err)
     }else{
@@ -20,7 +20,7 @@ const getUsers = function(req, res, next) {
 }
 
 const deleteUser = function(req,res,next){
-  var decoded = jwt.verify(req.cookies.jwt, 'A4e2n84E0OpF3wW21', function(err, decoded) {
+  var decoded = jwt.verify(req.cookies.jwt, secret, function(err, decoded) {
     if(err){
       next(err)
     }else{
