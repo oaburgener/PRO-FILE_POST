@@ -11,19 +11,21 @@ import Paper from 'material-ui/Paper';
 import { Link } from 'react-router-dom'
 
 const titleStyle={
-  color: 'red',
+  color: 'firebrick',
   fontFamily:"Helvetica Neue",
   fontWeight: 'bold',
+  marginLeft: '3px',
   marginTop:'3px',
-  size:'15px'
+  fontSize:'30px'
 }
 
 const toolbar={
   zIndex: '9',
+  position:'fixed',
+  top:'0',
   backgroundColor:'white',
   marginBottom:'18px',
-  position:'fixed',
-  width:'100vw',
+  width:'100%',
   paddingTop: '5px',
   height: '65px'
 }
@@ -76,26 +78,35 @@ export default class Navbar extends React.Component {
               <img src={require('../logos/blackFbLogo.jpg')} className="icons"/>
             </a>
             <a href="http://pro-file.us/#/">
-              <img src={require('../logos/round-logo.png')} className="icons"/>
+              <img src={require('../logos/round-logo.png')} className="icons" style={{height:'26px'}}/>
             </a>
 
             <IconMenu
+
               iconButtonElement={
-                <IconButton touch={true}> <svg fill="#000000" height="27" viewBox="0 0 24 24" width="27" xmlns="http://www.w3.org/2000/svg">
+                <IconButton style={{marginLeft:'10px'}} touch={true}> <svg fill="#000000" height="34" viewBox="0 0 24 24" width="34" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
                   <path d="M0 0h24v24H0z" fill="none" />
                 </svg>
                 </IconButton> }
-              style={{marginBottom:'6px', marginLeft:'3px'}}>
-              <Link to='/login' style={{ textDecoration: 'none' }}>
-                <MenuItem primaryText="Log in" />
-              </Link>
+
+                  style={{
+                    marginBottom:'6px',
+                    marginLeft:'3px',
+                  }}>
+                <Link to='/login' style={{ textDecoration: 'none' }}>
+                  <MenuItem primaryText="Log in" />
+                </Link>
+                <Link to='/SignUp' style={{textDecoration: 'none'}}>
+
               <MenuItem primaryText="Sign up" />
+            </Link>
             </IconMenu>
 
             <IconMenu
+              className='hamburger'
               iconButtonElement=
-              {<IconButton><svg fill="#000000" height="25" viewBox="0 0 24 24" width="25" xmlns="http://www.w3.org/2000/svg">
+              {<IconButton style={{marginLeft:'10px'}}>  <svg fill="#000000" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 0h24v24H0z" fill="none"/>
                 <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
               </svg></IconButton>}

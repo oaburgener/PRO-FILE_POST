@@ -36,7 +36,7 @@ class Login extends React.Component {
 
 
       <button label="Submit">Submit</button>
-      <button label="Sign Up">Sign up</button>
+
 
     </form>}
     </div>
