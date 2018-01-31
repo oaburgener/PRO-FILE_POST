@@ -76,16 +76,16 @@ export default class Navbar extends React.Component {
             <FontIcon className="muidocs-icon-custom-sort" />
           </ToolbarGroup>
           <ToolbarGroup>
-            <a href="https://twitter.com/PRO__file" style={{marginLeft:'3px', marginRight:'2px'}}>
+            <a href="https://twitter.com/PRO__file" target= "blank" style={{marginLeft:'3px', marginRight:'2px'}}>
               <img src={require('../logos/black twitter.png')} className="icons"/>
             </a>
-            <a href="https://www.instagram.com/pro.file.sports/?hl=en">
+            <a href="https://www.instagram.com/pro.file.sports/?hl=en" target= "blank">
               <img src={require('../logos/blackGramLogo.png')} className="icons"/>
             </a>
-            <a href="https://www.facebook.com/profilesportsinc/">
+            <a href="https://www.facebook.com/profilesportsinc/" target= "blank">
               <img src={require('../logos/blackFbLogo.jpg')} className="icons"/>
             </a>
-            <a href="http://pro-file.us/#/">
+            <a href="http://pro-file.us/#/" target= "blank">
               <img src={require('../logos/round-logo.png')} className="icons" style={{height:'26px'}}/>
             </a>
 
