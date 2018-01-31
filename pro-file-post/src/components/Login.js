@@ -17,7 +17,7 @@ class Login extends React.Component {
 //   }
   render() {
     return (
-      <div>
+      <div className="login-form">
 
       {this.props.toast ? <div>
         <p>'username or password does not match'</p>
@@ -36,7 +36,7 @@ class Login extends React.Component {
 
 
       <button label="Submit">Submit</button>
-      <button label="Sign Up">Sign up</button>
+
 
     </form>}
     </div>
