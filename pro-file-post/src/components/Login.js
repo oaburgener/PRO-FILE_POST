@@ -19,16 +19,18 @@ class Login extends React.Component {
     return (
       <div className="login-form">
 
-      {this.props.toast ? <div>
-        <p>'username or password does not match'</p>
+        {this.props.toast ? <div>
+          <p>'username or password does not match'</p>
           <button type = 'button' >ok</button>
-      </div>: null}
-      {this.props.token ? <Redirect to= '/' />:
+        </div>: null}
+        {this.props.token ? <Redirect to= '/' />:
         <form onSubmit={this.handleSubmit}>
+
       <h2 className='signIn'>Login</h2>
 
-      <label htmlFor="email">Enter your email</label>
-      <input id="email" ref = "email" name="email" type="email"/>
+
+          <label htmlFor="email">Enter your email</label>
+          <input id="email" ref = "email" name="email" type="email"/>
 
       <label htmlFor="username">Enter Password</label>
       <input id="username" ref = "password" name="username" type="password"/>

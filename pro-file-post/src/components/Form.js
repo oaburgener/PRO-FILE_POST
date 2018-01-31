@@ -1,8 +1,8 @@
 import React from 'react'
 import { MenuItem, DropdownButton } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
-
-const Form = ({createArticle,cookie})=> {
+const Form = ({createArticle, getArticles, cookie})=> {
 console.log(createArticle,cookie);
   return (
     <div>
@@ -35,12 +35,15 @@ console.log(createArticle,cookie);
             </select>
           <legend className="form-field-submission">Image URL</legend>
             <input id="image" className="form-small-input" type="text" name="image" />
-          <div onClick={(e)=>{
-            e.preventDefault()
-            createArticle(cookie.id)
+
+          <Link to="/" onClick={async(e)=>{
+            e.stopPropagation()
+            await createArticle(cookie.id)
+            getArticles()
           }}>
             <input className="form-button" type="submit" value="Submit"/>
-          </div>
+          </Link>
+
         </form>
       </div>
     </div>

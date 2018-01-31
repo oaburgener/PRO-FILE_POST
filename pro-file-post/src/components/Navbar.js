@@ -27,13 +27,25 @@ const toolbar={
   marginBottom:'18px',
   width:'100%',
   paddingTop: '5px',
-  height: '65px'
+  height: '69px'
 }
 
 const toolImage={
-  maxHeight: '55px',
-  maxWidth: '101px',
+  maxHeight: '45px',
+  maxWidth: 'auto',
   paddingLeft: '24px',
+  marginTop:'-23px',
+}
+
+const logo={
+  display: 'inline-block',
+  fontFamily:"Lato Regular",
+  fontFamily:"Helvetica Neue",
+  fontSize:'35px',
+  fontWeight:'bold',
+  color: 'black',
+  marginTop:'3px',
+  marginLeft: '2px'
 }
 
 export default class Navbar extends React.Component {
@@ -57,27 +69,28 @@ export default class Navbar extends React.Component {
           <ToolbarGroup firstChild={true}>
 
             <Link to='/' style={{ textDecoration: 'none' }}>
-              <img src={require("../logos/greenLogo.png")} height="180" width= "332" alt="Logo" style={toolImage} />
+              <img src={require("../logos/greenpostlogo.png")}  alt="Logo" style={toolImage} /><span style={logo}>OST</span>
 
             </Link>
 
             <FontIcon className="muidocs-icon-custom-sort" />
           </ToolbarGroup>
           <ToolbarGroup>
-            <a href="https://twitter.com/PRO__file" style={{marginLeft:'3px', marginRight:'2px'}}>
+            <a href="https://twitter.com/PRO__file" target= "blank" style={{marginLeft:'3px', marginRight:'2px'}}>
               <img src={require('../logos/black twitter.png')} className="icons"/>
             </a>
-            <a href="https://www.instagram.com/pro.file.sports/?hl=en">
+            <a href="https://www.instagram.com/pro.file.sports/?hl=en" target= "blank">
               <img src={require('../logos/blackGramLogo.png')} className="icons"/>
             </a>
-            <a href="https://www.facebook.com/profilesportsinc/">
+            <a href="https://www.facebook.com/profilesportsinc/" target= "blank">
               <img src={require('../logos/blackFbLogo.jpg')} className="icons"/>
             </a>
-            <a href="http://pro-file.us/#/">
+            <a href="http://pro-file.us/#/" target= "blank">
               <img src={require('../logos/round-logo.png')} className="icons" style={{height:'26px'}}/>
             </a>
 
             <IconMenu
+              className= "login-menu"
 
               iconButtonElement={
                 <IconButton style={{marginLeft:'10px'}} touch={true}> <svg fill="#000000" height="34" viewBox="0 0 24 24" width="34" xmlns="http://www.w3.org/2000/svg">
@@ -90,16 +103,21 @@ export default class Navbar extends React.Component {
                     marginBottom:'6px',
                     marginLeft:'3px',
                   }}>
-                <Link to='/login' style={{ textDecoration: 'none' }}>
+                {!this.props.cookie.id ? <Link to='/login' style={{ textDecoration: 'none' }}>
                   <MenuItem primaryText="Log in" />
-                </Link>
-                <Link to='/SignUp' style={{textDecoration: 'none'}}>
+                </Link> : null }
 
-              <MenuItem primaryText="Sign up" />
-            </Link>
+                {!this.props.cookie.id ? <Link to='/SignUp' style={{textDecoration: 'none'}}>
+                  <MenuItem primaryText="Sign up" />
+                </Link> : null }
+
+                {this.props.cookie.id ? <Link to='/' style={{ textDecoration: 'none' }}>
+                  <MenuItem onClick={()=> {window.location.reload()}} primaryText="Sign out" />
+                </Link> : null }
             </IconMenu>
 
             <IconMenu
+
               className='hamburger'
               iconButtonElement=
               {<IconButton style={{marginLeft:'10px'}}>  <svg fill="#000000" height="36" viewBox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg">
@@ -110,12 +128,15 @@ export default class Navbar extends React.Component {
               onChange={this.handleChangeSingle}
               value={this.state.valueSingle}
               style={{marginBottom:'4px', marginLeft: '-3px' }}>
+
               <Link to='/about' style={{ textDecoration: 'none' }}>
                 <MenuItem  value={1} href="#" primaryText="About" className="menu"/>
               </Link>
-              <Link to="/article-submit" style={{ textDecoration: 'none' }}>
+
+              {this.props.cookie.id ? <Link to="/article-submit" style={{ textDecoration: 'none' }}>
                 <MenuItem value={2} href="#" primaryText="Submit article" className="menu"/>
-              </Link>
+              </Link> : null }
+
               {this.props.cookie.admin ? <Link to='/admin' style={{ textDecoration: 'none' }}>
                 <MenuItem primaryText="Admin View" />
               </Link> : null}
