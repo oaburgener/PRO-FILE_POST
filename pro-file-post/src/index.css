@@ -25,6 +25,23 @@ body {
   padding-top: 30px;
 }
 
+#summary {
+  font-size:18px;
+  font-style: italic;
+}
+
+#dropdown {
+  border-color: none;
+  border-width: .5px;
+  width: 100%;
+  margin-bottom: 20px;
+  float: left;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background-color: white;
+  border-color: #d4d7db;
+}
+
 .guidelines-container {
   padding-top: 100px;
 }

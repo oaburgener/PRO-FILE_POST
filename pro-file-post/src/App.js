@@ -8,7 +8,6 @@ import Jumbotron from './components/jumbotron'
 import Navbar from './components/Navbar'
 import About from './components/About'
 import {pinkA200} from 'material-ui/styles/colors';
-// import Body from './components/Body'
 import Footer from './components/Footer'
 import BodyContainer from './containers/BodyContainer'
 import { connect } from 'react-redux'
@@ -20,9 +19,7 @@ import Filters from './components/Filter'
 import ArticleContainer from './containers/ArticleContainer'
 import SmallCard from './components/SmallCard'
 import Login from './components/Login'
-
 import LoginContainer from './containers/LoginContainer'
-
 import Form from './components/Form'
 import FormContainer from './containers/FormContainer'
 

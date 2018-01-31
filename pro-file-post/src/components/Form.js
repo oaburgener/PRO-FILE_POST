@@ -1,6 +1,8 @@
 import React from 'react'
+import { MenuItem, DropdownButton } from 'react-bootstrap'
 
-const Form = ()=> {
+
+const Form = ({createArticle})=> {
 
   return (
     <div>
@@ -13,22 +15,29 @@ const Form = ()=> {
       </div>
       <div class="submission-form">
         <form>
-          <fieldset>
-            <p id="legend" className="form-headers">Submissions</p>
-            <legend className="form-field-submission">Name <span className="orange">*</span></legend>
-              <input id="name" className="form-small-input" type="text" name="text" required/>
-            <legend className="form-field-submission">Email <span className="orange">*</span></legend>
-              <input id="email" className="form-small-input" type="email" name="email" required/>
-            <legend className="form-field-submission">Title <span className="orange">*</span></legend>
-              <textarea id="title" className="form-large-input" name="title" required></textarea>
-          </fieldset>
-          <fieldset>
-            <legend className="form-field-submission">Text <span className="orange">*</span></legend>
-              <textarea id="article-body" id="article-submission-text"  className="form-large-input" name="text" required></textarea>
-          </fieldset>
-            <legend className="form-field-submission">Image URL</legend>
-              <input id="image" className="form-small-input" type="text" name="image" />
-            <input className="form-button" type="submit" value="Submit" />
+          <p id="legend" className="form-headers">Submissions</p>
+          <legend className="form-field-submission">Name <span className="orange">*</span></legend>
+            <input id="name" className="form-small-input" type="text" name="text" required/>
+          <legend className="form-field-submission">Title <span className="orange">*</span></legend>
+            <textarea id="title" className="form-large-input" name="title" required></textarea>
+          <legend className="form-field-submission">Summary <span className="orange">*</span></legend>
+          <legend id="summary" className="form-field-submission">Please summarize your article in 1-2 sentences.</legend>
+            <textarea id="title" className="form-large-input" name="summary" required></textarea>
+          <legend className="form-field-submission">Text <span className="orange">*</span></legend>
+            <textarea id="article-body" id="article-submission-text" className="form-large-input" name="text" required></textarea>
+          <legend className="form-field-submission">Sport <span className="orange">*</span></legend>
+            <select id="dropdown">
+              <option value="baseball">baseball</option>
+              <option value="basketball">basketball</option>
+              <option value="soccer">soccer</option>
+              <option value="hockey">hockey</option>
+              <option value="football">football</option>
+            </select>
+          <legend className="form-field-submission">Image URL</legend>
+            <input id="image" className="form-small-input" type="text" name="image" />
+          <div onClick={()=>{createArticle()}}>
+            <input className="form-button" type="submit" value="Submit"/>
+          </div>
         </form>
       </div>
     </div>

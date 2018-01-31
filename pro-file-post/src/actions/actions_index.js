@@ -50,16 +50,16 @@ export const getArticleId = (id) => {
   }
 }
 
-export const createArticle = (event) => {
-  event.preventDefault()
+export const createArticle = () => {
 
   let author = document.getElementById('name')
-  let email = document.getElementById('email')
-  let title = document.getElementById('name')
+  let title = document.getElementById('title')
+  let summary = document.getElementById('summary')
   let articleBody = document.getElementById('article-body')
+  let sport = document.getElementById('sport')
   let image = document.getElementById('image')
 
-  let body = {}
+  let body = {title:title, summary:summary, body:articleBody, sport:sport}
 
   return async (dispatch) => {
     const response = await fetch('http://localhost:3001/articles/', {
