@@ -41,14 +41,14 @@ class App extends Component {
             <NavContainer />
           </MuiThemeProvider>
 
-            <Route exact path="/" render={() => (
-              <div className='container-fluid'>
-                <JumbotronContainer />
-                <Filters />
-                <MuiThemeProvider>
-                  <BodyContainer />
-                </MuiThemeProvider>
-              </div>
+          <Route exact path="/" render={() => (
+            <div className='container-fluid'>
+              <JumbotronContainer />
+              <Filters />
+              <MuiThemeProvider>
+                <BodyContainer />
+              </MuiThemeProvider>
+            </div>
           )}/>
 
           <Route exact path ="/article/:id" render={() => (
