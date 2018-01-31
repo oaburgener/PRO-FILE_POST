@@ -52,15 +52,12 @@ class App extends Component {
             </div>
           )}/>
 
-<<<<<<< HEAD
           <Route exact path ="/article-submit" render={() => (
             <div>
               <FormContainer/>
             </div>
           )}/>
 
-=======
->>>>>>> 0218bd0c5694b56b4cd1f9f373994e66c5b09faa
           <Route exact path ="/about" render={() => (
             <div>
               <About />
