@@ -62,11 +62,11 @@ export const getArticleId = (id) => {
     const json = await response.json()
     console.log(json.data);
 
-    // const body = json.data.body.split('\n')
+    const body = json.data.body.split('\n')
     dispatch({
       type: GET_ONE_ARTICLE,
       data: json.data,
-      // body: body
+      body: body
     })
   }
 }

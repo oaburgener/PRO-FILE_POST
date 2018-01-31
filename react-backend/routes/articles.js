@@ -23,12 +23,6 @@ const filter = (req,res,next) => {
   .then((data) => {res.send({data})}
 )}
 
-const filterByWriter = (req,res,next) => {
-  knex('articles')
-  .where('user_id', req.params.user_id)
-  .then((data) => {res.send({data})}
-)}
-
 const getArticleId = (req,res,next) => {
   var id = req.params.id
   knex('users')
@@ -98,6 +92,5 @@ module.exports = {
   postArticles,
   deleteArticle,
   filter,
-  filterByWriter,
   updateViews
 }
