@@ -46,8 +46,6 @@ class App extends Component {
             <Route exact path="/" render={() => (
               <div className='container-fluid'>
 
-              <JumbotronContainer />
-            
 
                 <JumbotronContainer />
 
