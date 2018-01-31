@@ -2,7 +2,7 @@ import React from 'react'
 import { MenuItem, DropdownButton } from 'react-bootstrap'
 
 
-const Form = ({createArticle,cookie})=> {
+const Form = ({createArticle, getArticles, cookie})=> {
 console.log(createArticle,cookie);
   return (
     <div>
@@ -35,11 +35,16 @@ console.log(createArticle,cookie);
             </select>
           <legend className="form-field-submission">Image URL</legend>
             <input id="image" className="form-small-input" type="text" name="image" />
-          <div onClick={()=>{
-            createArticle(cookie.id)
+
+
+          <div onClick={async(e)=>{
+            e.preventDefault()
+            await createArticle(cookie.id)
+            getArticles()
           }}>
             <input className="form-button" type="submit" value="Submit"/>
           </div>
+
         </form>
       </div>
     </div>

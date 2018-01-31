@@ -80,7 +80,6 @@ export default class Navbar extends React.Component {
             <IconMenu
               className= "login-menu"
 
-
               iconButtonElement={
                 <IconButton style={{marginLeft:'10px'}} touch={true}> <svg fill="#000000" height="34" viewBox="0 0 24 24" width="34" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
@@ -92,13 +91,17 @@ export default class Navbar extends React.Component {
                     marginBottom:'6px',
                     marginLeft:'3px',
                   }}>
-                <Link to='/login' style={{ textDecoration: 'none' }}>
+                {!this.props.cookie.id ? <Link to='/login' style={{ textDecoration: 'none' }}>
                   <MenuItem primaryText="Log in" />
-                </Link>
-                <Link to='/SignUp' style={{textDecoration: 'none'}}>
+                </Link> : null }
 
-              <MenuItem primaryText="Sign up" />
-            </Link>
+                {!this.props.cookie.id ? <Link to='/SignUp' style={{textDecoration: 'none'}}>
+                  <MenuItem primaryText="Sign up" />
+                </Link> : null }
+
+                {this.props.cookie.id ? <Link to='/' style={{ textDecoration: 'none' }}>
+                  <MenuItem onClick={()=> {window.location.reload()}} primaryText="Sign out" />
+                </Link> : null }
             </IconMenu>
 
             <IconMenu
@@ -113,12 +116,15 @@ export default class Navbar extends React.Component {
               onChange={this.handleChangeSingle}
               value={this.state.valueSingle}
               style={{marginBottom:'4px', marginLeft: '-3px' }}>
+
               <Link to='/about' style={{ textDecoration: 'none' }}>
                 <MenuItem  value={1} href="#" primaryText="About" className="menu"/>
               </Link>
-              <Link to="/article-submit" style={{ textDecoration: 'none' }}>
+
+              {this.props.cookie.id ? <Link to="/article-submit" style={{ textDecoration: 'none' }}>
                 <MenuItem value={2} href="#" primaryText="Submit article" className="menu"/>
-              </Link>
+              </Link> : null }
+
               {this.props.cookie.admin ? <Link to='/admin' style={{ textDecoration: 'none' }}>
                 <MenuItem primaryText="Admin View" />
               </Link> : null}

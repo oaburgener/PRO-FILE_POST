@@ -74,7 +74,7 @@ export const createArticle = (id) => {
     })
     dispatch({
       type: CREATE_ARTICLE,
-      data: [bitchinbod]
+      data: [...store.getState().splash.all_articles]
     })
   }
 }
