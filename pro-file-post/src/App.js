@@ -52,7 +52,6 @@ class App extends Component {
               </MuiThemeProvider>
               <DeleteArticle />
               <Filters />
-              <BodyContainer />
             </div>
           )}/>
 
@@ -89,7 +88,6 @@ class App extends Component {
           <MuiThemeProvider>
             <Footer />
           </MuiThemeProvider>
-
       </div>
     </Router>
 
