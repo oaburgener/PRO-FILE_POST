@@ -17,11 +17,11 @@ body {
 /* Main Body */
 .smallPic{
   max-width:100%;
-  height: 280px;
+  height: 311px;
   object-fit:cover;
 }
 .smallCard{
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 /* END Main body */
 
@@ -40,6 +40,8 @@ body {
   margin-left: 26px;
   margin-bottom: 3px;
 }
+
+
 
 /* END NAVBAR */
 
@@ -199,16 +201,17 @@ body {
 }
 
 .filter-icons{
-  height: 26px;
+  height: 28px;
   margin-left: 17px;
   margin-top:8px;
 }
 
 .hover-icon{
-  height: 5vh;
-  margin: 17px;
-  padding: 1px;
+  height: 28px;
+  margin-left: 17px;
+  /* padding-bottom: .5px; */
   box-shadow: 0px 2.5px ;
+  margin-top:8px;
 }
 
 /***** End Filter Styling *****/
@@ -280,6 +283,7 @@ footer {
   color: white;
   text-transform: uppercase;
   text-align: left;
+  font-size: 46px;
 }
 
 .largeSub{
@@ -295,7 +299,7 @@ footer {
   height:31%;
   padding-left:15px;
   padding-right: 15px;
-  padding-top: 9.5%;
+  padding-top: 8.5%;
   top: 69%;
   position: relative;
 }
@@ -364,7 +368,7 @@ footer {
 }
 /* END ARTICLE STYLE */
 /* Media Querries*/
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
 .imageBig{
   height: 250px;
 }
@@ -372,11 +376,24 @@ footer {
   height:190px;
 }
 .box{
-  background-color: rgba(0,0,0,.8);
+  background-color: rgba(0,0,0,.6);
   padding-top:2%;
   height:49%;
   top:51%
 }
 }
 
+
+@media screen and (max-width: 768px)
+{
+  .icons {
+    display: none;
+}
+.imageBig{
+  height: 290px;
+}
+.smallPic{
+  height:240px;
+}
+}
 /* END Media Querries*/
