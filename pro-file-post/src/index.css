@@ -3,6 +3,7 @@ body {
   padding: 0;
   font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif !important;
   font-weight: 50;
+  height: 100%;
 }
 
 /* Main Body */
@@ -28,7 +29,7 @@ body {
 .icons {
   height: 23px;
   width: auto;
-  margin-left: 23px;
+  margin-left: 26px;
   margin-bottom: 3px;
 }
 
@@ -144,14 +145,14 @@ body {
 }
 
 .filter-by{
-  display: inline-block;
+  display: inline;
   font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif !important;
   float: left;
   font-size: 22px;
 }
 
 .filter-icons{
-  height: 5vh;
+  height: 4vh;
   margin: 17px;
 }
 
@@ -176,8 +177,14 @@ body {
 }
 
 footer {
-  display: flex;
-  flex-wrap: wrap;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 8px;
+  height: 45px;
+  width:100%;
+  background-color:white;
 }
 
 .footerTitle{
@@ -248,7 +255,7 @@ footer {
 .imageBig {
   background-size: cover;
   /* max-width:100%; */
-  height:520px;
+  height:560px;
   background-repeat:no-repeat,
 }
 
