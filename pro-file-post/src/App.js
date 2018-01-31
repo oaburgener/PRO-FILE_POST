@@ -44,12 +44,16 @@ class App extends Component {
 
           <MuiThemeProvider>
             <NavContainer />
+          </MuiThemeProvider>
+
             <Route exact path="/" render={() => (
               <div className='container-fluid'>
-              <JumbotronContainer />
+                <JumbotronContainer />
                 <Filters />
-              <BodyContainer />
-            </div>
+                <MuiThemeProvider>
+                  <BodyContainer />
+                </MuiThemeProvider>
+              </div>
           )}/>
 
           <Route exact path ='/admin' render={() =>(
@@ -86,9 +90,9 @@ class App extends Component {
               <SignUp />
             </div>
           )}/>
-
-          <Footer />
-        </MuiThemeProvider>
+          <MuiThemeProvider>
+            <Footer />
+          </MuiThemeProvider>
 
       </div>
     </Router>

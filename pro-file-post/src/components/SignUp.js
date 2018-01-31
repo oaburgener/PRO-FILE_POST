@@ -17,7 +17,7 @@ console.log(data);
   render() {
     console.log(this.props);
     return (
-      <div>
+      <div style={{marginTop: '34px'}}>
 
       {this.props.toast ? <div>
         <p>'Please fill out all fields'</p>
