@@ -88,7 +88,9 @@ export default class ToolbarExamplesSimple extends React.Component {
                 <Link to='/login' style={{ textDecoration: 'none' }}>
                   <MenuItem primaryText="Log in" />
                 </Link>
+                <Link to='/SignUp' style={{textDecoration: 'none'}}>
               <MenuItem primaryText="Sign up" />
+            </Link>
             </IconMenu>
 
             <IconMenu iconButtonElement={<IconButton><svg fill="#000000" height="25" viewBox="0 0 24 24" width="25" xmlns="http://www.w3.org/2000/svg">
