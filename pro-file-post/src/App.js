@@ -8,7 +8,6 @@ import Jumbotron from './components/jumbotron'
 import Navbar from './components/Navbar'
 import About from './components/About'
 import {pinkA200} from 'material-ui/styles/colors';
-// import Body from './components/Body'
 import Footer from './components/Footer'
 import BodyContainer from './containers/BodyContainer'
 import { connect } from 'react-redux'
@@ -20,11 +19,12 @@ import Filters from './components/Filter'
 import ArticleContainer from './containers/ArticleContainer'
 import SmallCard from './components/SmallCard'
 import Login from './components/Login'
-
+import SubmitButton from './components/Login'
+import SignUp from './containers/SignUpContainer'
 import LoginContainer from './containers/LoginContainer'
-
 import Form from './components/Form'
-
+import FormContainer from './containers/FormContainer'
+import NavContainer from './containers/NavContainer'
 
 class App extends Component {
 
@@ -35,14 +35,12 @@ class App extends Component {
   render() {
     return (
       <Router>
-      <div className="App">
+        <div className="App">
 
-        <MuiThemeProvider>
-          <LoginContainer />
-          <Navbar />
-
-          <Route exact path="/" render={() => (
-            <div>
+          <MuiThemeProvider>
+            <NavContainer />
+            <Route exact path="/" render={() => (
+              <div className='container-fluid'>
               <JumbotronContainer />
                 <Filters />
               <BodyContainer />
@@ -57,7 +55,7 @@ class App extends Component {
 
           <Route exact path ="/article-submit" render={() => (
             <div>
-              <Form />
+              <FormContainer/>
             </div>
           )}/>
 
@@ -69,12 +67,16 @@ class App extends Component {
 
           <Route exact path ="/login" render={() => (
             <div>
-              <Login />
+              <LoginContainer />
+            </div>
+          )}/>
+          <Route exact path ="/SignUp" render={()=>(
+            <div>
+              <SignUp />
             </div>
           )}/>
 
           <Footer />
-
         </MuiThemeProvider>
 
       </div>

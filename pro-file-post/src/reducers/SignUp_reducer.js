@@ -1,21 +1,21 @@
 import {
   UNAUTHORIZED,
-  LOGIN,
+  SIGNUP,
 } from '../actions/actions_index'
 
 var initialState = {
   toast:false,
   token: false,
-  cookie: {},
+  data:false
 }
 export default (state = initialState, action) => {
   switch (action.type) {
-    case LOGIN:
+    case SIGNUP:
     return {
       ...state,
-      token: action.data,
-      cookie: action.cookie
+      data: action.data
     }
+
     case UNAUTHORIZED:
     return{
       ...state,
