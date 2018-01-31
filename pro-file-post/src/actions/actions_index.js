@@ -6,11 +6,8 @@ export const GET_ONE_ARTICLE = 'GET_ONE_ARTICLE'
 export const CREATE_ARTICLE='CREATE_ARTICLE'
 export const LOGIN = 'LOGIN'
 export const UNAUTHORIZED = 'UNAUTHORIZED'
-<<<<<<< HEAD
-
-=======
 export const SIGNUP = 'SIGNUP'
->>>>>>> 0218bd0c5694b56b4cd1f9f373994e66c5b09faa
+
 export const getArticles = () => {
 
   return async (dispatch) => {

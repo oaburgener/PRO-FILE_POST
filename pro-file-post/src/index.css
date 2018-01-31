@@ -6,6 +6,14 @@ body {
   height: 100%;
 }
 
+/* Login Body */
+
+.login-form {
+  padding-top: 150px;
+}
+
+/* END login Body */
+
 /* Main Body */
 .smallPic{
   max-width:100%;

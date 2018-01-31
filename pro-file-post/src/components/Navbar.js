@@ -48,13 +48,19 @@ export default class Navbar extends React.Component {
 
   handleChange = (event, index, value) => this.setState({value});
 
+  handleCookie = () => {
+    var admin = document.cookie.split(';')[1].split(',')[1].split('=')[1]
+    var verify = (admin==='true') ? true : false
+   console.log(verify);
+   return verify
+  }
+
   render() {
+    document.cookie = document.cookie || 'JWT=sdlakfjlsdaj,admin=laksjdflajsdf,id=laksdflksjf'
     console.log(typeof(document.cookie));
-    if(document.cookie){
-      var admin = document.cookie.split(',')[1].split('=')[1]
-      admin = (admin==='true') ? true : false
+      var admin = this.handleCookie()
       console.log(admin)
-    }
+
     return (
 
         <Toolbar style={toolbar}>
