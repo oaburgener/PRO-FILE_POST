@@ -6,11 +6,26 @@ const putLikes = (req,res,next) => {
   knex('likes').where({
     user_id: req.body.userId,
     article_id: req.body.articleId
-  })
-  .update({liked: req.body.liked})
-  .then(data => {
-    updateRating(req.body.articleId)
-    res.sendStatus(202)
+  }).then(relation=>{
+    if(!relation){
+      knex('likes').insert({
+        user_id: req.body.userId,
+        article_id: req.body.articleId,
+        liked: req.body.liked
+      }).then(data => {
+        updateRating(req.body.articleId)
+        res.sendStatus(202)
+      })
+    }else{
+      knex('likes').where({
+        user_id: req.body.userId,
+        article_id: req.body.articleId
+      }).update({liked: req.body.liked})
+      .then(data => {
+        updateRating(req.body.articleId)
+        res.sendStatus(202)
+      })
+    }
   })
   .catch(err => {next(err)})
 }
