@@ -2,8 +2,8 @@ import React from 'react'
 import { MenuItem, DropdownButton } from 'react-bootstrap'
 
 
-const Form = ({createArticle})=> {
-
+const Form = ({createArticle,cookie})=> {
+console.log(createArticle,cookie);
   return (
     <div>
       <div className='guidelines-container'>
@@ -21,10 +21,10 @@ const Form = ({createArticle})=> {
           <legend className="form-field-submission">Title <span className="orange">*</span></legend>
             <textarea id="title" className="form-large-input" name="title" required></textarea>
           <legend className="form-field-submission">Summary <span className="orange">*</span></legend>
-          <legend id="summary" className="form-field-submission">Please summarize your article in 1-2 sentences.</legend>
+          <legend className="form-field-submission">Please summarize your article in 1-2 sentences.</legend>
             <textarea id="summary" className="form-large-input" name="summary" required></textarea>
           <legend className="form-field-submission">Text <span className="orange">*</span></legend>
-            <textarea id="article-body" id="article-submission-text" className="form-large-input" name="text" required></textarea>
+            <textarea id="article-body" className="form-large-input" name="text" required></textarea>
           <legend className="form-field-submission">Sport <span className="orange">*</span></legend>
             <select id="dropdown">
               <option value="baseball">baseball</option>
@@ -35,7 +35,10 @@ const Form = ({createArticle})=> {
             </select>
           <legend className="form-field-submission">Image URL</legend>
             <input id="image" className="form-small-input" type="text" name="image" />
-          <div onClick={()=>{createArticle()}}>
+          <div onClick={(e)=>{
+            e.preventDefault()
+            createArticle(cookie.id)
+          }}>
             <input className="form-button" type="submit" value="Submit"/>
           </div>
         </form>
