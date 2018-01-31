@@ -11,11 +11,11 @@ import{Grid, Row, Col, Image} from 'react-bootstrap'
 
 const SmallCard = ({article, getArticleId}) => {
   return (
-      <Col xs={12} sm={6} md={4}>
+      <Col xs={12} sm={6} md={6} lg={4}>
         <Card
           style=
           {{width:'auto',
-          marginBottom: '14px'}}>
+          marginBottom: '28px'}}>
           <Link to={`/article/${article.id}`}
           >
             <CardMedia

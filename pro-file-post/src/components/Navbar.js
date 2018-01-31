@@ -27,13 +27,25 @@ const toolbar={
   marginBottom:'18px',
   width:'100%',
   paddingTop: '5px',
-  height: '65px'
+  height: '69px'
 }
 
 const toolImage={
-  maxHeight: '55px',
-  maxWidth: '101px',
+  maxHeight: '45px',
+  maxWidth: 'auto',
   paddingLeft: '24px',
+  marginTop:'-23px',
+}
+
+const logo={
+  display: 'inline-block',
+  fontFamily:"Lato Regular",
+  fontFamily:"Helvetica Neue",
+  fontSize:'35px',
+  fontWeight:'bold',
+  color: 'black',
+  marginTop:'3px',
+  marginLeft: '2px'
 }
 
 export default class Navbar extends React.Component {
@@ -61,7 +73,7 @@ export default class Navbar extends React.Component {
           <ToolbarGroup firstChild={true}>
 
             <Link to='/' style={{ textDecoration: 'none' }}>
-              <img src={require("../logos/greenpostlogo.png")} height="180" width= "332" alt="Logo" style={toolImage} />
+              <img src={require("../logos/greenpostlogo.png")}  alt="Logo" style={toolImage} /><span style={logo}>OST</span>
 
             </Link>
 
