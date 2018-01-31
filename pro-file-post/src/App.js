@@ -25,6 +25,8 @@ import LoginContainer from './containers/LoginContainer'
 import Form from './components/Form'
 import FormContainer from './containers/FormContainer'
 import NavContainer from './containers/NavContainer'
+import DeleteArticle from './components/DeleteArticle.js'
+
 
 class App extends Component {
 
@@ -42,6 +44,7 @@ class App extends Component {
             <Route exact path="/" render={() => (
               <div className='container-fluid'>
               <JumbotronContainer />
+              <DeleteArticle />
                 <Filters />
               <BodyContainer />
             </div>
