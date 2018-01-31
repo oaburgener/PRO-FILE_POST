@@ -13,10 +13,10 @@ class Filters extends Component {
 
   render () {
     return (
-      <div>
-        <div className= "filter-by">
-          filter by
-        </div>
+      <div className="row filterbar">
+        <span className= "filter-by">
+          FILTER BY
+        </span>
         <div className= "all-icons">
           <img onClick={()=> this.props.getBySport('basketball')}
             onMouseEnter= {() => this.setState({ hover: 1 }) }

@@ -20,11 +20,10 @@ import Filters from './components/Filter'
 import ArticleContainer from './containers/ArticleContainer'
 import SmallCard from './components/SmallCard'
 import Login from './components/Login'
+import SubmitButton from './components/Login'
 import SignUp from './containers/SignUpContainer'
 import LoginContainer from './containers/LoginContainer'
-
 import Form from './components/Form'
-
 
 class App extends Component {
 
@@ -35,14 +34,12 @@ class App extends Component {
   render() {
     return (
       <Router>
-      <div className="App">
+        <div className="App">
 
-        <MuiThemeProvider>
-
-          <Navbar />
-
-          <Route exact path="/" render={() => (
-            <div>
+          <MuiThemeProvider>
+            <Navbar />
+            <Route exact path="/" render={() => (
+              <div className='container-fluid'>
               <JumbotronContainer />
                 <Filters />
               <BodyContainer />
@@ -52,12 +49,6 @@ class App extends Component {
           <Route exact path ="/article/:id" render={() => (
             <div>
               <ArticleContainer />
-            </div>
-          )}/>
-
-          <Route exact path ="/article-submit" render={() => (
-            <div>
-              <Form />
             </div>
           )}/>
 
@@ -79,7 +70,6 @@ class App extends Component {
           )}/>
 
           <Footer />
-
         </MuiThemeProvider>
 
       </div>

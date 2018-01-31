@@ -11,7 +11,7 @@ export const getArticles = () => {
     const json = await response.json()
     const trending =  json.data.sort(function(a,b){
       return (b.likes + b.views) - (a.likes + a.views)
-    }).slice(0,3)
+    }).slice(0,2)
     dispatch({
       type: GET_ARTICLES,
       data:json.data,
