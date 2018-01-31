@@ -1,17 +1,13 @@
 import React from 'react'
 import LargePics from './largePics'
+import{Grid, Row, Column} from 'react-bootstrap'
 
 const Jumbotron = ({ trending_articles }) => {
 
   return (
-
-    <div className='main'>
-      <div className='grid'>
-        <div className='row'>
-          {trending_articles.map(article=> (<LargePics key={article.id} article={article}/>))}
-        </div>
+      <div className="row topRow" style={{backgroundColor:'black'}}>
+        {trending_articles.map(article=> (<LargePics key={article.id} article={article}/>))}
       </div>
-    </div>
   )
 }
 export default Jumbotron
