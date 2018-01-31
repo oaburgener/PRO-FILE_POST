@@ -6,7 +6,11 @@ export const GET_ONE_ARTICLE = 'GET_ONE_ARTICLE'
 export const CREATE_ARTICLE='CREATE_ARTICLE'
 export const LOGIN = 'LOGIN'
 export const UNAUTHORIZED = 'UNAUTHORIZED'
+<<<<<<< HEAD
 
+=======
+export const SIGNUP = 'SIGNUP'
+>>>>>>> 0218bd0c5694b56b4cd1f9f373994e66c5b09faa
 export const getArticles = () => {
 
   return async (dispatch) => {
@@ -14,7 +18,7 @@ export const getArticles = () => {
     const json = await response.json()
     const trending =  json.data.sort(function(a,b){
       return (b.likes + b.views) - (a.likes + a.views)
-    }).slice(0,3)
+    }).slice(0,2)
     dispatch({
       type: GET_ARTICLES,
       data:json.data,
@@ -100,9 +104,10 @@ return async (dispatch) =>{
       })
     }else{
       const json = await response.json()
-      let cookie = `jwt=${json.token}`
-      document.cookie = cookie
       console.log(json);
+      let cookie = `jwt=${json.token},admin=${json.admin},id=${json.id}`
+      document.cookie = cookie
+      console.log(document.cookie);
       dispatch({
        type: LOGIN,
        data: true
@@ -110,3 +115,23 @@ return async (dispatch) =>{
   }
   }
 }
+
+export const SignUpVerify = (user) =>{
+let body = JSON.stringify(user)
+console.log(body);
+return async (dispatch) =>{
+    const response = await fetch('http://localhost:3001/users/',{
+      method: 'POST',
+      headers: {
+        'Content-Type' : 'application/json',
+        'Accept': 'application/json'
+      },
+      body:body
+    })
+
+      dispatch({
+       type: SIGNUP,
+       data: true
+    })
+  }
+  }

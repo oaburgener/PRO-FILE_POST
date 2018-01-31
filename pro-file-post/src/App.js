@@ -19,10 +19,11 @@ import Filters from './components/Filter'
 import ArticleContainer from './containers/ArticleContainer'
 import SmallCard from './components/SmallCard'
 import Login from './components/Login'
+import SubmitButton from './components/Login'
+import SignUp from './containers/SignUpContainer'
 import LoginContainer from './containers/LoginContainer'
 import Form from './components/Form'
 import FormContainer from './containers/FormContainer'
-
 
 class App extends Component {
 
@@ -33,14 +34,12 @@ class App extends Component {
   render() {
     return (
       <Router>
-      <div className="App">
+        <div className="App">
 
-        <MuiThemeProvider>
-          <LoginContainer />
-          <Navbar />
-
-          <Route exact path="/" render={() => (
-            <div>
+          <MuiThemeProvider>
+            <Navbar />
+            <Route exact path="/" render={() => (
+              <div className='container-fluid'>
               <JumbotronContainer />
                 <Filters />
               <BodyContainer />
@@ -53,12 +52,15 @@ class App extends Component {
             </div>
           )}/>
 
+<<<<<<< HEAD
           <Route exact path ="/article-submit" render={() => (
             <div>
               <FormContainer/>
             </div>
           )}/>
 
+=======
+>>>>>>> 0218bd0c5694b56b4cd1f9f373994e66c5b09faa
           <Route exact path ="/about" render={() => (
             <div>
               <About />
@@ -67,12 +69,16 @@ class App extends Component {
 
           <Route exact path ="/login" render={() => (
             <div>
-              <Login />
+              <LoginContainer />
+            </div>
+          )}/>
+          <Route exact path ="/SignUp" render={()=>(
+            <div>
+              <SignUp />
             </div>
           )}/>
 
           <Footer />
-
         </MuiThemeProvider>
 
       </div>
