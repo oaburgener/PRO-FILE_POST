@@ -24,7 +24,7 @@ class Admin extends Component {
   render(){
     return (
 
-    <div>
+    <div className='admin_container'>
       <h2>Admin Dashboard</h2>
       {this.props.all_users.map(user => (<UserCard key={user.id} user={user}
         getUsers={getUsers} delUser= {this.props.delUser}/>))}
