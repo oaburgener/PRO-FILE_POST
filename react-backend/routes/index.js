@@ -14,6 +14,8 @@ router.get('/articles', articles.getArticles)
 
 router.get('/articles/filter/:sport', articles.filter)
 
+router.get('/articles/filter/:user_id', articles.filterByWriter)
+
 router.get('/articles/:id', articles.getArticleId)
 
 // for ranking router.get('/users/top10')

@@ -33,7 +33,6 @@ export const getArticles = () => {
 
 
 export const getBySport = (sport)=> {
-
   return async (dispatch) => {
     const response = await fetch(`http://localhost:3001/articles/filter/${sport}`)
     const json = await response.json()
@@ -42,9 +41,7 @@ export const getBySport = (sport)=> {
       data: json.data,
     })
   }
-
 }
-
 
 export const getByWriter = (user_id)=> {
   return async (dispatch) => {
