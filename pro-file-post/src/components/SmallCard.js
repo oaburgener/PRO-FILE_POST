@@ -10,17 +10,18 @@ import{Grid, Row, Col, Image} from 'react-bootstrap'
 
 
 const SmallCard = ({article, getArticleId}) => {
+  //console.log(article);
   return (
       <Col xs={12} sm={6} md={6} lg={4}>
         <Card
           style=
           {{width:'auto',
           marginBottom: '28px'}}>
-          <Link to={`/article/${article.id}`}
-          >
+          <Link to={`/article/${article.id}`}>
             <CardMedia
               onClick={(event)=>{getArticleId(article.id)}}
               overlay={<CardTitle title={article.title} subtitle={article.first_name + ' ' +article.last_name} />}>
+              {/* <p>{article.summary}</p> */}
               <Image className="smallPic" src={article.image_url} alt="" responsive/>
             </CardMedia>
           </Link>
