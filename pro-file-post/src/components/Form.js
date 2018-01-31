@@ -22,7 +22,7 @@ const Form = ({createArticle})=> {
             <textarea id="title" className="form-large-input" name="title" required></textarea>
           <legend className="form-field-submission">Summary <span className="orange">*</span></legend>
           <legend id="summary" className="form-field-submission">Please summarize your article in 1-2 sentences.</legend>
-            <textarea id="title" className="form-large-input" name="summary" required></textarea>
+            <textarea id="summary" className="form-large-input" name="summary" required></textarea>
           <legend className="form-field-submission">Text <span className="orange">*</span></legend>
             <textarea id="article-body" id="article-submission-text" className="form-large-input" name="text" required></textarea>
           <legend className="form-field-submission">Sport <span className="orange">*</span></legend>

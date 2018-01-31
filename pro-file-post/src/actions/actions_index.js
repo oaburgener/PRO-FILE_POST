@@ -26,7 +26,7 @@ export const getArticles = () => {
 export const getBySport = (sport)=> {
 
   return async (dispatch) => {
-    const response = await fetch(`http://localhost:3001/articles/${sport}`)
+    const response = await fetch(`http://localhost:3001/articles/filter/${sport}`)
     const json = await response.json()
     dispatch({
       type: GET_SPORT,
@@ -52,25 +52,28 @@ export const getArticleId = (id) => {
 
 export const createArticle = () => {
 
-  let author = document.getElementById('name')
-  let title = document.getElementById('title')
-  let summary = document.getElementById('summary')
-  let articleBody = document.getElementById('article-body')
-  let sport = document.getElementById('sport')
-  let image = document.getElementById('image')
+  console.log('IN CREATE ARTICLE!!!!');
 
-  let body = {title:title, summary:summary, body:articleBody, sport:sport}
+  let author = document.getElementById('name').value
+  let title = document.getElementById('title').value
+  let summary = document.getElementById('summary').value
+  let articleBody = document.getElementById('article-body').value
+  let sport = document.getElementById('dropdown').value
+  let image = document.getElementById('image').value
 
+  let body = {user_id: 10, title:title, summary:summary, body:articleBody, sport:sport}
+  console.log('body', body);
   return async (dispatch) => {
     const response = await fetch('http://localhost:3001/articles/', {
       method: 'POST',
-      body: JSON.stringify(body),
+      body: body,
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
       }
     })
     const json = await response.json()
+    console.log('json', json);
     dispatch({
       type: CREATE_ARTICLE,
       data: [...store.getState().splash.all_articles, ...json]
