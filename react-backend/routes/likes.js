@@ -7,6 +7,7 @@ const putLikes = (req,res,next) => {
     user_id: req.body.userId,
     article_id: req.body.articleId
   })
+  
   .update({liked: req.body.liked})
   .then(data => {
     updateRating(req.body.articleId)

@@ -74,6 +74,7 @@ export default class Navbar extends React.Component {
             </a>
 
             <IconMenu
+              className= "login-menu"
               iconButtonElement={
                 <IconButton touch={true}> <svg fill="#000000" height="27" viewBox="0 0 24 24" width="27" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
@@ -88,6 +89,7 @@ export default class Navbar extends React.Component {
             </IconMenu>
 
             <IconMenu
+
               iconButtonElement=
               {<IconButton><svg fill="#000000" height="25" viewBox="0 0 24 24" width="25" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0 0h24v24H0z" fill="none"/>

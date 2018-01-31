@@ -97,6 +97,11 @@ body {
   border-width: .5px;
 }
 
+.share-buttons{
+  display: flex;
+  justify-content: center;
+}
+
 .form-large-input {
   font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
   border-radius: 4px;
@@ -119,11 +124,11 @@ body {
 }
 .twitter-share-button{
   height: 25px;
-  width: 25px;
+  width: 30px;
 }
 
 .fb-share-button{
-  margin: 8px;
+  margin-left: 5px;
 }
 
 .thumbsUp{
