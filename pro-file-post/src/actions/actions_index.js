@@ -53,13 +53,12 @@ export const getArticleId = (id) => {
 }
 
 
-export const createArticle = () => {
+export const createArticle = (id) => {
 
 
   let title = document.getElementById('title').value
   let summary = document.getElementById('summary').value
   let articleBody = document.getElementById('article-body').value
-  console.log(articleBody);
   let sport = document.getElementById('dropdown').value
   // let image = document.getElementById('image').value
 
