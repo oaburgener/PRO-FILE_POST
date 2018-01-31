@@ -10,7 +10,7 @@ import{Grid, Row, Col, Image} from 'react-bootstrap'
 
 
 const SmallCard = ({article, getArticleId}) => {
-  //console.log(article);
+
   return (
       <Col xs={12} sm={6} md={6} lg={4}>
         <Card

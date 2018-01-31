@@ -61,14 +61,14 @@ const postArticles = (req,res,next) => {
 }
 
 const deleteArticle = (req,res,next) => {
-  var decoded = jwt.verify(req.cookies.jwt, 'A4e2n84E0OpF3wW21', function(err, decoded) {
-    if(err){
-      next(err)
-    }else{
-      return decoded
-    }
-  })
-  if(!decoded.admin)res.sendStatus(403)
+  // var decoded = jwt.verify(req.cookies.jwt, 'A4e2n84E0OpF3wW21', function(err, decoded) {
+  //   if(err){
+  //     next(err)
+  //   }else{
+  //     return decoded
+  //   }
+  // })
+  // if(!decoded.admin)res.sendStatus(403)
   knex('articles').where({id: req.params.id})
   .then(data=>{res.sendStatus(200)})
   .catch(err=>{next(err)})

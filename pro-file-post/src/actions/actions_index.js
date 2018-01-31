@@ -3,11 +3,15 @@ import store from '../store'
 export const GET_ARTICLES = 'GET_ARTICLES'
 export const GET_SPORT = 'GET_SPORT'
 export const GET_ONE_ARTICLE = 'GET_ONE_ARTICLE'
+export const DELETE_USER = 'DELETE_USER'
+export const GET_USERS = 'GET_USERS'
+
 export const CREATE_ARTICLE='CREATE_ARTICLE'
 export const LOGIN = 'LOGIN'
 export const UNAUTHORIZED = 'UNAUTHORIZED'
 export const SIGNUP = 'SIGNUP'
 export const GET_COOKIE = 'GET_COOKIE'
+
 
 export const getArticles = () => {
 
@@ -59,11 +63,43 @@ export const getArticleId = (id) => {
   return async (dispatch) => {
     const response = await fetch(`http://localhost:3001/articles/${id}`)
     const json = await response.json()
-    const body = json.data.body.split('\n')
+    console.log(json.data);
+
+    // const body = json.data.body.split('\n')
     dispatch({
       type: GET_ONE_ARTICLE,
       data: json.data,
-      body: body
+      // body: body
+    })
+  }
+}
+
+export const getUsers = () => {
+  return async (dispatch) => {
+    const response = await fetch ('http://localhost:3001/users/')
+    const json = await response.json()
+    console.log(json);
+    dispatch({
+      type: GET_USERS,
+      data: json.data,
+    })
+  }
+}
+
+export const delUser = (id) => {
+  return async (dispatch) => {
+    const response = await fetch(`http://localhost:3001/users/${id}`,{
+      method: 'DELETE',
+      body: {},
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }
+    })
+    let remaining = store.getState().admin.all_users.filter(e => e.id !== id)
+    dispatch({
+      type: DELETE_USER,
+      data: remaining
     })
   }
 }

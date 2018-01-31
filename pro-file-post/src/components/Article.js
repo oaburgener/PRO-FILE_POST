@@ -18,10 +18,8 @@ class Article extends Component {
 
 
   render(){
-    // console.log(this.props.body)
     return (
-    <div className= 'article-container' style={{marginTop:'56px'}}>
-
+    <div className= 'article-container' style={{marginTop:'38px'}}>
       <div >
         <Image className='header_image' src={this.props.article.image_url}/>
       </div>
