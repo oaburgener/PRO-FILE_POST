@@ -7,19 +7,19 @@ const secret = process.env.SECRET || 'A4e2n84E0OpF3wW21'
 const jwt = require('jsonwebtoken')
 const cookieParser = require('cookie-parser')
 
-const store = (req,res,sendit)=>{
+const store = (req,res,next)=>{
   var salt = bcrypt.genSaltSync(6)
   var hash = bcrypt.hashSync(req.body.password, salt);
   knex('users').insert({
-    firstName:req.body.firstName,
-    lastName:req.body.lastName,
+    first_name:req.body.firstName,
+    last_name:req.body.lastName,
     email:req.body.email,
     password:hash
   },'*')
   .then(user=>{
     res.status(204).send({id:user[0].id})
   })
-  .catch(err=>{next(err)})
+  .catch(err=>{console.log(err);next(err)})
 }
 const compare = (req,res,sendit)=>{
   knex('users').where({

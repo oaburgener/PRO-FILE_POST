@@ -3,6 +3,7 @@ export const GET_SPORT = 'GET_SPORT'
 export const GET_ONE_ARTICLE = 'GET_ONE_ARTICLE'
 export const LOGIN = 'LOGIN'
 export const UNAUTHORIZED = 'UNAUTHORIZED'
+export const SIGNUP = 'SIGNUP'
 export const getArticles = () => {
 
   return async (dispatch) => {
@@ -74,3 +75,23 @@ return async (dispatch) =>{
   }
   }
 }
+
+export const SignUpVerify = (user) =>{
+let body = JSON.stringify(user)
+console.log(body);
+return async (dispatch) =>{
+    const response = await fetch('http://localhost:3001/users/',{
+      method: 'POST',
+      headers: {
+        'Content-Type' : 'application/json',
+        'Accept': 'application/json'
+      },
+      body:body
+    })
+
+      dispatch({
+       type: SIGNUP,
+       data: true
+    })
+  }
+  }
