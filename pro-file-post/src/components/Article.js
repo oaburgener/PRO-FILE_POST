@@ -31,7 +31,7 @@ class Article extends Component {
       <div className= "share-buttons">
         <i onClick= {() => this.getLikes()} class="material-icons">thumb_up</i>
         <div>Likes: {this.props.article.likes}</div>
-        <div className="fb-share-button" data-href={`${this.shareLink}`} data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2Fshare-button%23configurator&amp;src=sdkpreparse">Share</a></div>
+        <div className="fb-share-button" data-href={`${this.shareLink}`} data-layout="button" data-size="small" data-mobile-iframe="false"><a className="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2Fshare-button%23configurator&amp;src=sdkpreparse">Share</a></div>
         <a target= "_blank" href={`https://twitter.com/intent/tweet?text=${this.shareLink}`} data-size="large"><img className="twitter-share-button" src={require('../logos/tweetLogo.png')} /></a>
       </div>
     </div>
