@@ -13,7 +13,7 @@ class Filters extends Component {
 
   render () {
     return (
-      <div className="row">
+      <div className="row filterbar">
         <div className= "filter-by">
           filter by
         </div>

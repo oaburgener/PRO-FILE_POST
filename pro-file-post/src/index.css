@@ -24,13 +24,15 @@ body {
 {
   margin-left: 6px
   }
-
+/* NAVBAR */
 .icons {
-  height: 20px;
+  height: 23px;
   width: auto;
-  margin-left: 16px;
+  margin-left: 23px;
   margin-bottom: 3px;
 }
+
+/* END NAVBAR */
 
 /***** Form Styling *****/
 
@@ -136,6 +138,11 @@ body {
 }
 
 /***** Filter Styling *****/
+.filterbar{
+  margin-left: 7%;
+  margin-right: 7%;
+}
+
 .filter-by{
   display: inline-block;
   font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif !important;
