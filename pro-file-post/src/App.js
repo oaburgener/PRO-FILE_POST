@@ -40,7 +40,7 @@ class App extends Component {
           <MuiThemeProvider>
             <NavContainer />
           </MuiThemeProvider>
-          
+
             <Route exact path="/" render={() => (
               <div className='container-fluid'>
                 <JumbotronContainer />

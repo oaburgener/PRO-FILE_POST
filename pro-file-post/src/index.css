@@ -143,6 +143,11 @@ body {
 .share-buttons{
   display: flex;
   justify-content: center;
+  padding-bottom: 80px;
+
+}
+.article-container{
+  height: 100vh;
 }
 
 .form-large-input {

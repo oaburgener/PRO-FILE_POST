@@ -20,7 +20,7 @@ class Article extends Component {
   render(){
     console.log(this.props.body)
     return (
-    <div>
+    <div className= 'article-container'>
 
       <div >
         <Image className='header_image' src={this.props.article.image_url}/>
