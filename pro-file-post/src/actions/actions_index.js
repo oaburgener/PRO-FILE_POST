@@ -98,6 +98,7 @@ return async (dispatch) =>{
     }else{
       const json = await response.json()
       let cookie = {jwt:json.token,admin:json.admin,id:json.id}
+      document.cookie = cookie
       dispatch({
        type: LOGIN,
        data: true,
