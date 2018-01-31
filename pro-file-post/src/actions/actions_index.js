@@ -41,6 +41,19 @@ export const getBySport = (sport)=> {
 
 }
 
+
+export const getByWriter = (user_id)=> {
+  return async (dispatch) => {
+    const response = await fetch(`http://localhost:3001/articles/filter/${user_id}`)
+    const json = await response.json()
+    dispatch({
+      type: GET_SPORT,
+      data: json.data,
+    })
+  }
+
+}
+
 export const getArticleId = (id) => {
 
   return async (dispatch) => {
