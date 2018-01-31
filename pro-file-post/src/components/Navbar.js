@@ -55,7 +55,7 @@ export default class Navbar extends React.Component {
           <ToolbarGroup firstChild={true}>
 
             <Link to='/' style={{ textDecoration: 'none' }}>
-              <img src={require("../logos/greenLogo.png")} height="180" width= "332" alt="Logo" style={toolImage} />
+              <img src={require("../logos/greenpostlogo.png")} height="180" width= "332" alt="Logo" style={toolImage} />
 
             </Link>
 
