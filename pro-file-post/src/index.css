@@ -8,6 +8,11 @@ body {
 
 /* Signup Body */
 
+.login-alert {
+  display:block;
+  position: absolute;
+}
+
 #signup-form {
   display: flex;
   justify-content: center;

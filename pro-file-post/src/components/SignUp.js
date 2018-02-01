@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router'
+import { Alert } from 'react-bootstrap'
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -16,11 +17,6 @@ class SignUp extends React.Component {
   render() {
     return (
       <div id="signup-form">
-
-      {this.props.toast ? <div>
-        <p>'Please fill out all fields'</p>
-          <button type = 'button' >ok</button>
-      </div>: null}
 
       {this.props.data ? <Redirect to= '/login' />:
         <form onSubmit={this.handleSubmit}>
@@ -43,6 +39,13 @@ class SignUp extends React.Component {
       <button id="signup-button" label="Submit">Submit</button>
 
     </form>}
+
+      {this.props.toast ? <div>
+        <Alert bsStyle="success">
+          <strong>Invalid email or password.</strong>
+        </Alert>
+      </div>: null}
+
     </div>
   )
   }

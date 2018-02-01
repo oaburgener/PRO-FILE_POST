@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router'
+import { Alert } from 'react-bootstrap'
 
 class Login extends React.Component {
   constructor(props) {
@@ -31,9 +32,13 @@ class Login extends React.Component {
         <button id="login-button" label="Submit">Submit</button>
 
       </form>}
-      {this.props.toast ? <div>
-        <p>'username or password does not match'</p>
-      </div>: null}
+
+      {this.props.toast ? <div className="login-alert">
+        <Alert bsStyle="success">
+          <strong>Invalid email or password.</strong>
+        </Alert>
+      </div> : null}
+
     </div>
   )
   }
