@@ -5,7 +5,7 @@ export const GET_SPORT = 'GET_SPORT'
 export const GET_ONE_ARTICLE = 'GET_ONE_ARTICLE'
 export const DELETE_USER = 'DELETE_USER'
 export const GET_USERS = 'GET_USERS'
-
+export const DELETE_ARTICLE = 'DELETE_ARTICLE'
 export const CREATE_ARTICLE='CREATE_ARTICLE'
 export const LOGIN = 'LOGIN'
 export const UNAUTHORIZED = 'UNAUTHORIZED'
@@ -21,7 +21,7 @@ export const getArticles = () => {
     const trending =  json.data.sort(function(a,b){
       return (b.likes + b.views) - (a.likes + a.views)
     }).slice(0,2)
-    console.log(json.data);
+    // console.log(json.data);
     dispatch({
       type: GET_ARTICLES,
       data:json.data,
@@ -29,8 +29,6 @@ export const getArticles = () => {
     })
  }
 }
-
-
 
 export const getBySport = (sport)=> {
   return async (dispatch) => {
@@ -71,11 +69,29 @@ export const getArticleId = (id) => {
   }
 }
 
+// export const delArticle = (id) => {
+//   return async (dispatch) => {
+//     const response = await fetch(`http://localhost:3001/articles/${id}`,{
+//       method: 'DELETE',
+//       body: {},
+//       headers: {
+//         'Content-Type': 'application/json',
+//         'Accept': 'application/json',
+//       }
+//     })
+//     let remaining = store.getState().admin.all_articles.filter(e => e.id !== id)
+//     dispatch({
+//       type: DELETE_ARTICLE,
+//       data: remaining
+//     })
+//   }
+// }
+
 export const getUsers = () => {
   return async (dispatch) => {
     const response = await fetch ('http://localhost:3001/users/')
     const json = await response.json()
-    console.log(json);
+    // console.log(json);
     dispatch({
       type: GET_USERS,
       data: json.data,
@@ -100,7 +116,6 @@ export const delUser = (id) => {
     })
   }
 }
-
 
 export const createArticle = (id) => {
 

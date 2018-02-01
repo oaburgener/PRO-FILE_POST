@@ -4,15 +4,18 @@ import { bindActionCreators } from 'redux'
 import { getUsers } from '../actions/actions_index.js'
 import { delUser } from '../actions/actions_index.js'
 import Admin from '../components/Admin.js'
+import { getArticles } from '../actions/actions_index.js'
 
 const mapStateToProps = state => ({
   all_users:state.admin.all_users,
-  user: state.admin.user
+  user: state.admin.user,
+  all_articles: state.splash.all_articles
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   getUsers: getUsers,
   delUser: delUser,
+  getArticles: getArticles
 }, dispatch)
 
 const AdminContainer = connect (

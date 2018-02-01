@@ -20,9 +20,7 @@ import ArticleContainer from './containers/ArticleContainer'
 import SmallCard from './components/SmallCard'
 import Login from './components/Login'
 import SubmitButton from './components/Login'
-
 import AdminContainer from './containers/AdminContainer'
-
 import SignUp from './containers/SignUpContainer'
 import LoginContainer from './containers/LoginContainer'
 import Form from './components/Form'
@@ -55,7 +53,6 @@ class App extends Component {
               <MuiThemeProvider>
                 <BodyContainer />
               </MuiThemeProvider>
-              <DeleteArticle />
               <Filters />
             </div>
           )}/>
