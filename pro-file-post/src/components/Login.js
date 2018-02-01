@@ -35,7 +35,7 @@ class Login extends React.Component {
 
 
 
-      <button label="Submit">Submit</button>
+      <button id="login-button" label="Submit">Submit</button>
 
 
     </form>}
