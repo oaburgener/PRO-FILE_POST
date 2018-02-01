@@ -18,7 +18,11 @@ const getArticles = (req,res,next) =>{
 }
 
 const filter = (req,res,next) => {
-  knex('articles')
+  knex('users')
+  .join('articles', 'users.id', '=', 'articles.user_id' )
+  .select('articles.id', 'users.first_name', 'users.last_name', 'articles.title', 'articles.summary',
+  'articles.body', 'articles.image_url', 'articles.sport', 'articles.views',
+  'articles.likes', 'articles.created_at', 'articles.updated_at')
   .where('sport', req.params.sport)
   .then((data) => {res.send({data})}
 )}
@@ -39,6 +43,7 @@ const getArticleId = (req,res,next) => {
   })
 }
 
+
 const postArticles = (req,res,next) => {
   var cookie = req.headers['cooker']
   var jwot = cookie.split(';')[1].split('=')[1]
@@ -51,7 +56,6 @@ const postArticles = (req,res,next) => {
   })
   if(!decoded.id) res.sendStatus(403)
   var image_url = req.body.image_url || 'https://images.unsplash.com/photo-1485388276992-0ce5ce2d6981?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b23bb57338708adc590a9243d8f80797&auto=format&fit=crop&w=799&q=80'
-
   knex('articles').insert({
     user_id:req.body.user_id,
     title:req.body.title,
@@ -73,15 +77,14 @@ const deleteArticle = (req,res,next) => {
     }
   })
   if(!decoded.admin)res.sendStatus(403)
-  knex('articles').where({id: req.params.id})
-  .then(data=>{res.sendStatus(200)})
+  knex('articles').returning('*').where({id: req.params.id}).del()
+  .then(data=>{res.status(200).send({data})})
   .catch(err=>{next(err)})
 }
 
 const updateViews = (id) => {
   knex('articles').where({id: id})
   .then((article)=> {
-    console.log('then');
     var newViews = Number(article[0].views) + 1
     knex('articles').where({id: id}).update({views: newViews})
     .then(count=>{

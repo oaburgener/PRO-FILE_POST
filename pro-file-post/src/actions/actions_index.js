@@ -5,6 +5,7 @@ export const GET_SPORT = 'GET_SPORT'
 export const GET_ONE_ARTICLE = 'GET_ONE_ARTICLE'
 export const DELETE_USER = 'DELETE_USER'
 export const GET_USERS = 'GET_USERS'
+export const DELETE_ARTICLE = 'DELETE_ARTICLE'
 export const CREATE_ARTICLE='CREATE_ARTICLE'
 export const LOGIN = 'LOGIN'
 export const UNAUTHORIZED = 'UNAUTHORIZED'
@@ -20,6 +21,7 @@ export const getArticles = () => {
     const trending =  json.data.sort(function(a,b){
       return (b.likes + b.views) - (a.likes + a.views)
     }).slice(0,2)
+    // console.log(json.data);
     dispatch({
       type: GET_ARTICLES,
       data:json.data,
@@ -28,17 +30,19 @@ export const getArticles = () => {
  }
 }
 
-export const getBySport = (sport)=> {
 
+export const getBySport = (sport)=> {
   return async (dispatch) => {
     const response = await fetch(`http://localhost:3001/articles/filter/${sport}`)
     const json = await response.json()
+    let filtered = store.getState().splash.all_articles.filter(e => e.sport === sport)
+
     dispatch({
       type: GET_SPORT,
       data: json.data,
+      filtered: filtered
     })
   }
-
 }
 
 export const getArticleId = (id) => {
@@ -57,6 +61,26 @@ export const getArticleId = (id) => {
       type: GET_ONE_ARTICLE,
       data: json.data,
       body: body
+    })
+  }
+}
+
+export const delArticle = (id) => {
+  console.log(id);
+  return async (dispatch) => {
+    console.log(dispatch);
+    const response = await fetch(`http://localhost:3001/articles/${id}`,{
+      method: 'DELETE',
+      body: {},
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }
+    })
+    let remaining = store.getState().admin.all_articles.filter(e => e.id !== id)
+    dispatch({
+      type: DELETE_ARTICLE,
+      data: remaining
     })
   }
 }
@@ -112,7 +136,6 @@ export const delUser = (id) => {
     }
   }
 }
-
 
 export const createArticle = (id) => {
 
@@ -182,7 +205,6 @@ export const logInVerify = (user) =>{
 
 export const SignUpVerify = (user) =>{
 let body = JSON.stringify(user)
-console.log(body);
 return async (dispatch) =>{
     const response = await fetch('http://localhost:3001/users/',{
       method: 'POST',
