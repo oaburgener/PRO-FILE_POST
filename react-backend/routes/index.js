@@ -16,8 +16,6 @@ router.get('/articles/filter/:sport', articles.filter)
 
 router.get('/articles/:id', articles.getArticleId)
 
-// for ranking router.get('/users/top10')
-
 router.post('/users', bcrypt.store)
 
 router.post('/articles',articles.postArticles)

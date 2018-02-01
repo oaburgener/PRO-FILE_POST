@@ -43,6 +43,7 @@ const getArticleId = (req,res,next) => {
   })
 }
 
+
 const postArticles = (req,res,next) => {
 
   var image_url = req.body.image_url || 'https://images.unsplash.com/photo-1485388276992-0ce5ce2d6981?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b23bb57338708adc590a9243d8f80797&auto=format&fit=crop&w=799&q=80'
@@ -58,6 +59,8 @@ const postArticles = (req,res,next) => {
 }
 
 const deleteArticle = (req,res,next) => {
+  // console.log('hit');
+  // console.log(req.params);
   // var decoded = jwt.verify(req.cookies.jwt, 'A4e2n84E0OpF3wW21', function(err, decoded) {
   //   if(err){
   //     next(err)
@@ -66,15 +69,15 @@ const deleteArticle = (req,res,next) => {
   //   }
   // })
   // if(!decoded.admin)res.sendStatus(403)
-  knex('articles').where({id: req.params.id})
-  .then(data=>{res.sendStatus(200)})
+  knex('articles').returning('*').where({id: req.params.id}).del()
+  .then(data=>{res.status(200).send({data})})
   .catch(err=>{next(err)})
 }
 
 const updateViews = (id) => {
   knex('articles').where({id: id})
   .then((article)=> {
-    console.log('then');
+    //console.log('then');
     var newViews = Number(article[0].views) + 1
     knex('articles').where({id: id}).update({views: newViews})
     .then(count=>{
