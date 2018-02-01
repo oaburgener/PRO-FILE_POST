@@ -95,11 +95,7 @@ export const getUsers = () => {
 
 export const delUser = (id) => {
   return async (dispatch) => {
-<<<<<<< HEAD
     let cookie = document.cookie
-=======
-      console.log(dispatch)
->>>>>>> bbbe5af9aa69b6eba02bf3a41c587d88f4e431dc
     const response = await fetch(`http://localhost:3001/users/${id}`,{
       method: 'DELETE',
       body: {},
