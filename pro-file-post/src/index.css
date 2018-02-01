@@ -133,7 +133,7 @@ body {
 /* Main Body */
 .smallPic{
   max-width:100%;
-  height: 311px;
+  height: 275px;
   object-fit:cover;
 }
 .smallCard{
@@ -403,7 +403,7 @@ footer {
   color: white;
   text-transform: uppercase;
   text-align: left;
-  font-size: 46px;
+  font-size: 40px;
 }
 
 .largeSub{
@@ -427,7 +427,7 @@ footer {
 .imageBig {
   background-size: cover;
   /* max-width:100%; */
-  height:560px;
+  height:500px;
   background-repeat:no-repeat,
 }
 
@@ -521,19 +521,51 @@ footer {
   padding-bottom: 4%
 }
  /*****END FOOTER STYLING *****/
+ /* Media Querries*/
+ @media screen and (max-width: 1024px) {
+ .imageBig{
+   height: 250px;
+ }
+ .smallPic{
+   height:190px;
+ }
+ .box{
+   background-color: rgba(0,0,0,.6);
+   padding-top:2%;
+   height:46%;
+   top:54%
+ }
+ .largeTitle{
+   font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+   color: white;
+   text-transform: uppercase;
+   text-align: left;
+   font-size: 36px;
+ }
+ .imageBig{
+   height: 300px;
+ }
+ }
 
 
-@media screen and (max-width: 768px)
-{
-  .icons {
-    display: none;
-}
-.imageBig{
-  height: 290px;
-}
-.smallPic{
-  height:240px;
-}
-}
+ @media screen and (max-width: 768px)
+ {
+   .icons {
+     display: none;
+ }
+ .imageBig{
+   height: 290px;
+ }
+ .smallPic{
+   height:240px;
+ }
+ .largeTitle{
+   font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+   color: white;
+   text-transform: uppercase;
+   text-align: left;
+   font-size: 30px;
+ }
+ }
 
 /* END Media Querries*/
