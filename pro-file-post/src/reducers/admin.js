@@ -18,7 +18,6 @@ export default (state = initialState, action) => {
       all_users: action.data,
     }
     case DELETE_USER:
-    console.log('hit')
     return {
       ...state,
       all_users: action.data,
@@ -29,7 +28,6 @@ export default (state = initialState, action) => {
       all_articles: action.data,
     }
     case DELETE_ARTICLE:
-    console.log('hit');
     return {
       ...state,
       all_articles: action.data,
