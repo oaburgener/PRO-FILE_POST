@@ -11,9 +11,7 @@ import SignUp from './SignUp_reducer'
 export default combineReducers({
   splash,
   article,
-
   admin,
-
   login,
   SignUp
 

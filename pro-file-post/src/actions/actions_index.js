@@ -48,10 +48,14 @@ export const getBySport = (sport)=> {
 export const getArticleId = (id) => {
 
   return async (dispatch) => {
-    const response = await fetch(`http://localhost:3001/articles/${id}`)
+    const response = await fetch(`http://localhost:3001/articles/${id}`,{
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+        credentails : 'include'
+    })
     const json = await response.json()
-    console.log(json.data);
-
     const body = json.data.body.split('\n')
     dispatch({
       type: GET_ONE_ARTICLE,
@@ -62,34 +66,55 @@ export const getArticleId = (id) => {
 }
 
 export const delArticle = (id) => {
-  console.log(id);
+
   return async (dispatch) => {
-    console.log(dispatch);
+    let cookie = document.cookie
     const response = await fetch(`http://localhost:3001/articles/${id}`,{
       method: 'DELETE',
       body: {},
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-      }
+        'cooker': cookie
+      },
+      credentails : 'include'
     })
-    let remaining = store.getState().admin.all_articles.filter(e => e.id !== id)
-    dispatch({
-      type: DELETE_ARTICLE,
-      data: remaining
-    })
+    if(response.status==403){
+      dispatch({
+        type: 'jwtsaysno',
+      })
+    }else{
+      let remaining = store.getState().admin.all_articles.filter(e => e.id !== id)
+      dispatch({
+        type: DELETE_ARTICLE,
+        data: remaining
+      })
+    }
   }
 }
 
 export const getUsers = () => {
   return async (dispatch) => {
-    const response = await fetch ('http://localhost:3001/users/')
-    const json = await response.json()
-    // console.log(json);
-    dispatch({
-      type: GET_USERS,
-      data: json.data,
+    let cookie = document.cookie
+    const response = await fetch ('http://localhost:3001/users/',{
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'cooker' : cookie,
+      },
+      credentails : 'include'
     })
+    const json = await response.json()
+    if(response.status===403){
+      dispatch({
+        type: 'jwtsaysno',
+      })
+    }else{
+      dispatch({
+        type: GET_USERS,
+        data: json.data,
+      })
+    }
   }
 }
 
@@ -106,11 +131,17 @@ export const delUser = (id) => {
       },
       credentails : 'include'
     })
-    let remaining = store.getState().admin.all_users.filter(e => e.id !== id)
-    dispatch({
-      type: DELETE_USER,
-      data: remaining
-    })
+    if(response.status===403){
+      dispatch({
+        type: 'jwtsaysno',
+      })
+    }else{
+      let remaining = store.getState().admin.all_users.filter(e => e.id !== id)
+      dispatch({
+        type: DELETE_USER,
+        data: remaining
+      })
+    }
   }
 }
 
@@ -124,6 +155,7 @@ export const createArticle = (id) => {
 
   let body = {user_id: id ,title:title, summary:summary, body:articleBody, sport:sport, image_url:image}
   let bitchinbod = JSON.stringify(body)
+  let cookie = document.cookie
   return async (dispatch) => {
     const response = await fetch('http://localhost:3001/articles/', {
       method: 'POST',
@@ -131,12 +163,20 @@ export const createArticle = (id) => {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-      }
+        'cooker' : cookie,
+      },
+        credentails : 'include'
     })
-    dispatch({
-      type: CREATE_ARTICLE,
-      data: [...store.getState().splash.all_articles]
-    })
+    if(response.status===403){
+      dispatch({
+        type: 'jwtsaysno',
+      })
+    }else{
+      dispatch({
+        type: CREATE_ARTICLE,
+        data: [...store.getState().splash.all_articles]
+      })
+    }
   }
 }
 
@@ -152,16 +192,16 @@ export const logInVerify = (user) =>{
         body:body
       })
 
-      if(response.status===401){
-        console.log(401);
+      if(response.status===403){
         dispatch({
           type: UNAUTHORIZED,
           data: true
         })
       }else{
         const json = await response.json()
+        let sign = `jwt=${json.token}`
+        document.cookie=sign
         let cookie = {jwt:json.token,admin:json.admin,id:json.id}
-        document.cookie = cookie
         dispatch({
          type: LOGIN,
          data: true,
@@ -173,7 +213,6 @@ export const logInVerify = (user) =>{
 
 export const SignUpVerify = (user) =>{
 let body = JSON.stringify(user)
-console.log(body);
 return async (dispatch) =>{
     const response = await fetch('http://localhost:3001/users/',{
       method: 'POST',
