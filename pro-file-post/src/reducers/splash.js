@@ -2,7 +2,6 @@ import {
   GET_ARTICLES,
   GET_SPORT,
   CREATE_ARTICLE,
-  DELETE_ARTICLE
 } from '../actions/actions_index'
 
 const initialState = {
@@ -31,11 +30,7 @@ export default (state = initialState, action) => {
       ...state,
       all_articles: action.data,
     }
-    case DELETE_ARTICLE:
-    return {
-      ...state,
-      all_articles: action.data,
-    }
+
     default: return state
   }
 }

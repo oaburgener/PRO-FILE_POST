@@ -55,6 +55,8 @@ const postArticles = (req,res,next) => {
 }
 
 const deleteArticle = (req,res,next) => {
+  console.log('hit');
+  console.log(req.params);
   // var decoded = jwt.verify(req.cookies.jwt, 'A4e2n84E0OpF3wW21', function(err, decoded) {
   //   if(err){
   //     next(err)
