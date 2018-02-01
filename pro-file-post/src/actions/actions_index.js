@@ -36,6 +36,7 @@ export const getBySport = (sport)=> {
     const response = await fetch(`http://localhost:3001/articles/filter/${sport}`)
     const json = await response.json()
     let filtered = store.getState().splash.all_articles.filter(e => e.sport === sport)
+
     dispatch({
       type: GET_SPORT,
       data: json.data,
