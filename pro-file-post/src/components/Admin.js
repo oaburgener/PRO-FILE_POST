@@ -25,7 +25,6 @@ class Admin extends Component {
 
 
   render(){
-    console.log(this.props)
     return (
     <div className='admin_container'>
       <h2>Admin Dashboard</h2>

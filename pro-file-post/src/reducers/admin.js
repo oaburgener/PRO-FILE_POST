@@ -1,7 +1,8 @@
 import {
   GET_USERS,
   DELETE_USER,
-  DELETE_ARTICLE
+  DELETE_ARTICLE,
+  GET_ARTICLES,
 } from '../actions/actions_index'
 
 const initialState = {
@@ -21,6 +22,11 @@ export default (state = initialState, action) => {
     return {
       ...state,
       all_users: action.data,
+    }
+    case GET_ARTICLES:
+    return {
+      ...state,
+      all_articles: action.data,
     }
     case DELETE_ARTICLE:
     console.log('hit');
