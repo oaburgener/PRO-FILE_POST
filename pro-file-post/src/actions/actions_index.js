@@ -103,7 +103,7 @@ export const getUsers = () => {
 
 export const delUser = (id) => {
   return async (dispatch) => {
-      console.log(store.getState().admin.all_users)
+      console.log(dispatch)
     const response = await fetch(`http://localhost:3001/users/${id}`,{
       method: 'DELETE',
       body: {},

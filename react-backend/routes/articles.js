@@ -65,8 +65,8 @@ const deleteArticle = (req,res,next) => {
   //   }
   // })
   // if(!decoded.admin)res.sendStatus(403)
-  knex('articles').where({id: req.params.id})
-  .then(data=>{res.sendStatus(200)})
+  knex('articles').returning('*').where({id: req.params.id}).del()
+  .then(data=>{res.status(200).send({data})})
   .catch(err=>{next(err)})
 }
 

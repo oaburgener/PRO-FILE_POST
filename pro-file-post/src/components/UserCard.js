@@ -9,7 +9,7 @@ import {delArticle} from  '../actions/actions_index.js'
 
 
 
-const UserCard = ({ user, getUsers, article, delUser, all_articles}) => {
+const UserCard = ({ user, getUsers, article, delUser, all_articles, delArticle}) => {
 
   return (
     <Grid>
