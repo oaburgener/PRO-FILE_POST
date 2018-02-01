@@ -94,7 +94,6 @@ export const delUser = (id) => {
   }
 }
 
-
 export const createArticle = (id) => {
 
   let title = document.getElementById('title').value
