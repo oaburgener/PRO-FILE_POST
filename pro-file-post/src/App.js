@@ -13,6 +13,7 @@ import BodyContainer from './containers/BodyContainer'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { getArticles } from './actions/actions_index.js'
+import { getArticleId } from './actions/actions_index.js'
 import JumbotronContainer from './containers/JumbotronContainer'
 import FilterContainer from './containers/FilterContainer'
 import Filters from './components/Filter'
@@ -20,24 +21,30 @@ import ArticleContainer from './containers/ArticleContainer'
 import SmallCard from './components/SmallCard'
 import Login from './components/Login'
 import SubmitButton from './components/Login'
-
-import AdminContainer from './containers/AdminContainer'
-
 import SignUp from './containers/SignUpContainer'
 import LoginContainer from './containers/LoginContainer'
 import Form from './components/Form'
 import FormContainer from './containers/FormContainer'
 import NavContainer from './containers/NavContainer'
 
-
 class App extends Component {
-
-  componentDidMount() {
-    this.props.getArticles()
+  constructor(props){
+    super(props)
+    this.componentDidMount = this.componentDidMount.bind(this)
   }
 
+  componentDidMount() {
+    console.log(this.props)
+    this.props.getArticles()
+    // this.props.getArticleId( window.location.href.split('/')[window.location.href.split('/').length-1])
+
+  }
+
+  componentWillMount() {
+  }
 
   render() {
+    let id = window.location.href.split('/')[window.location.href.split('/').length-1]
     return (
       <Router>
         <div className="App">
@@ -49,20 +56,14 @@ class App extends Component {
             <Route exact path="/" render={() => (
               <div className='container-fluid'>
                 <JumbotronContainer />
-                <FilterContainer />
+                <Filters />
                 <MuiThemeProvider>
                   <BodyContainer />
                 </MuiThemeProvider>
               </div>
           )}/>
 
-          <Route exact path ='/admin' render={() =>(
-            <div>
-              <AdminContainer />
-            </div>
-          )}/>
-
-          <Route exact path ="/article/:id" render={() => (
+          <Route exact path ={`/article/:id`} render={() => (
             <div>
               <ArticleContainer />
             </div>
