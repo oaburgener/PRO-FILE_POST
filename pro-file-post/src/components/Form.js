@@ -3,7 +3,6 @@ import { MenuItem, DropdownButton } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 const Form = ({createArticle, getArticles, cookie})=> {
-console.log(createArticle,cookie);
   return (
     <div>
       <div className='guidelines-container'>

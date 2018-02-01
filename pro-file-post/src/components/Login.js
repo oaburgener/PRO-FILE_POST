@@ -6,7 +6,6 @@ class Login extends React.Component {
   constructor(props) {
     super(props)
     this.handleSubmit = this.handleSubmit.bind(this)
-    //this.showAlert = this.showAlert.bind(this)
   }
   handleSubmit(event) {
     event.preventDefault()
@@ -28,7 +27,7 @@ class Login extends React.Component {
 
           <label className="login-small-text" htmlFor="username">Password</label>
           <input id="username" ref = "password" name="username" type="password"/>
-          
+
         <button id="login-button" label="Submit">Submit</button>
 
       </form>}

@@ -24,7 +24,6 @@ const SmallCard = ({article, getArticleId}) => {
                 title={article.title}
                 titleStyle={{fontWeight:'500', fontFamily:'Lato', fontFamily:'Helvetica Neue'}}
                 subtitle={article.first_name + ' ' +article.last_name} />}>
-              {/* <p>{article.summary}</p> */}
               <Image className="smallPic" src={article.image_url} alt="" responsive/>
             </CardMedia>
           </Link>

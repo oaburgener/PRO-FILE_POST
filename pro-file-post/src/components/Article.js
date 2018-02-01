@@ -7,13 +7,14 @@ class Article extends Component {
   constructor(props){
     super(props)
      this.shareLink = window.location.href
-    // console.log("fb link: ", typeof this.shareLink);
   }
   getLikes() {
-    // console.log("before click: ", this.props.article.likes);
     this.props.article.likes += 1
     return this.props.article.likes
-    // console.log("after click: ", this.props.article.likes);
+  }
+
+  componentDidMount() {
+    this.props.getArticleId( window.location.href.split('/')[window.location.href.split('/').length-1])
   }
 
 

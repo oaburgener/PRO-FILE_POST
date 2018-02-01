@@ -6,7 +6,6 @@ class SignUp extends React.Component {
   constructor(props) {
     super(props)
     this.handleSubmit = this.handleSubmit.bind(this)
-    //this.showAlert = this.showAlert.bind(this)
   }
   handleSubmit(event) {
     event.preventDefault()

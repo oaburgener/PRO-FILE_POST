@@ -14,7 +14,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 }, dispatch)
 
 const ArticleContainer = connect (
-  mapStateToProps,null
+  mapStateToProps,mapDispatchToProps
 )(Article)
 
 export default ArticleContainer
