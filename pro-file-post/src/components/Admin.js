@@ -17,8 +17,6 @@ class Admin extends Component {
 
   componentDidMount() {
     this.props.getUsers()
-    // this.props.getArticles()
-
   }
 
   render(){

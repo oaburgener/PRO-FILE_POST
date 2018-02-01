@@ -18,7 +18,11 @@ const getArticles = (req,res,next) =>{
 }
 
 const filter = (req,res,next) => {
-  knex('articles')
+  knex('users')
+  .join('articles', 'users.id', '=', 'articles.user_id' )
+  .select('articles.id', 'users.first_name', 'users.last_name', 'articles.title', 'articles.summary',
+  'articles.body', 'articles.image_url', 'articles.sport', 'articles.views',
+  'articles.likes', 'articles.created_at', 'articles.updated_at')
   .where('sport', req.params.sport)
   .then((data) => {res.send({data})}
 )}
