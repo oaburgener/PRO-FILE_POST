@@ -20,14 +20,14 @@ import ArticleContainer from './containers/ArticleContainer'
 import SmallCard from './components/SmallCard'
 import Login from './components/Login'
 import SubmitButton from './components/Login'
-
 import AdminContainer from './containers/AdminContainer'
-
 import SignUp from './containers/SignUpContainer'
 import LoginContainer from './containers/LoginContainer'
 import Form from './components/Form'
 import FormContainer from './containers/FormContainer'
 import NavContainer from './containers/NavContainer'
+import DeleteArticle from './components/DeleteArticle.js'
+
 
 
 class App extends Component {
@@ -46,14 +46,14 @@ class App extends Component {
             <NavContainer />
           </MuiThemeProvider>
 
-            <Route exact path="/" render={() => (
-              <div className='container-fluid'>
-                <JumbotronContainer />
-                <FilterContainer />
-                <MuiThemeProvider>
-                  <BodyContainer />
-                </MuiThemeProvider>
-              </div>
+          <Route exact path="/" render={() => (
+            <div className='container-fluid'>
+              <JumbotronContainer />
+              <FilterContainer />
+              <MuiThemeProvider>
+                <BodyContainer />
+              </MuiThemeProvider>
+            </div>
           )}/>
 
           <Route exact path ='/admin' render={() =>(
@@ -82,7 +82,9 @@ class App extends Component {
 
           <Route exact path ="/login" render={() => (
             <div>
-              <LoginContainer />
+              <MuiThemeProvider>
+                <LoginContainer />
+              </MuiThemeProvider>
             </div>
           )}/>
           <Route exact path ="/SignUp" render={()=>(
@@ -93,7 +95,6 @@ class App extends Component {
           <MuiThemeProvider>
             <Footer />
           </MuiThemeProvider>
-
       </div>
     </Router>
 

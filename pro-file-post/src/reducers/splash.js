@@ -31,6 +31,7 @@ export default (state = initialState, action) => {
       ...state,
       all_articles: action.data,
     }
+
     default: return state
   }
 }

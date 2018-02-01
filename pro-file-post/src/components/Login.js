@@ -26,9 +26,9 @@ class Login extends React.Component {
           <label className="login-small-text" htmlFor="email">Email</label>
           <input id="email" ref = "email" name="email" type="email"/>
 
-        <label className="login-small-text" htmlFor="username">Password</label>
-        <input id="username" ref = "password" name="username" type="password"/>
-
+          <label className="login-small-text" htmlFor="username">Password</label>
+          <input id="username" ref = "password" name="username" type="password"/>
+          
         <button id="login-button" label="Submit">Submit</button>
 
       </form>}

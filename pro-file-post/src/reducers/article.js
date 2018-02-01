@@ -17,6 +17,7 @@ export default (state = initialState, action) => {
       article: action.data,
       body: action.body
     }
+      break;
     default: return state
   }
 }
