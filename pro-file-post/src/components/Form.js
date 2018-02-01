@@ -1,17 +1,16 @@
 import React from 'react'
 import { MenuItem, DropdownButton } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
-
-const Form = ({createArticle,cookie})=> {
-console.log(createArticle,cookie);
+const Form = ({createArticle, getArticles, cookie})=> {
   return (
     <div>
       <div className='guidelines-container'>
         <h1 id="form-title">Curious about submitting an article?</h1>
         <p className="form-text">Welcome to The Post! We welcome all submissions from experienced athletes. Please read the submission guidelines below. </p>
-        <p className="form-headers">Submission Guidelines</p>
-        <p className="form-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p className="form-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p className="form-headers">Guidelines</p>
+        <p className="form-text">We strive to produce the best content possible for our readers. Therefore, we would like each article to align with a major sport and to be about 800 - 1,000 words. Posting an article is free! We love to hear your voice and welcome multiple submissions, including op-ed's, interviews, and narrative nonfiction.</p>
+        <p className="form-text">Send us your work by using the submission form below. If including an image URL, please be sure it is high resolution! Email us at propost@propostmedia.com with any questions.</p>
       </div>
       <div class="submission-form">
         <form>
@@ -21,7 +20,7 @@ console.log(createArticle,cookie);
           <legend className="form-field-submission">Title <span className="orange">*</span></legend>
             <textarea id="title" className="form-large-input" name="title" required></textarea>
           <legend className="form-field-submission">Summary <span className="orange">*</span></legend>
-          <legend className="form-field-submission">Please summarize your article in 1-2 sentences.</legend>
+          <legend id="summary-instruction" className="form-field-submission">Please summarize your article in 1-2 sentences.</legend>
             <textarea id="summary" className="form-large-input" name="summary" required></textarea>
           <legend className="form-field-submission">Text <span className="orange">*</span></legend>
             <textarea id="article-body" className="form-large-input" name="text" required></textarea>
@@ -35,12 +34,15 @@ console.log(createArticle,cookie);
             </select>
           <legend className="form-field-submission">Image URL</legend>
             <input id="image" className="form-small-input" type="text" name="image" />
-          <div onClick={(e)=>{
-            e.preventDefault()
-            createArticle(cookie.id)
+
+          <Link to="/" onClick={async(e)=>{
+            e.stopPropagation()
+            await createArticle(cookie.id)
+            getArticles()
           }}>
             <input className="form-button" type="submit" value="Submit"/>
-          </div>
+          </Link>
+
         </form>
       </div>
     </div>

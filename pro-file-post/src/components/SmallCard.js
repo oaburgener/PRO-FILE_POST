@@ -10,7 +10,7 @@ import{Grid, Row, Col, Image} from 'react-bootstrap'
 
 
 const SmallCard = ({article, getArticleId}) => {
-  //console.log(article);
+
   return (
       <Col xs={12} sm={6} md={6} lg={4}>
         <Card
@@ -24,7 +24,6 @@ const SmallCard = ({article, getArticleId}) => {
                 title={article.title}
                 titleStyle={{fontWeight:'500', fontFamily:'Lato', fontFamily:'Helvetica Neue'}}
                 subtitle={article.first_name + ' ' +article.last_name} />}>
-              {/* <p>{article.summary}</p> */}
               <Image className="smallPic" src={article.image_url} alt="" responsive/>
             </CardMedia>
           </Link>
