@@ -40,7 +40,16 @@ const getArticleId = (req,res,next) => {
 }
 
 const postArticles = (req,res,next) => {
-
+  var cookie = req.headers['cooker']
+  var jwot = cookie.split(';')[1].split('=')[1]
+  var decoded = jwt.verify(jwot, secret, function(err, decoded) {
+    if(err){
+      next(err)
+    }else{
+      return decoded
+    }
+  })
+  if(!decoded.id) res.sendStatus(403)
   var image_url = req.body.image_url || 'https://images.unsplash.com/photo-1485388276992-0ce5ce2d6981?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b23bb57338708adc590a9243d8f80797&auto=format&fit=crop&w=799&q=80'
 
   knex('articles').insert({
@@ -54,14 +63,16 @@ const postArticles = (req,res,next) => {
 }
 
 const deleteArticle = (req,res,next) => {
-  // var decoded = jwt.verify(req.cookies.jwt, 'A4e2n84E0OpF3wW21', function(err, decoded) {
-  //   if(err){
-  //     next(err)
-  //   }else{
-  //     return decoded
-  //   }
-  // })
-  // if(!decoded.admin)res.sendStatus(403)
+  var cookie = req.headers['cooker']
+  var jwot = cookie.split(';')[1].split('=')[1]
+  var decoded = jwt.verify(jwot, secret, function(err, decoded) {
+    if(err){
+      next(err)
+    }else{
+      return decoded
+    }
+  })
+  if(!decoded.admin)res.sendStatus(403)
   knex('articles').where({id: req.params.id})
   .then(data=>{res.sendStatus(200)})
   .catch(err=>{next(err)})
