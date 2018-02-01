@@ -10,38 +10,37 @@ class SignUp extends React.Component {
   handleSubmit(event) {
     event.preventDefault()
     var data = {firstName: this.refs.first_name.value, lastName: this.refs.last_name.value, email: this.refs.email.value, password: this.refs.password.value}
-console.log(data);
     this.props.SignUpVerify(data)
   }
 
   render() {
-    console.log(this.props);
     return (
-      <div style={{marginTop: '34px'}}>
+      <div id="signup-form">
 
       {this.props.toast ? <div>
         <p>'Please fill out all fields'</p>
           <button type = 'button' >ok</button>
       </div>: null}
+
       {this.props.data ? <Redirect to= '/login' />:
         <form onSubmit={this.handleSubmit}>
-      <h2 className='signUp'>signup</h2>
+      <h1 className='signUp'>Sign Up</h1>
 
-      <label htmlFor="first_name">Enter your first name</label>
-      <input id="first_name" ref = "first_name" name="first_name" type="first_name" required/>
+      <label className="login-small-text" htmlFor="first_name">First Name</label>
+      <input id="first_name" className="signup-input" ref = "first_name" name="first_name" type="first_name" required/>
 
-      <label htmlFor="last_name">Enter your last name</label>
-      <input id="last_name" ref = "last_name" name="last_name" type="last_name" required/>
+      <label className="login-small-text" htmlFor="last_name">Last Name</label>
+      <input id="last_name" className="signup-input" ref = "last_name" name="last_name" type="last_name" required/>
 
-      <label htmlFor="email">Enter your email</label>
+      <label className="login-small-text" htmlFor="email">Email</label>
       <input id="email" ref = "email" name="email" type="email" required/>
 
-      <label htmlFor="username">Enter Password</label>
+      <label className="login-small-text" htmlFor="username">Password</label>
       <input id="username" ref = "password" name="username" type="password" required/>
 
 
 
-      <button label="Submit">Submit</button>
+      <button id="signup-button" label="Submit">Submit</button>
 
     </form>}
     </div>

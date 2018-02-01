@@ -12,17 +12,11 @@ class Login extends React.Component {
     var data = {email: this.refs.email.value, password: this.refs.password.value}
     this.props.logInVerify(data)
   }
-//  showAlert(){
-// this.props.toast  ? alert('username or password does not match'):null
-//   }
+
   render() {
     return (
       <div className="login-form">
 
-        {this.props.toast ? <div>
-          <p>'username or password does not match'</p>
-          <button type = 'button'>ok</button>
-        </div>: null}
         {this.props.token ? <Redirect to= '/' />:
         <form onSubmit={this.handleSubmit}>
           <h1 className='signIn'>Welcome!</h1>
@@ -37,6 +31,9 @@ class Login extends React.Component {
         <button id="login-button" label="Submit">Submit</button>
 
       </form>}
+      {this.props.toast ? <div>
+        <p>'username or password does not match'</p>
+      </div>: null}
     </div>
   )
   }

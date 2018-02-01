@@ -6,6 +6,54 @@ body {
   height: 100%;
 }
 
+/* Signup Body */
+
+#signup-form {
+  display: flex;
+  justify-content: center;
+  border: .5px solid #d4d7db;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 10%;
+}
+
+#signup-button {
+  background-color: #00C988;
+  color: #fff;
+  height: 41px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 13px 40px;
+  border-radius: 3px;
+  border: none;
+  margin-bottom: 30px;
+}
+
+.signUp {
+  padding-top: 35px;
+  padding-bottom: 40px;
+}
+
+.signup-input {
+  display: flex;
+  justify-content: center;
+  border-style: solid;
+  font-family: "Lato Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: 0;
+  padding: 7px;
+  width: 100%;
+  background-color: white;
+  border-color: #d4d7db;
+  margin-bottom: 30px;
+  display: block;
+  border-width: .5px;
+}
+
+/* END Signup Body */
+
 /* Login Body */
 
 .login-form {
