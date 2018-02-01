@@ -66,22 +66,30 @@ export const getArticleId = (id) => {
 }
 
 export const delArticle = (id) => {
-  console.log(id);
+
   return async (dispatch) => {
-    console.log(dispatch);
+    let cookie = document.cookie
     const response = await fetch(`http://localhost:3001/articles/${id}`,{
       method: 'DELETE',
       body: {},
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-      }
+        'cooker': cookie
+      },
+      credentails : 'include'
     })
-    let remaining = store.getState().admin.all_articles.filter(e => e.id !== id)
-    dispatch({
-      type: DELETE_ARTICLE,
-      data: remaining
-    })
+    if(response.status==403){
+      dispatch({
+        type: 'jwtsaysno',
+      })
+    }else{
+      let remaining = store.getState().admin.all_articles.filter(e => e.id !== id)
+      dispatch({
+        type: DELETE_ARTICLE,
+        data: remaining
+      })
+    }
   }
 }
 
