@@ -10,7 +10,7 @@ exports.seed = function(knex, Promise){
           image_url: 'https://images.unsplash.com/photo-1475440197469-e367ec8eeb19?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d07e497e8f90af29b9c3da6a02dfa4ea&auto=format&fit=crop&w=1950&q=80',
           sport: 'basketball',
           views: 2,
-          likes: 22,
+          likes: 92,
           created_at: new Date('2016-06-26 14:26:16 UTC'),
           updated_at: new Date('2016-06-26 14:26:16 UTC')
         }, {
