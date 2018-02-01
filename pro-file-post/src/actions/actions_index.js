@@ -95,14 +95,16 @@ export const getUsers = () => {
 
 export const delUser = (id) => {
   return async (dispatch) => {
-      console.log(dispatch)
+    let cookie = document.cookie
     const response = await fetch(`http://localhost:3001/users/${id}`,{
       method: 'DELETE',
       body: {},
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-      }
+        'cooker' : cookie,
+      },
+      credentails : 'include'
     })
     let remaining = store.getState().admin.all_users.filter(e => e.id !== id)
     dispatch({
