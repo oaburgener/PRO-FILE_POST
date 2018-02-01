@@ -8,6 +8,7 @@ export const LOGIN = 'LOGIN'
 export const UNAUTHORIZED = 'UNAUTHORIZED'
 export const SIGNUP = 'SIGNUP'
 export const GET_COOKIE = 'GET_COOKIE'
+export const GET_ARTICLES_DELETE = 'GET_ARTICLES_DELETE'
 
 export const getArticles = () => {
 
@@ -17,7 +18,7 @@ export const getArticles = () => {
     const trending =  json.data.sort(function(a,b){
       return (b.likes + b.views) - (a.likes + a.views)
     }).slice(0,2)
-    console.log(json.data);
+
     dispatch({
       type: GET_ARTICLES,
       data:json.data,
@@ -26,7 +27,19 @@ export const getArticles = () => {
  }
 }
 
+export const getArticlesDelete = (1) => {
 
+  return async (dispatch) => {
+    const response = await fetch('http://localhost:3001/articles/1')
+    const json = await response.json()
+    const userArt =json.data.body.split('\n')
+    dispatch({
+      type: GET_ARTICLES_DELETE,
+      data: json.data,
+      body: userArt
+    })
+}
+}
 
 export const getBySport = (sport)=> {
 

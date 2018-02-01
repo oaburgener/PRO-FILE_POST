@@ -53,7 +53,6 @@ class App extends Component {
               <DeleteArticle />
               <Filters />
             </div>
-3
           )}/>
 
           <Route exact path ="/article/:id" render={() => (
