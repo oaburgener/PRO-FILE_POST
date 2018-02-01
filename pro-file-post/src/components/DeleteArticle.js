@@ -7,15 +7,15 @@ import { getUsers } from '../actions/actions_index.js'
 import { delArticle } from '../actions/actions_index.js'
 import {getArticles} from '../actions/actions_index.js'
 
-const DeleteArticle = ({article, delArticle}) => {
+const DeleteArticle = ({article, delArticle, getArticles}) => {
 
   return (
     <div>
       <p><span style={{fontSize: '19px'}}> ARTICLE TITLE: {article.title}</span> ARTICLE SUMMARY: {article.summary}
       </p>
       <Button  type='button' bsSize="small"  className='admin-button' onClick={
-        async ()=> { await delArticle(article.id)}}
-      >Delete</Button>
+        async ()=> { await delArticle(article.id)
+          await getArticles()}}>Delete</Button>
         </div>
     )
 }

@@ -21,9 +21,6 @@ class Admin extends Component {
   }
 
 
-
-
-
   render(){
     return (
     <div className='admin_container'>

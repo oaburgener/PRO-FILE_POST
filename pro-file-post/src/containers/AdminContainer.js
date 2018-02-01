@@ -10,7 +10,7 @@ import { getArticles } from '../actions/actions_index.js'
 const mapStateToProps = state => ({
   all_users:state.admin.all_users,
   user: state.admin.user,
-  all_articles: state.splash.all_articles,
+  all_articles: state.admin.all_articles,
   article: state.admin.article
 })
 

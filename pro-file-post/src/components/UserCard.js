@@ -24,7 +24,7 @@ const UserCard = ({ user, getUsers, article, delUser, all_articles, delArticle})
           <ListGroupItem>{
             all_articles.map(article =>  {
               if (article.user_id == user.id) {
-                return (<DeleteArticle key={article.id} article={article} title={article.title} summary={article.summary} delArticle={delArticle}/>)
+                return (<DeleteArticle key={article.id} article={article} title={article.title} summary={article.summary} delArticle={delArticle} getArticles={getArticles}/>)
               }
             })}</ListGroupItem>
         </Col>
