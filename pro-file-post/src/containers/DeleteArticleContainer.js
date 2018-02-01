@@ -17,7 +17,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 }, dispatch)
 
 const DeleteArticleContainer = connect (
-  mapStateToProps,null
+  mapStateToProps,mapDispatchToProps
 )(Article)
 
 export default DeleteArticleContainer

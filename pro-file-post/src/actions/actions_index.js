@@ -72,6 +72,7 @@ export const getArticleId = (id) => {
 export const delArticle = (id) => {
   console.log(id);
   return async (dispatch) => {
+    console.log(dispatch);
     const response = await fetch(`http://localhost:3001/articles/${id}`,{
       method: 'DELETE',
       body: {},
@@ -80,7 +81,6 @@ export const delArticle = (id) => {
         'Accept': 'application/json',
       }
     })
-    console.log(response)
     let remaining = store.getState().admin.all_articles.filter(e => e.id !== id)
     dispatch({
       type: DELETE_ARTICLE,
@@ -103,6 +103,7 @@ export const getUsers = () => {
 
 export const delUser = (id) => {
   return async (dispatch) => {
+      console.log(dispatch)
     const response = await fetch(`http://localhost:3001/users/${id}`,{
       method: 'DELETE',
       body: {},
