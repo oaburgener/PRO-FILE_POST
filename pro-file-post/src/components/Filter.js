@@ -18,7 +18,7 @@ class Filters extends Component {
           FILTER BY
         </span>
         <div className= "all-icons">
-          <img onClick={()=> this.props.getBySport('basketball')}
+          <img onClick= {() => this.props.getBySport('basketball')}
             onMouseEnter= {() => this.setState({ hover: 1 }) }
             onMouseLeave= {() => this.setState({ hover: 0 }) }
             className= {this.state.hover === 1 ? "hover-icon" : "filter-icons"}

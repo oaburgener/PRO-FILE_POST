@@ -24,6 +24,7 @@ export default (state = initialState, action) => {
     return {
       ...state,
       all_articles: action.data,
+      filtered_articles: action.filtered
     }
     case CREATE_ARTICLE:
     return {

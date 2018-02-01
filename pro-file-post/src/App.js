@@ -49,11 +49,10 @@ class App extends Component {
           <Route exact path="/" render={() => (
             <div className='container-fluid'>
               <JumbotronContainer />
-              <Filters />
+              <FilterContainer />
               <MuiThemeProvider>
                 <BodyContainer />
               </MuiThemeProvider>
-              <Filters />
             </div>
           )}/>
 
