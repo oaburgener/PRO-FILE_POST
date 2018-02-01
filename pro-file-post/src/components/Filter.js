@@ -43,10 +43,10 @@ class Filters extends Component {
             onMouseLeave= {() => this.setState({ hover: 0 }) }
             className= {this.state.hover === 5 ? "hover-icon" : "filter-icons"}
             src={ require("../logos/Soccerball_mark.svg.png") }/>
-          <img onClick={()=> this.props.getArticles()}
-            onMouseEnter= {() => this.setState({ hover: 5 }) }
+          <img onClick={()=> this.props.getArticles('All')}
+            onMouseEnter= {() => this.setState({ hover: 6 }) }
             onMouseLeave= {() => this.setState({ hover: 0 }) }
-            className= {this.state.hover === 5 ? "hover-icon" : "filter-icons"}
+            className= {this.state.hover === 6 ? "hover-icon" : "filter-icons"}
             src={ require("../logos/all.png") }/>
         </div>
       </div>
