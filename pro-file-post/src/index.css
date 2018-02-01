@@ -62,14 +62,13 @@ body {
 /* Login Body */
 
 .login-form {
-  margin-top: 80px;
   display: flex;
   justify-content: center;
   border: .5px solid #d4d7db;
   padding: 75px;
   margin-left: 20%;
   margin-right: 20%;
-  margin-top: 15%;
+  margin-top: 10%;
 }
 
 #login-large-text {
