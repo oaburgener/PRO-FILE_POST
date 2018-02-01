@@ -21,11 +21,17 @@ import ArticleContainer from './containers/ArticleContainer'
 import SmallCard from './components/SmallCard'
 import Login from './components/Login'
 import SubmitButton from './components/Login'
+<<<<<<< HEAD
+=======
+import AdminContainer from './containers/AdminContainer'
+>>>>>>> 3f91d5a547614b29020e9dccf684034f8f10f706
 import SignUp from './containers/SignUpContainer'
 import LoginContainer from './containers/LoginContainer'
 import Form from './components/Form'
 import FormContainer from './containers/FormContainer'
 import NavContainer from './containers/NavContainer'
+import DeleteArticle from './components/DeleteArticle.js'
+
 
 class App extends Component {
   constructor(props){
@@ -53,6 +59,7 @@ class App extends Component {
             <NavContainer />
           </MuiThemeProvider>
 
+<<<<<<< HEAD
             <Route exact path="/" render={() => (
               <div className='container-fluid'>
                 <JumbotronContainer />
@@ -61,6 +68,16 @@ class App extends Component {
                   <BodyContainer />
                 </MuiThemeProvider>
               </div>
+=======
+          <Route exact path="/" render={() => (
+            <div className='container-fluid'>
+              <JumbotronContainer />
+              <FilterContainer />
+              <MuiThemeProvider>
+                <BodyContainer />
+              </MuiThemeProvider>
+            </div>
+>>>>>>> 3f91d5a547614b29020e9dccf684034f8f10f706
           )}/>
 
           <Route exact path ={`/article/:id`} render={() => (
@@ -83,7 +100,9 @@ class App extends Component {
 
           <Route exact path ="/login" render={() => (
             <div>
-              <LoginContainer />
+              <MuiThemeProvider>
+                <LoginContainer />
+              </MuiThemeProvider>
             </div>
           )}/>
           <Route exact path ="/SignUp" render={()=>(
@@ -94,7 +113,6 @@ class App extends Component {
           <MuiThemeProvider>
             <Footer />
           </MuiThemeProvider>
-
       </div>
     </Router>
 

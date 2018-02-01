@@ -10,7 +10,7 @@ exports.seed = function(knex, Promise){
           image_url: 'https://images.unsplash.com/photo-1475440197469-e367ec8eeb19?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d07e497e8f90af29b9c3da6a02dfa4ea&auto=format&fit=crop&w=1950&q=80',
           sport: 'basketball',
           views: 2,
-          likes: 22,
+          likes: 92,
           created_at: new Date('2016-06-26 14:26:16 UTC'),
           updated_at: new Date('2016-06-26 14:26:16 UTC')
         }, {
@@ -28,7 +28,7 @@ exports.seed = function(knex, Promise){
         },
         {
           id: 3,
-          user_id: 2,
+          user_id: 6,
           title: 'The bleacher report',
           summary: 'I am Eddie and this is my story on how to make a milli',
           body: "Farm-to-table tbh migas, unicorn vaporware VHS photo booth vegan gastropub etsy kitsch. Affogato pork belly distillery, tilde wolf 8-bit XOXO franzen brooklyn. Pabst blog semiotics fixie single-origin coffee yr, helvetica forage keffiyeh glossier four loko. Post-ironic VHS meggings yr. Neutra intelligentsia flannel af, kinfolk williamsburg fam crucifix post-ironic fashion axe enamel pin narwhal. Bespoke leggings poke, af wolf unicorn schlitz trust fund tattooed.\nShoreditch succulents adaptogen kogi messenger bag dreamcatcher subway tile man bun quinoa. Lomo keffiyeh biodiesel YOLO ennui. Lo-fi yuccie marfa tilde, taiyaki chicharrones kinfolk umami put a bird on it sartorial readymade listicle typewriter. Waistcoat crucifix man bun heirloom godard kitsch forage. Chicharrones microdosing swag 90's pabst actually scenester sartorial vice chillwave tousled hoodie pork belly poke.\nChia beard mustache selfies, snackwave pabst PBR&B thundercats try-hard hella selvage. Dreamcatcher unicorn plaid cred. Butcher locavore cliche cardigan pok pok kombucha shabby chic, try-hard VHS actually meggings affogato. Lyft authentic pinterest, hot chicken hoodie tote bag austin butcher.",
@@ -54,9 +54,9 @@ exports.seed = function(knex, Promise){
         },
         {
           id: 5,
-          user_id: 2,
+          user_id: 4,
           title: 'The best deals on gear',
-          summary: 'I am Eddie and this is my story on how to make a milli',
+          summary: 'I am Eddie and this is my story on how to get deals',
           body: "Farm-to-table tbh migas, unicorn vaporware VHS photo booth vegan gastropub etsy kitsch. Affogato pork belly distillery, tilde wolf 8-bit XOXO franzen brooklyn. Pabst blog semiotics fixie single-origin coffee yr, helvetica forage keffiyeh glossier four loko. Post-ironic VHS meggings yr. Neutra intelligentsia flannel af, kinfolk williamsburg fam crucifix post-ironic fashion axe enamel pin narwhal. Bespoke leggings poke, af wolf unicorn schlitz trust fund tattooed.\nShoreditch succulents adaptogen kogi messenger bag dreamcatcher subway tile man bun quinoa. Lomo keffiyeh biodiesel YOLO ennui. Lo-fi yuccie marfa tilde, taiyaki chicharrones kinfolk umami put a bird on it sartorial readymade listicle typewriter. Waistcoat crucifix man bun heirloom godard kitsch forage. Chicharrones microdosing swag 90's pabst actually scenester sartorial vice chillwave tousled hoodie pork belly poke.\nChia beard mustache selfies, snackwave pabst PBR&B thundercats try-hard hella selvage. Dreamcatcher unicorn plaid cred. Butcher locavore cliche cardigan pok pok kombucha shabby chic, try-hard VHS actually meggings affogato. Lyft authentic pinterest, hot chicken hoodie tote bag austin butcher.",
           image_url: 'https://images.unsplash.com/photo-1449356669056-f1c1e6e56b0f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=479fe3ea838301cd6b6b89ff99392995&auto=format&fit=crop&w=1566&q=80',
           sport: 'baseball',
@@ -71,26 +71,52 @@ exports.seed = function(knex, Promise){
                   title: 'Lane Johnson on the ball',
                   summary: 'I am Eddie and this is my story on how to make a milli',
                   body: "hen Lane Johnson has that look on his face, you know something’s up. That mischievous vibe. I see it all the time, man.\nI’m sitting at the pregame meal on Friday night before the Falcons game, and it’s me, Lane, Chris Long, Jason Kelce and Brent Celek. When you’re with those four guys, something’s always going on. Jason’s looking at me and Brent, kind of like a little kid who can’t contain himself, you know?\nAnd he says, “Lane, tell ’em. Tell ’em, dude.”\nWe’re like, “What? Tell us what?”\nHe says, “Tell ’em what we ordered.”\nAnd so Lane kind of leans across the table all … what’s the word? I guess you’d call it conspiratorial, like it’s Ocean’s Eleven or something. And he’s like, “You know how everyone keeps saying we’re underdogs? Even though we’re the No. 1 seed? Well … we were on Amazon last night, and we ordered these dog masks.”\nAnd I’m kind of confused. I’m like, “What do you mean, like … a puppy?”\nLane says, “No, man. German shepherds. They’re creepy. Real creepy. Two-day shipping. They’re coming tomorrow.”\nBefore I can even think, like, What the heck are you going to do with a creepy dog mask? Lane says, “Yeah, and when we win, because we’re gonna freaking win, we’re going to do everything in the masks. Media. Postgame. Everything. Dogs.”\nChris and Jason don’t even say anything. They’re just nodding, like, Genius, right? Dogs.  \nUnderdogs. No shot. Dead in the water. We heard it about 10,000 times over the course of that week: The first No. 1 seed since 1970 to be ’dogs in the divisional round. It wasn’t just us who embraced it. The whole city embraced it. If you’re an outsider, you probably don’t really get it. But if you’re from Philly, and if you’ve been following this team all year, then you know. It’s not just Carson Wentz who went down. It was Jason Peters and Darren Sproles and Jordan Hicks and Chris Maragos. We could probably field an All-Pro team of injured guys, but instead of crumbling under all the adversity, it only made us more united.h",
-                  image_url: 'https://images.unsplash.com/photo-1471295253337-3ceaaedca402?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=214d4b3c50b289db475238a0c19c5ef5&auto=format&fit=crop&w=2848&q=80',
-                  sport: 'football',
+                  image_url: 'https://images.unsplash.com/photo-1503591489840-3e5066f41660?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=410f6d4e94bdc27f0d00d9cca701ed1e&auto=format&fit=crop&w=1050&q=80',
+                  sport: 'basketball',
                   views: 10,
                   likes: 8,
                   created_at: new Date('2016-06-26 14:26:16 UTC'),
                   updated_at: new Date('2016-06-26 14:26:16 UTC')
                 },
-                // {
-                //           id: 7,
-                //           user_id: 2,
-                //           title: 'Header goes here please',
-                //           summary: 'I am Eddie and this is my story on how to make a milli',
-                //           body: "hen Lane Johnson has that look on his face, you know something’s up. That mischievous vibe. I see it all the time, man.\nI’m sitting at the pregame meal on Friday night before the Falcons game, and it’s me, Lane, Chris Long, Jason Kelce and Brent Celek. When you’re with those four guys, something’s always going on. Jason’s looking at me and Brent, kind of like a little kid who can’t contain himself, you know?\nAnd he says, “Lane, tell ’em. Tell ’em, dude.”\nWe’re like, “What? Tell us what?”\nHe says, “Tell ’em what we ordered.”\nAnd so Lane kind of leans across the table all … what’s the word? I guess you’d call it conspiratorial, like it’s Ocean’s Eleven or something. And he’s like, “You know how everyone keeps saying we’re underdogs? Even though we’re the No. 1 seed? Well … we were on Amazon last night, and we ordered these dog masks.”\nAnd I’m kind of confused. I’m like, “What do you mean, like … a puppy?”\nLane says, “No, man. German shepherds. They’re creepy. Real creepy. Two-day shipping. They’re coming tomorrow.”\nBefore I can even think, like, What the heck are you going to do with a creepy dog mask? Lane says, “Yeah, and when we win, because we’re gonna freaking win, we’re going to do everything in the masks. Media. Postgame. Everything. Dogs.”\nChris and Jason don’t even say anything. They’re just nodding, like, Genius, right? Dogs.  \nUnderdogs. No shot. Dead in the water. We heard it about 10,000 times over the course of that week: The first No. 1 seed since 1970 to be ’dogs in the divisional round. It wasn’t just us who embraced it. The whole city embraced it. If you’re an outsider, you probably don’t really get it. But if you’re from Philly, and if you’ve been following this team all year, then you know. It’s not just Carson Wentz who went down. It was Jason Peters and Darren Sproles and Jordan Hicks and Chris Maragos. We could probably field an All-Pro team of injured guys, but instead of crumbling under all the adversity, it only made us more united.h",
-                //           image_url: 'https://images.unsplash.com/photo-1485426337939-af69cf101909?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7ec5df8fa5047c3b39c8b885a904dd43&auto=format&fit=crop&w=1650&q=80',
-                //           sport: 'soccer',
-                //           views: 10,
-                //           likes: 18,
-                //           created_at: new Date('2016-06-26 14:26:16 UTC'),
-                //           updated_at: new Date('2016-06-26 14:26:16 UTC')
-                //         }
+                {
+                          id: 7,
+                          user_id: 3,
+                          title: 'Networking as athletes',
+                          summary: 'I am Eddie and this is my story on how to network',
+                          body: "hen Lane Johnson has that look on his face, you know something’s up. That mischievous vibe. I see it all the time, man.\nI’m sitting at the pregame meal on Friday night before the Falcons game, and it’s me, Lane, Chris Long, Jason Kelce and Brent Celek. When you’re with those four guys, something’s always going on. Jason’s looking at me and Brent, kind of like a little kid who can’t contain himself, you know?\nAnd he says, “Lane, tell ’em. Tell ’em, dude.”\nWe’re like, “What? Tell us what?”\nHe says, “Tell ’em what we ordered.”\nAnd so Lane kind of leans across the table all … what’s the word? I guess you’d call it conspiratorial, like it’s Ocean’s Eleven or something. And he’s like, “You know how everyone keeps saying we’re underdogs? Even though we’re the No. 1 seed? Well … we were on Amazon last night, and we ordered these dog masks.”\nAnd I’m kind of confused. I’m like, “What do you mean, like … a puppy?”\nLane says, “No, man. German shepherds. They’re creepy. Real creepy. Two-day shipping. They’re coming tomorrow.”\nBefore I can even think, like, What the heck are you going to do with a creepy dog mask? Lane says, “Yeah, and when we win, because we’re gonna freaking win, we’re going to do everything in the masks. Media. Postgame. Everything. Dogs.”\nChris and Jason don’t even say anything. They’re just nodding, like, Genius, right? Dogs.  \nUnderdogs. No shot. Dead in the water. We heard it about 10,000 times over the course of that week: The first No. 1 seed since 1970 to be ’dogs in the divisional round. It wasn’t just us who embraced it. The whole city embraced it. If you’re an outsider, you probably don’t really get it. But if you’re from Philly, and if you’ve been following this team all year, then you know. It’s not just Carson Wentz who went down. It was Jason Peters and Darren Sproles and Jordan Hicks and Chris Maragos. We could probably field an All-Pro team of injured guys, but instead of crumbling under all the adversity, it only made us more united.h",
+                          image_url: 'https://images.unsplash.com/photo-1485426337939-af69cf101909?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7ec5df8fa5047c3b39c8b885a904dd43&auto=format&fit=crop&w=1650&q=80',
+                          sport: 'soccer',
+                          views: 10,
+                          likes: 18,
+                          created_at: new Date('2016-06-26 14:26:16 UTC'),
+                          updated_at: new Date('2016-06-26 14:26:16 UTC')
+                        },
+                        {
+                          id: 8,
+                          user_id: 5,
+                          title: 'Keeping in shape',
+                          summary: 'I am Eddie and this is my story on how to keep in shape',
+                          body: "Farm-to-table tbh migas, unicorn vaporware VHS photo booth vegan gastropub etsy kitsch. Affogato pork belly distillery, tilde wolf 8-bit XOXO franzen brooklyn. Pabst blog semiotics fixie single-origin coffee yr, helvetica forage keffiyeh glossier four loko. Post-ironic VHS meggings yr. Neutra intelligentsia flannel af, kinfolk williamsburg fam crucifix post-ironic fashion axe enamel pin narwhal. Bespoke leggings poke, af wolf unicorn schlitz trust fund tattooed.\nShoreditch succulents adaptogen kogi messenger bag dreamcatcher subway tile man bun quinoa. Lomo keffiyeh biodiesel YOLO ennui. Lo-fi yuccie marfa tilde, taiyaki chicharrones kinfolk umami put a bird on it sartorial readymade listicle typewriter. Waistcoat crucifix man bun heirloom godard kitsch forage. Chicharrones microdosing swag 90's pabst actually scenester sartorial vice chillwave tousled hoodie pork belly poke.\nChia beard mustache selfies, snackwave pabst PBR&B thundercats try-hard hella selvage. Dreamcatcher unicorn plaid cred. Butcher locavore cliche cardigan pok pok kombucha shabby chic, try-hard VHS actually meggings affogato. Lyft authentic pinterest, hot chicken hoodie tote bag austin butcher.",
+                          image_url: 'https://images.unsplash.com/photo-1516118042656-5642e59967be?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=484fc4acbebdf9cb95e81eff1a73985e&auto=format&fit=crop&w=1052&q=80',
+                          sport: 'track',
+                          views: 10,
+                          likes: 8,
+                          created_at: new Date('2016-06-26 14:26:16 UTC'),
+                          updated_at: new Date('2016-06-26 14:26:16 UTC')
+                        },
+                        {
+                          id: 9,
+                          user_id: 6,
+                          title: 'Going for the pros',
+                          summary: 'I am Eddie and this is my story on how to keep in shape',
+                          body: "Farm-to-table tbh migas, unicorn vaporware VHS photo booth vegan gastropub etsy kitsch. Affogato pork belly distillery, tilde wolf 8-bit XOXO franzen brooklyn. Pabst blog semiotics fixie single-origin coffee yr, helvetica forage keffiyeh glossier four loko. Post-ironic VHS meggings yr. Neutra intelligentsia flannel af, kinfolk williamsburg fam crucifix post-ironic fashion axe enamel pin narwhal. Bespoke leggings poke, af wolf unicorn schlitz trust fund tattooed.\nShoreditch succulents adaptogen kogi messenger bag dreamcatcher subway tile man bun quinoa. Lomo keffiyeh biodiesel YOLO ennui. Lo-fi yuccie marfa tilde, taiyaki chicharrones kinfolk umami put a bird on it sartorial readymade listicle typewriter. Waistcoat crucifix man bun heirloom godard kitsch forage. Chicharrones microdosing swag 90's pabst actually scenester sartorial vice chillwave tousled hoodie pork belly poke.\nChia beard mustache selfies, snackwave pabst PBR&B thundercats try-hard hella selvage. Dreamcatcher unicorn plaid cred. Butcher locavore cliche cardigan pok pok kombucha shabby chic, try-hard VHS actually meggings affogato. Lyft authentic pinterest, hot chicken hoodie tote bag austin butcher.",
+                          image_url: 'https://images.unsplash.com/photo-1493311532826-91f3915a3c6e?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3da3872af59c469be8221d933ae6804b&auto=format&fit=crop&w=1050&q=80',
+                          sport: 'frisbee',
+                          views: 10,
+                          likes: 18,
+                          created_at: new Date('2016-06-26 14:26:16 UTC'),
+                          updated_at: new Date('2016-06-26 14:26:16 UTC')
+                        },
       ])
 
     .then(function(){

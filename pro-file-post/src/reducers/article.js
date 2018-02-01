@@ -2,6 +2,7 @@ import {
   GET_ONE_ARTICLE,
 } from '../actions/actions_index'
 
+
 const initialState = {
   user_id: 0,
   article: {},
@@ -17,6 +18,7 @@ export default (state = initialState, action) => {
       article: action.data,
       body: action.body
     }
+      break;
     default: return state
   }
 }
