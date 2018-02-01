@@ -5,6 +5,7 @@ import { Grid, Row, Col, Button, ListGroupItem } from 'react-bootstrap'
 import { delUser } from '../App.js'
 import DeleteArticle from './DeleteArticle'
 import {getArticles} from '../actions/actions_index.js'
+import {delArticle} from  '../actions/actions_index.js'
 
 
 
@@ -22,9 +23,8 @@ const UserCard = ({ user, getUsers, article, delUser, all_articles}) => {
           </ListGroupItem>
           <ListGroupItem>{
             all_articles.map(article =>  {
-              console.log(article.user_id);
               if (article.user_id == user.id) {
-                return (<DeleteArticle key={article.id} article={article} title={article.title} summary={article.summary}/>)
+                return (<DeleteArticle key={article.id} article={article} title={article.title} summary={article.summary} delArticle={delArticle}/>)
               }
             })}</ListGroupItem>
         </Col>

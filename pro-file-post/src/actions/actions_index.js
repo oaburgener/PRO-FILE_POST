@@ -69,23 +69,23 @@ export const getArticleId = (id) => {
   }
 }
 
-// export const delArticle = (id) => {
-//   return async (dispatch) => {
-//     const response = await fetch(`http://localhost:3001/articles/${id}`,{
-//       method: 'DELETE',
-//       body: {},
-//       headers: {
-//         'Content-Type': 'application/json',
-//         'Accept': 'application/json',
-//       }
-//     })
-//     let remaining = store.getState().admin.all_articles.filter(e => e.id !== id)
-//     dispatch({
-//       type: DELETE_ARTICLE,
-//       data: remaining
-//     })
-//   }
-// }
+export const delArticle = (id) => {
+  return async (dispatch) => {
+    const response = await fetch(`http://localhost:3001/articles/${id}`,{
+      method: 'DELETE',
+      body: {},
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }
+    })
+    let remaining = store.getState().admin.all_articles.filter(e => e.id !== id)
+    dispatch({
+      type: DELETE_ARTICLE,
+      data: remaining
+    })
+  console.log(response)}
+}
 
 export const getUsers = () => {
   return async (dispatch) => {

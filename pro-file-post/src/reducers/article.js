@@ -1,5 +1,6 @@
 import {
   GET_ONE_ARTICLE,
+  DELETE_ARTICLE,
 } from '../actions/actions_index'
 
 const initialState = {
@@ -17,6 +18,13 @@ export default (state = initialState, action) => {
       article: action.data,
       body: action.body
     }
+    case DELETE_ARTICLE:
+    return{
+      ...state,
+      article: action.data,
+      data: action.data
+    }
+      break;
     default: return state
   }
 }
