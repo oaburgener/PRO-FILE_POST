@@ -21,10 +21,7 @@ import ArticleContainer from './containers/ArticleContainer'
 import SmallCard from './components/SmallCard'
 import Login from './components/Login'
 import SubmitButton from './components/Login'
-<<<<<<< HEAD
-=======
 import AdminContainer from './containers/AdminContainer'
->>>>>>> 3f91d5a547614b29020e9dccf684034f8f10f706
 import SignUp from './containers/SignUpContainer'
 import LoginContainer from './containers/LoginContainer'
 import Form from './components/Form'
@@ -59,16 +56,9 @@ class App extends Component {
             <NavContainer />
           </MuiThemeProvider>
 
-<<<<<<< HEAD
-            <Route exact path="/" render={() => (
-              <div className='container-fluid'>
-                <JumbotronContainer />
-                <Filters />
-                <MuiThemeProvider>
-                  <BodyContainer />
-                </MuiThemeProvider>
-              </div>
-=======
+
+  
+
           <Route exact path="/" render={() => (
             <div className='container-fluid'>
               <JumbotronContainer />
@@ -77,7 +67,6 @@ class App extends Component {
                 <BodyContainer />
               </MuiThemeProvider>
             </div>
->>>>>>> 3f91d5a547614b29020e9dccf684034f8f10f706
           )}/>
 
           <Route exact path ={`/article/:id`} render={() => (
